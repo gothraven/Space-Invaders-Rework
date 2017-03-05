@@ -4,6 +4,7 @@
 #include <string.h>
 #include <poll.h>
 #include <termios.h>
+#include <mymap.h>
 
 
 int main(/*int argc, char const *argv[]*/){
@@ -16,6 +17,8 @@ int main(/*int argc, char const *argv[]*/){
 		tab[4] = "./keyboardInput";
 		tab[5] = NULL;
 	
+
+
 	execvp(tab[0],tab); //executing the game on a diffrent terminal
 	
 	return 0;
