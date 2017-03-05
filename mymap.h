@@ -8,11 +8,10 @@
 
 int main(/*int argc, char const *argv[]*/)
 {
-	char*[150];
+	char*[150]; //<= il faut faire char * nom_du_tableau [numéro]
 	int cmp=0;
-	char buff[1];
+	char buff[1]; 
 	while(cmp=!150){
-
 
 
 	}
