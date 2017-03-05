@@ -1,12 +1,15 @@
-EXEC=shell test
-SOURCES=game.c
+EXEC=game mouseInput keyboardInput
+SOURCES=game.c mouseInput.c keyboardInput.c
 CC=gcc
-CFLAGS= -g -w -Wall -Wextra -Werror -std=gnu99
+CFLAGS= -g -Wall -Wextra -Werror -std=gnu99
 .PHONY: default clean
 
 all: $(EXEC)
 
 game: game.c
+mouseInput: mouseInput.c
+keyboardInput: keyboardInput.c
+
 
 % : %.c
 
