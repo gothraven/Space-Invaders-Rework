@@ -14,7 +14,7 @@ int main(/*int argc, char const *argv[]*/){
 		tab[1] = "-geometry";
 		tab[2] = "150x50";
 		tab[3] = "-e";
-		tab[4] = "./mouseInput";
+		tab[4] = "./keyboardInput";
 		tab[5] = NULL;
 	
 
