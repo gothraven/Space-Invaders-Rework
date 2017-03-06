@@ -4,7 +4,7 @@
 #include <string.h>
 #include <poll.h>
 #include <termios.h>
-#include <mymap.h>
+//#include <mymap.h>
 
 
 int main(/*int argc, char const *argv[]*/){
@@ -14,7 +14,7 @@ int main(/*int argc, char const *argv[]*/){
 		tab[1] = "-geometry";
 		tab[2] = "150x50";
 		tab[3] = "-e";
-		tab[4] = "./keyboardInput";
+		tab[4] = "./mouseInput";
 		tab[5] = NULL;
 	
 

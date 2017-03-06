@@ -11,7 +11,7 @@ int main(void){
   int key;
   changemode(1); 
   printf("HELLOOOOO!!! ONE DAY THE GAME WILLS START HERE\n");
-  printf("BUT NOW, YOU CAN JUST USE IT AS A TYPING WRITER\n\n\n");
+  printf("BUT NOW, YOU CAN JUST USE DRAW\n\n\n");
   while(1){ //we keep waiting forever
     if(!kbhit()){ 
       // something has been detected. now get that.
