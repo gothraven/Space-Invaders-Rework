@@ -1,4 +1,7 @@
 
+
+~~~ WELCOME ~~~
+
 Hello and welcome to our SPACE INVADERS! Right now you are earth's only hope to save
 it from alien invaders from space. Make your job, and make it good, mankind
 believes in you...
