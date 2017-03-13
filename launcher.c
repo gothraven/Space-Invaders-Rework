@@ -2,19 +2,16 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include <poll.h>
-#include <termios.h>
-//#include <mymap.h>
 
 
-int main(/*int argc, char const *argv[]*/){
+int main(){
 	
 	char * tab[6];
 		tab[0] = "xterm";
 		tab[1] = "-geometry";
 		tab[2] = "150x50";
 		tab[3] = "-e";
-		tab[4] = "./keyboardInput"; //./mouseInput
+		tab[4] = "./game";
 		tab[5] = NULL;
 	
 
