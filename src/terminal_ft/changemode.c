@@ -1,7 +1,7 @@
 # ****************************************************************************#
 #                                                                             #
 #                                                #   # #### #### ####         #
-#    terminal.h                                  #   # #  # #    #            #
+#    changemode.c                                #   # #  # #    #            #
 #                                                #   # #### ###  #            #
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
@@ -9,9 +9,6 @@
 #    Updated: 2017/13/03 01:06:52 by Z.Safiy                                  #
 #                                                                             #
 #*****************************************************************************#
-
-#ifndef TERMINAL_H
-#define TERMINAL_H value
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,9 +19,20 @@
 #include <poll.h>
 #include <termios.h>
 
-
-void changemode(int dir);
-int kbhit(void);
+#include "terminal.h"
 
 
-#endif
+void changemode(int dir){
+
+	static struct termios oldt, newt;
+
+	if(dir == 1){
+		tcgetattr(STDIN_FILENO,&oldt);
+		newt = oldt;
+		newt.c_lflag &= ~(ICANON | ECHO);
+		tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+	}else{
+		tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+	}
+
+}

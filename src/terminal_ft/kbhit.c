@@ -1,7 +1,7 @@
 # ****************************************************************************#
 #                                                                             #
 #                                                #   # #### #### ####         #
-#    terminal.h                                  #   # #  # #    #            #
+#    kbhit.c                                     #   # #  # #    #            #
 #                                                #   # #### ###  #            #
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
@@ -9,9 +9,6 @@
 #    Updated: 2017/13/03 01:06:52 by Z.Safiy                                  #
 #                                                                             #
 #*****************************************************************************#
-
-#ifndef TERMINAL_H
-#define TERMINAL_H value
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,9 +19,14 @@
 #include <poll.h>
 #include <termios.h>
 
-
-void changemode(int dir);
-int kbhit(void);
+#include "terminal.h"
 
 
-#endif
+int kbhit(void){
+
+	pfd.fd = STDIN_FILENO;
+  	pfd.events = POLLIN;
+  	pr = poll(&pfd, 1, 5000);
+
+	return pr; 
+}
