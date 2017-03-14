@@ -22,8 +22,9 @@
 
 void map_xy(char * map, char charc, int x, int y);
 
-
-
-
+void map_init(char * map);
+void fill_map(char * map);
+void draw_borders(char * map);
+void draw_status_bar(char * map);
 
 #endif

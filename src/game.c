@@ -21,8 +21,7 @@ int main(){
 
 	changemode(1);
 	char * map = malloc(MAP_SIZE*sizeof(char));
-	for(int i=0; i<MAP_SIZE; i++) map[i]=' ';
-	map_xy(map,'$',1,1);
+	map_init(map);
 	write(1,map,MAP_SIZE);
 	while(1){
 		int status = kbhit();
@@ -36,7 +35,6 @@ int main(){
 			printf("\nSorry, time is up.\n");
 			return 0;
 		}else{
-
 			changemode(0);
 			printf("\nPoll() error.\n");
 			return 0;

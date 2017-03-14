@@ -6,7 +6,7 @@
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
 #    Created: 2017/13/03 11:05:30 by Z.Safiy                                  #
-#    Updated: 2017/13/03 11:05:30 by Z.Safiy                                  #
+#    Updated: 2017/14/03 09:27:30 by Z.Safiy                                  #
 #                                                                             #
 #*****************************************************************************#
 
@@ -17,7 +17,7 @@ TERMINAL_FT_PATH := terminal_ft/
 TERMINAL_FT_SRC := changemode kbhit 
 
 MAP_FT_PATH := map_ft/
-MAP_FT_SRC := map_xy
+MAP_FT_SRC := map_xy map_init
 
 LOADING_FT_PATH := loading_ft/
 LOADING_FT_SRC := 
@@ -67,12 +67,12 @@ CACHE:=.cache_exists
 all: $(NAME)
 
 $(NAME): $(OBJ) $(LIB_PATH)
-		@echo $(Yellow) " Compiling --> $@ <-- with $(CFLAGS) " $(END)
+		@echo $(Yellow)" Compiling -->"$(CYAN)"SPACE INVADERS"$(END)$(Yellow)"<-- with $(CFLAGS) " $(END)
 		@$(COMPILER) $(OBJ) -o $@ $(INCF)
-		@echo $(Green) " !!! Ready !!!" $(END)
+		@echo $(Green) " !!! Ready !!! EXECUTE WITH :"$(END) $(YELLOW)" ./go" $(END)
 
 $(CACHE_PATH)%.o:$(SRC_PATH)%.c | $(CACHE)
-		@echo $(Green) "Creating $(NAME) : $@ with $< " $(END);
+		@echo $(Green) "Creating "$(Red)"the $(NAME)"$(END) $(Green)" : $@ with $< " $(END);
 		@$(COMPILER) $(CFLAGS) -o $@ -c $<
 
 %.c:
