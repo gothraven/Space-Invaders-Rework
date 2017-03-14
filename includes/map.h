@@ -20,6 +20,10 @@
 
 
 
+void map_xy(char * map, char charc, int x, int y);
+
+
+
 
 
 #endif

@@ -17,7 +17,7 @@ TERMINAL_FT_PATH := terminal_ft/
 TERMINAL_FT_SRC := changemode kbhit 
 
 MAP_FT_PATH := map_ft/
-MAP_FT_SRC := 
+MAP_FT_SRC := map_xy
 
 LOADING_FT_PATH := loading_ft/
 LOADING_FT_SRC := 
