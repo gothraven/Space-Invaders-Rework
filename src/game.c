@@ -24,7 +24,6 @@ int main(){
 	char * map = malloc(MAP_SIZE*sizeof(char));
 	map_init(map);
 	write(1,map,MAP_SIZE);
-	
 	/* GAME TEST */
 	char *shape[] = {"#####\0"," ### \0","  #  \0",NULL};
 	int j = 6;
