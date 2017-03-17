@@ -4,3 +4,6 @@ mouseInput
 keyboardInput
 go
 *.o
+*.svg
+
+

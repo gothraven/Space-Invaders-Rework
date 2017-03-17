@@ -28,6 +28,7 @@ void changemode(int dir){
 		newt = oldt;
 		newt.c_lflag &= ~(ICANON | ECHO);
 		tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+
 	}else{
 		tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 	}

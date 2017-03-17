@@ -19,7 +19,7 @@
 
 
 void changemode(int dir);
-int kbhit(void);
+int poll_ft(void);
 
 
 #endif

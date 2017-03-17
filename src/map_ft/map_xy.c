@@ -15,11 +15,7 @@
 
 
 void map_xy(char * map, char charc, int x, int y){
-	for(int i=0; i<SCREEN_HEIGHT; i++){
-		for(int j=0; j<SCREEN_WIDTH; j++){
-			if((i+1)==y && (j+1)==x){
-				map[i*(SCREEN_WIDTH)+j] = charc;
-			}
-		}
-	}
+
+	map[(y-1)*(SCREEN_WIDTH)+(x-1)] = charc;
+
 }

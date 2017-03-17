@@ -14,10 +14,10 @@
 NAME := game
 
 TERMINAL_FT_PATH := terminal_ft/
-TERMINAL_FT_SRC := changemode kbhit 
+TERMINAL_FT_SRC := changemode poll_ft 
 
 MAP_FT_PATH := map_ft/
-MAP_FT_SRC := map_xy map_init
+MAP_FT_SRC := map_xy map_init draw_shape
 
 LOADING_FT_PATH := loading_ft/
 LOADING_FT_SRC := 
