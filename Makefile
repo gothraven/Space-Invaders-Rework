@@ -17,7 +17,10 @@ TERMINAL_FT_PATH := terminal_ft/
 TERMINAL_FT_SRC := changemode poll_ft 
 
 MAP_FT_PATH := map_ft/
-MAP_FT_SRC := map_xy map_init draw_shape
+MAP_FT_SRC := map_xy map_init draw_shape map_show
+
+PLAYER_FT_PATH := player_ft/
+PLAYER_FT_SRC := move_player
 
 LOADING_FT_PATH := loading_ft/
 LOADING_FT_SRC := 
@@ -44,6 +47,7 @@ CFLAGS = -g -W -Wall -Werror -Wextra  $(INCF)
 #----------------ADDING PATH AND FORMAT TO THE FILENAMES--------------------#
 FILES+=$(addprefix $(TERMINAL_FT_PATH),$(TERMINAL_FT_SRC))
 FILES+=$(addprefix $(MAP_FT_PATH),$(MAP_FT_SRC))
+FILES+=$(addprefix $(PLAYER_FT_PATH),$(PLAYER_FT_SRC))
 FILES+=$(addprefix $(LOADING_FT_PATH),$(LOADING_FT_SRC))
 
 SRC = $(addprefix $(SRC_PATH),$(addsuffix .c,$(FILES)))
@@ -82,6 +86,7 @@ $(CACHE):
 	@mkdir -p $(CACHE_PATH)
 	@mkdir -p $(CACHE_PATH)$(TERMINAL_FT_PATH)
 	@mkdir -p $(CACHE_PATH)$(MAP_FT_PATH)
+	@mkdir -p $(CACHE_PATH)$(PLAYER_FT_PATH)
 	@mkdir -p $(CACHE_PATH)$(LOADING_FT_PATH)
 
 clean:

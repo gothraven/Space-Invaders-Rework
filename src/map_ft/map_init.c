@@ -9,8 +9,7 @@
 #    Updated: 2017/14/03 09:19:10 by Z.Safiy                                  #
 #                                                                             # 
 #*****************************************************************************/
-#include <stdio.h>
-#include <unistd.h>
+
 #include "map.h"
 
 
@@ -24,7 +23,9 @@ void map_init(char * map){
 
 
 void fill_map(char * map){
+
 	for(int i=0; i<MAP_SIZE; i++) map[i]=' ';
+
 }
 
 

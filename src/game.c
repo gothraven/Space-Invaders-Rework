@@ -16,37 +16,39 @@
 #include <string.h>
 #include "terminal.h"
 #include "map.h"
+#include "player.h"
 
 
 int main(){
 
 	changemode(1);
 	char * map = malloc(MAP_SIZE*sizeof(char));
+	char * shape[] = {"  #  \0"," ### \0","#####\0",NULL};
+	
 	map_init(map);
-	write(1,map,MAP_SIZE);
-	/* GAME TEST */
-	char *shape[] = {"#####\0"," ### \0","  #  \0",NULL};
-	int j = 6;
-	for (unsigned int i = 4; i < (SCREEN_WIDTH-4-(strlen(shape[0]))); i++)
-	{
-		draw_shape(map,shape,i,j);
-		write(1,map,MAP_SIZE);
-		usleep(100000);
-		erase_shape(map,shape,i,j);
-		if(i == (SCREEN_WIDTH-4-(strlen(shape[0])))-1){
-			i=4;
-			j+=5;
-		}
-	}
-	/*
-	while(1){
-		int status = kbhit();
+	draw_shape(map,shape,12,15);
+	map_show(map);
+	usleep(300000);
+	move_player_left(map,shape,12,15);
+	map_show(map);
+
+	pause();
+	changemode(0);
+	
+	return 0;
+}
+
+
+
+
+
+/*
+		int status = poll_ft();
 		if (status > 0){
     	// We have got something to read 
-			char key = getchar();
-			printf("%c",key);
 		}else if (!status) {
     	// We got a timeout 
+
 			changemode(0);
 			printf("\nSorry, time is up.\n");
 			return 0;
@@ -55,8 +57,4 @@ int main(){
 			printf("\nPoll() error.\n");
 			return 0;
 		}
-	}
-	changemode(0);
-	*/
-	return 0;
-}
+*/

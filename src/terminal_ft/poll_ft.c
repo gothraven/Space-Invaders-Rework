@@ -10,11 +10,6 @@
 #                                                                             #
 #*****************************************************************************/
 
-#include <stdio.h>
-#include <unistd.h>
-#include <poll.h>
-#include <termios.h>
-
 #include "terminal.h"
 
 

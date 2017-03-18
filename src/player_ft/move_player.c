@@ -1,39 +1,24 @@
 /*****************************************************************************#
 #                                                                             #
 #                                                #   # #### #### ####         #
-#    draw_shape.c                                #   # #  # #    #            #
+#    move_player.c                               #   # #  # #    #            #
 #                                                #   # #### ###  #            #
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
-#    Created: 2017/17/03 19:26:09 by Z.Safiy                                  #
-#    Updated: 2017/17/03 19:26:09 by Z.Safiy                                  #
+#    Created: 2017/18/03 23:26:09 by Z.Safiy                                  #
+#    Updated: 2017/18/03 23:26:09 by Z.Safiy                                  #
 #                                                                             # 
 #*****************************************************************************/
 
 #include "map.h"
+#include "player.h"
 
-void draw_shape(char * map,char ** shape,int x, int y){
-	int i=0,j=0;
-	while(shape[i] != NULL){
-		j=0;
-		while(shape[i][j] != '\0'){
-			map_xy(map,shape[i][j],x+j,y+i);
-			j++; 
-		}
-		i++;
-	}
-
+void move_player_left(char * map,char ** shape,int x, int y){
+	erase_shape(map,shape,x,y);
+	draw_shape(map,shape,x-1,y);
 }
 
-void erase_shape(char * map,char ** shape,int x, int y){
-	int i=0,j=0;
-	while(shape[i] != NULL){
-		j=0;
-		while(shape[i][j] != '\0'){
-			map_xy(map,' ',x+j,y+i);
-			j++; 
-		}
-		i++;
-	}
-
+void move_player_right(char * map, char ** shape, int x, int y){
+	erase_shape(map,shape,x,y);
+	draw_shape(map,shape,x+1,y);
 }

@@ -13,6 +13,9 @@
 #ifndef MAP_H
 #define MAP_H value
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 #define SCREEN_WIDTH 150
 #define SCREEN_HEIGHT 50
@@ -23,9 +26,12 @@
 void map_xy(char * map, char charc, int x, int y);
 
 void map_init(char * map);
+void map_show(char * map);
+
 void fill_map(char * map);
 void draw_borders(char * map);
 void draw_status_bar(char * map);
+
 void draw_shape(char * map,char ** shape,int x, int y);
 void erase_shape(char * map,char ** shape,int x, int y);
 
