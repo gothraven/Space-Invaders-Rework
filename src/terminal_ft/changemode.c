@@ -12,7 +12,11 @@
 
 #include "terminal.h"
 
-
+/**
+ * Changes the terminal mode from normal to raw mode
+ * @param dir is the option, 1 for RAW mode, 0 for normal mode.
+ * @see #tcgetattr(int,struct termios *) #cfmakeraw(struct termios *) #tcsetattr(int, int, struct termios *)
+ */
 void changemode(int dir){
 
 	static struct termios oldt, newt;
@@ -20,7 +24,7 @@ void changemode(int dir){
 	if(dir == 1){
 		tcgetattr(STDIN_FILENO,&oldt);
 		newt = oldt;
-		newt.c_lflag &= ~(ICANON | ECHO);
+		cfmakeraw(&newt);		
 		tcsetattr(STDIN_FILENO, TCSANOW, &newt);
 
 	}else{
