@@ -41,7 +41,6 @@ CACHE_PATH := cache/
 INCF = -I $(HDR_PATH)
 
 CFLAGS = -g -W -Wall -Werror -Wextra  $(INCF)
-
 #----------------STD--------------------#
 
 #----------------ADDING PATH AND FORMAT TO THE FILENAMES--------------------#
@@ -55,9 +54,6 @@ OBJ = $(addprefix $(CACHE_PATH),$(addsuffix .o,$(FILES)))
 #----------------ADDING PATH AND FORMAT TO THE FILENAMES--------------------#
 
 #-----------------COLORS------------------#
-#-------B = Bold---------#
-#-------I = Intense------#
-#-------U = Underline----#
 Green	:= "\033[0;32m"
 Red		:= "\033[1;91m"
 Yellow	:= "\033[0;33m"
@@ -93,9 +89,11 @@ clean:
 		@/bin/rm -rf $(CACHE_PATH)
 		@/bin/rm -rf $(CACHE)
 		@echo $(Red) "Deleting ---->>>> $(CACHE_PATH)" $(END)
+
 fclean: clean
 		@/bin/rm -rf $(NAME)
 		@echo $(Red) "Deleting ---->>>> $(NAME)" $(END)
+		
 re: fclean all
 
 norm:

@@ -2,7 +2,6 @@ game
 test
 mouseInput
 keyboardInput
-go
 *.o
 *.svg
 
