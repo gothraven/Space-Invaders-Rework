@@ -15,7 +15,7 @@
 /**
  * Changes the terminal mode from normal to raw mode
  * @param dir is the option, 1 for RAW mode, 0 for normal mode.
- * @see #tcgetattr(int,struct termios *) #cfmakeraw(struct termios *) #tcsetattr(int, int, struct termios *)
+ * @see #man_tcgetattr(3) #man_cfmakeraw(3) #man_tcsetattr(3)
  */
 void changemode(int dir){
 
