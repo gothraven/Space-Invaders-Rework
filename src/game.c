@@ -22,6 +22,8 @@
 int main(){
 
 	changemode(1);
+
+	//for testing 
 	char * map = malloc(MAP_SIZE*sizeof(char));
 	char * shape[] = {"  #  \0"," ### \0","#####\0",NULL};
 	
