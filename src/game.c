@@ -40,7 +40,6 @@ int main(){
 	int i =0;
 	while(1){
 
-		//map_xy(map,missile[0],13,40-i);
 		map_xy(map,missile[0],20,40-(2)*i);
 		
 
@@ -51,7 +50,7 @@ int main(){
 		move_player_left(map,shape,86-i,15);
 		
 		map_show(map);
-		//map_xy(map,' ',13,40-i);
+		
 		map_xy(map,' ',20,40-(2)*i);
 		usleep(300000);
 
