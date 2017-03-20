@@ -13,13 +13,16 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include "game.h"
+#include "map.h"
+
 #define RIGHTKEY 'd'
 #define LEFTKEY 'q'
 #define SPACEKEY ' '
 
-void move_player(char * map, char ** shape, int x, int y, char keypressed);
-void move_player_left(char * map,char ** shape,int x, int y);
-void move_player_right(char * map,char ** shape,int x, int y);
+void move_player(char * map,Player_t * defender, char keypressed);
+void move_player_left(char * map,Player_t * defender);
+void move_player_right(char * map,Player_t * defender);
 
 
 #endif
