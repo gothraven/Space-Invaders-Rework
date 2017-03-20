@@ -14,11 +14,12 @@
 
 
 int poll_ft(void){
+
 	struct pollfd pfd = {0,0,0};       /* poll() settings   */
 	int pr;
 	pfd.fd = STDIN_FILENO;
 	pfd.events = POLLIN;
-	pr = poll(&pfd, 1, -1);
+	pr = poll(&pfd, 1, 80);
 	
 	return pr; 
 }
