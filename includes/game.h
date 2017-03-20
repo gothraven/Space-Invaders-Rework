@@ -11,26 +11,28 @@
 #*****************************************************************************/
 
 #ifndef GAME_H
-#define GAME_H value
+#define GAME_H
 
-
+/*
 struct missile_t{
 	char * shape;
 	int x;
 	int y;
 	int power;
 };
+*/
 
-struct player_t{
+typedef struct {
 	char ** shape;
 	int x;
 	int y;
 	int health;
 	int speed;
-	missile_t shot;
+	//missile_t shot;
 	int fireOn;
-};
+}Player_t;
 
+/*
 struct invader_t{
 	char ** shape;
 	int x;
@@ -40,14 +42,15 @@ struct invader_t{
 	float freq;
 	int type;
 };
-
+*/
+/*
 struct game_t{
 	char ** map;
-	mod_t mode;
+	//mod_t mode;
 	player_t defender;
-	invader_t[] invaders;
+	invader_t invaders[];
 	int score;
 };
-
+*/
 
 #endif

@@ -13,6 +13,11 @@
 #include "map.h"
 #include "player.h"
 
+void move_player(char * map,char ** shape, int x, int y, char keypressed){
+	if(keypressed == LEFTKEY) move_player_left(map,shape,x,y);
+	if(keypressed == RIGHTKEY) move_player_right(map,shape,x,y);
+}
+
 void move_player_left(char * map,char ** shape,int x, int y){
 	erase_shape(map,shape,x,y);
 	draw_shape(map,shape,x-1,y);

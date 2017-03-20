@@ -13,7 +13,13 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#define RIGHTKEY 'd'
+#define LEFTKEY 'q'
+#define SPACEKEY ' '
+
+void move_player(char * map, char ** shape, int x, int y, char keypressed);
 void move_player_left(char * map,char ** shape,int x, int y);
 void move_player_right(char * map,char ** shape,int x, int y);
+
 
 #endif
