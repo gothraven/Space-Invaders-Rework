@@ -47,19 +47,11 @@ int main(){
 	while(1){
 
 		int status = poll_ft();
-			
-			draw_shape(map,enemy,5+i,13+(2)*j);
-			map_show(map);
-			erase_shape(map,enemy,5+i,13+(2)*j);
-			i++;
-			if(i==SCREEN_WIDTH-20){ i=0; j++; }
-		
+
 		if (status > 0){
     		// We have got something to read 
 
 			read(0,keypressed,1);
-			move_player(map,defender,keypressed[0]);
-			
 
 		}else if (!status) {
     		// We got a timeout
@@ -70,7 +62,16 @@ int main(){
 			return 0;
 		}
 
+		move_player(map,defender,keypressed[0]);
+		draw_shape(map,enemy,5+i,13+(2)*j);
+		map_show(map);
+		erase_shape(map,enemy,5+i,13+(2)*j);
 		
+		i++;
+		
+		if(i==SCREEN_WIDTH-20){ 
+			i=0; j++; 
+		}
 
 	}	
 	changemode(0);
