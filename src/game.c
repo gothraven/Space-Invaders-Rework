@@ -59,6 +59,7 @@ int main(){
 
 			read(0,keypressed,1);
 			move_player(map,defender,keypressed[0]);
+			
 
 		}else if (!status) {
     		// We got a timeout
