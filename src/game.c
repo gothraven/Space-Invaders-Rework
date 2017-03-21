@@ -42,24 +42,26 @@ int main(){
 	map_show(map);
 
 	int i =0;
-
+	int j = 0;
 
 	while(1){
 
 		int status = poll_ft();
+			
+			draw_shape(map,enemy,5+i,13+(2)*j);
+			map_show(map);
+			erase_shape(map,enemy,5+i,13+(2)*j);
+			i++;
+			if(i==SCREEN_WIDTH-20){ i=0; j++; }
+		
 		if (status > 0){
     		// We have got something to read 
+
 			read(0,keypressed,1);
 			move_player(map,defender,keypressed[0]);
-			map_show(map);
-		}else if (!status) {
-    		// We got a timeout 
-			draw_shape(map,enemy,5+i,13);
-			map_show(map);
-			erase_shape(map,enemy,5+i,13);
 
-			i++;
-			if(i==SCREEN_WIDTH-20) i=0;
+		}else if (!status) {
+    		// We got a timeout
 
 		}else{
 			changemode(0);
