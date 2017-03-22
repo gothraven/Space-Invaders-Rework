@@ -52,7 +52,7 @@ int main(){
     		// We have got something to read 
 
 			read(0,keypressed,1);
-
+		
 		}else if (!status) {
     		// We got a timeout
 
@@ -63,6 +63,7 @@ int main(){
 		}
 
 		move_player(map,defender,keypressed[0]);
+
 		draw_shape(map,enemy,5+i,13+(2)*j);
 		map_show(map);
 		erase_shape(map,enemy,5+i,13+(2)*j);
