@@ -10,19 +10,33 @@
 *                                                                             #
 ******************************************************************************/
 
-#include "game.h"
+//#include "game.h"
 #include "load.h"
 
+void load_defender(/*player_t * defender,*/char const * modename){
+	char PATH[100]="";
+	int fd;
 
-void load_defender(/*player_t * defender,*/char * modename){
-	char * PATH = strcat(MOD_PATH,modename);
-	//int fd = open(DEF_PATH)
-	printf("%s\n",PATH);
+	strcat(PATH,MOD_PATH);
+	strcat(PATH,modename);
+	strcat(PATH,"/");
+	strcat(PATH,DEF_PATH);
+	strcat(PATH,"1");
+
+	if((fd = open(PATH,O_RDONLY))==-1) perror("ERROR:open");
+	
+	printf("(%s)\n",PATH);
+
+	read_all(fd);
+	
+	if(close(fd)==-1) perror("ERROR:close");
+
 }
 
-
-int main(int argc, char const *argv[])
-{
-	load_defender("easy");
-	return 0;
+void read_all(int fd){
+	char buffer[1024];
+	int nread;
+	while((nread=read(fd,buffer,1024))>0){
+		write(2,buffer,nread);
+	}
 }

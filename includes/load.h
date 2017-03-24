@@ -13,11 +13,22 @@
 #ifndef LOAD_H
 #define LOAD_H value
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <string.h>
+#include <unistd.h>
+
 #define DEF_PATH "defender/"
 #define ENE_PATH "enemies/"
 #define MOD_PATH "mods/"
 #define LVL_PATH "levels/"
 
+void load_defender(/*player_t * defender,*/char const * modename);
+
+void read_all(int fd);
 
 
 

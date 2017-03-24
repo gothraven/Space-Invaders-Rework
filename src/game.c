@@ -17,11 +17,20 @@
 #include "terminal.h"
 #include "map.h"
 #include "player.h"
+#include "load.h"
 #include "game.h"
 
 
 int main(){
+	load_defender("hard");
+	return 0;
+}
 
+
+
+/** MOVEMENT TEST **/
+
+/*
 	changemode(1);
 
 	//for testing 
@@ -76,6 +85,4 @@ int main(){
 
 	}	
 	changemode(0);
-	
-	return 0;
-}
+*/

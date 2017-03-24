@@ -44,14 +44,14 @@ typedef struct {
 
 typedef struct {
 	char * name;
-	player_t defender;
+	Player_t * defender;
 	Invader_t invaders[];
 }Mod_t;
 
 typedef struct {
-	char ** map;
-	Mod_t mode[];
+	char ** map;	
 	int score;
+	Mod_t mode[];
 }Game_t;
 
 
