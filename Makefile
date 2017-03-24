@@ -6,7 +6,7 @@
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
 #    Created: 2017/13/03 11:05:30 by Z.Safiy                                  #
-#    Updated: 2017/14/03 09:27:30 by Z.Safiy                                  #
+#    Updated: 2017/24/03 22:39:20 by Z.Safiy                                  #
 #                                                                             #
 #*****************************************************************************#
 
@@ -23,7 +23,7 @@ PLAYER_FT_PATH := player_ft/
 PLAYER_FT_SRC := move_player
 
 LOADING_FT_PATH := loading_ft/
-LOADING_FT_SRC := 
+LOADING_FT_SRC := load_defender load_enemies load_mode load_game
 
 FILES = game
 

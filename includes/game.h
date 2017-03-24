@@ -13,14 +13,13 @@
 #ifndef GAME_H
 #define GAME_H
 
-/*
-struct missile_t{
-	char * shape;
+
+typedef struct {
+	char shape;
 	int x;
 	int y;
 	int power;
-};
-*/
+}Shot_t;
 
 typedef struct {
 	char ** shape;
@@ -28,29 +27,32 @@ typedef struct {
 	int y;
 	int health;
 	int speed;
-	//missile_t shot;
+	Shot_t * shot;
 	int fireOn;
 }Player_t;
 
-/*
-struct invader_t{
+typedef struct {
 	char ** shape;
 	int x;
 	int y;
 	int health;
 	int speed;
 	float freq;
+	Shot_t shot;
 	int type;
-};
-*/
-/*
-struct game_t{
-	char ** map;
-	//mod_t mode;
+}Invader_t;
+
+typedef struct {
+	char * name;
 	player_t defender;
-	invader_t invaders[];
+	Invader_t invaders[];
+}Mod_t;
+
+typedef struct {
+	char ** map;
+	Mod_t mode[];
 	int score;
-};
-*/
+}Game_t;
+
 
 #endif

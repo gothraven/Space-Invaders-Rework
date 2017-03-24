@@ -13,6 +13,12 @@
 #ifndef LOAD_H
 #define LOAD_H value
 
+#define DEF_PATH
+#define ENE_PATH
+#define MOD_PATH
+#define GAM_PATH
+#define LVL_PATH
+
 
 
 

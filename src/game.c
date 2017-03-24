@@ -27,7 +27,7 @@ int main(){
 	//for testing 
 	char * map = malloc(MAP_SIZE*sizeof(char));
 	char * shape[] = {"  #  \0"," ### \0","#####\0",NULL};
-	char * enemy[] = {"#####\0"," ### \0","  #  \0",NULL};
+	char * enemy[] = {"*-*-*\0"," [*] \0",NULL};
 	char keypressed[1];
 
 	Player_t * defender = malloc(sizeof(Player_t));
@@ -79,24 +79,3 @@ int main(){
 	
 	return 0;
 }
-
-
-
-
-
-/*
-		int status = poll_ft();
-		if (status > 0){
-    	// We have got something to read 
-		}else if (!status) {
-    	// We got a timeout 
-
-			changemode(0);
-			printf("\nSorry, time is up.\n");
-			return 0;
-		}else{
-			changemode(0);
-			printf("\nPoll() error.\n");
-			return 0;
-		}
-*/
