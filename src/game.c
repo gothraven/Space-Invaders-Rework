@@ -22,7 +22,8 @@
 
 
 int main(){
-	load_defender("hard");
+	load_defender("easy");
+	//pause();
 	return 0;
 }
 

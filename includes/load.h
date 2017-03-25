@@ -26,9 +26,9 @@
 #define MOD_PATH "mods/"
 #define LVL_PATH "levels/"
 
-void load_defender(/*player_t * defender,*/char const * modename);
+#define BUFFSIZE 1024
 
-void read_all(int fd);
+void load_defender(/*player_t * defender,*/char * modename);
 
 
 

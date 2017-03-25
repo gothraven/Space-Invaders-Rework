@@ -6,13 +6,12 @@
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
 #    Created: 2017/20/03 00:39:21 by Z.Safiy                                  #
-#    Updated: 2017/20/03 00:39:21 by Z.Safiy                                  #
+#    Updated: 2017/25/03 00:56:21 by Z.Safiy                                  #
 #                                                                             # 
 #*****************************************************************************/
 
 #ifndef GAME_H
 #define GAME_H
-
 
 typedef struct {
 	char shape;
