@@ -22,7 +22,7 @@
 
 
 int main(){
-	load_defender("easy");
+	load_defender("medium");
 	//pause();
 	return 0;
 }

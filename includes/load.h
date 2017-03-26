@@ -44,6 +44,7 @@ typedef struct {
 
 
 void load_defender(/*player_t * defender,*/char * modename);
+void load_shipfile(Ship_fs * file,int fd);
 char * get_line(char * buffer,int * i);
 void parse_line(char * line,char ** buff);
 void show_file(Ship_fs * file);
