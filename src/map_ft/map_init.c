@@ -23,7 +23,10 @@ void map_init(char * map){
 	draw_status_bar(map);
 }
 
-
+/**
+ *this function draw the ' ' in the map
+ *@param map available in map.h
+ */
 
 void fill_map(char * map){
 
@@ -31,7 +34,10 @@ void fill_map(char * map){
 
 }
 
-
+/**
+ *this fonction draw the borders of the map 
+ *@param map available in map.h
+ */
 
 void draw_borders(char * map){
 	for (int i = 1; i <=SCREEN_HEIGHT; i++){
@@ -43,7 +49,10 @@ void draw_borders(char * map){
 	}
 }
 
-
+/**
+ *this function show the level the score and the health of your spatialship 
+ *@param map is available in map.h
+ */
 void draw_status_bar(char * map){
 	char * score = "SCORE : ";
 	int x=7,y=2;
