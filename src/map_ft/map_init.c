@@ -11,7 +11,10 @@
 #*****************************************************************************/
 
 #include "map.h"
-
+/**
+ *this function draw the map
+ *@param map available in map.h
+ */
 
 
 void map_init(char * map){
