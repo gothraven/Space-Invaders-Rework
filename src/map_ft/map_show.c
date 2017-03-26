@@ -11,9 +11,11 @@
 #*****************************************************************************/
 
 #include "map.h"
+
 /**
  *this function just show the map
  *@param map available in map.h
+ *@see man_write(2)
  */
 void map_show(char * map){
 
