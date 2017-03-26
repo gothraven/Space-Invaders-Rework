@@ -1,7 +1,7 @@
 /*****************************************************************************#
 *                                                                             #
 *                                                #   # #### #### ####         #
-*    load_enemies.c                              #   # #  # #    #            #
+*    file_lines.c                                #   # #  # #    #            #
 *                                                #   # #### ###  #            #
 *    By: Z. Safiy Errahmane                      #   # #    #    #            #
 *                                                 ###  #    #### ####         #
@@ -10,45 +10,42 @@
 *                                                                             #
 ******************************************************************************/
 
-#include "game.h"
 #include "load.h"
 
-void load_enemy(char * enemytipe,char * modename){
-	char PATH[100]="";
-	int fd;
+char * get_line(char * buffer,int * i){
 	
-	Ship_fs * file = malloc(sizeof(Ship_fs));
+	char * line = malloc(1024*sizeof(char));
+	int j = 0;
 
-	if(file == NULL){
-		perror("ERROR:MALLOC");
-	}	
-
-	strcat(PATH,MOD_PATH);
-	strcat(PATH,modename);
-	strcat(PATH,"/");
-	strcat(PATH,ENE_PATH);
-	strcat(PATH,enemytipe);
-
-	if((fd = open(PATH,O_RDONLY))==-1){ 
-		char ERROR[100]="ERROR:OPEN:";
-		strcat(ERROR,modename);
-		strcat(ERROR,":");
-		strcat(ERROR,enemytipe);
-		perror(ERROR);
-		exit(EXIT_FAILURE);
+	while(buffer[*i] != '\n'){
+		line[j] = buffer[*i];
+		(*i)++; j++;
 	}
+	
+	line[j] = '\0';
+	(*i)++;
 
-	load_shipfile(file,fd);
-	show_file(file);
-	free_file(file);
+	return line;
+}
 
-	if(close(fd)==-1){
-		char ERROR[100]="ERROR:CLOSE:";
-		strcat(ERROR,modename);
-		strcat(ERROR,":");
-		strcat(ERROR,enemytipe);
-		perror(ERROR);
-		exit(EXIT_FAILURE);
+void parse_line(char * line,char ** buff){
+	
+	buff[0] = malloc(sizeof(char*));
+	int i = 0, j = 0, k = 0;
+
+	while(line[i] != '\0'){
+		while(line[i] == ' '){
+			buff[j][k]='\0';
+			k=0;
+			j++;
+			buff[j] = malloc(sizeof(char *));
+			i++;	
+		}
+		buff[j][k] = line[i];
+		k++;
+		i++;
 	}
-
+	j++;
+	buff[j] = NULL;
+	free(line);
 }

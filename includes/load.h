@@ -42,12 +42,17 @@ typedef struct {
 	char ** shape;
 }Ship_fs;
 
+void load_defender(char * defendertype,char * modename);
+void load_enemy(char * enemytipe,char * modename);
 
-void load_defender(/*player_t * defender,*/char * modename);
 void load_shipfile(Ship_fs * file,int fd);
+void show_file(Ship_fs * file);
+void free_file(Ship_fs * file);
+
 char * get_line(char * buffer,int * i);
 void parse_line(char * line,char ** buff);
-void show_file(Ship_fs * file);
+
+
 
 
 

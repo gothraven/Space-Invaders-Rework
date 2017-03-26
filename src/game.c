@@ -22,8 +22,8 @@
 
 
 int main(){
-	load_defender("medium");
-	pause();
+	printf("(DON'T WORRY,EVERYTHING IS WORKING WELL)\n");
+	//pause();
 	return 0;
 }
 

@@ -13,31 +13,37 @@
 #include "game.h"
 #include "load.h"
 
-void load_defender(char * modename){
+void load_defender(char * defendertype,char * modename){
 	char PATH[100]="";
 	int fd;
+	
 	Ship_fs * file = malloc(sizeof(Ship_fs));
 
 	strcat(PATH,MOD_PATH);
 	strcat(PATH,modename);
 	strcat(PATH,"/");
 	strcat(PATH,DEF_PATH);
-	strcat(PATH,"1");
+	strcat(PATH,defendertype);
 
 	if((fd = open(PATH,O_RDONLY))==-1){ 
 		char ERROR[100]="ERROR:OPEN:";
 		strcat(ERROR,modename);
+		strcat(ERROR,":");
+		strcat(ERROR,defendertype);
 		perror(ERROR);
 		exit(EXIT_FAILURE);
 	}
 
 	load_shipfile(file,fd);
-	
 	show_file(file);
+	free_file(file);
+	
 
 	if(close(fd)==-1){
 		char ERROR[100]="ERROR:CLOSE:";
 		strcat(ERROR,modename);
+		strcat(ERROR,":");
+		strcat(ERROR,defendertype);
 		perror(ERROR);
 		exit(EXIT_FAILURE);
 	}
