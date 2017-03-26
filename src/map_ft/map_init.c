@@ -51,7 +51,7 @@ void draw_borders(char * map){
 
 /**
  *this function show the level the score and the health of your spatialship 
- *@param map is available in map.h
+ *@param map is available in map.h 
  */
 void draw_status_bar(char * map){
 	char * score = "SCORE : ";
