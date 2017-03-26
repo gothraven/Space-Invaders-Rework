@@ -11,7 +11,10 @@
 #*****************************************************************************/
 
 #include "map.h"
-
+/**
+ *this function just show the map
+ *@param map available in map.h
+ */
 void map_show(char * map){
 
 	write(1,map,MAP_SIZE);
