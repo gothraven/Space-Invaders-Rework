@@ -28,14 +28,9 @@
 
 #define BUFFSIZE 1024
 
-void load_defender(/*player_t * defender,*/char * modename);
-char * get_line(char * buffer,int * i);
-void parse_line(char * line,char ** buff);
-
-
 typedef struct {
-	int ship_height;
 	int ship_width;
+	int ship_height;
 	int path_size;
 	int * path_h;
 	int * path_v;
@@ -47,6 +42,11 @@ typedef struct {
 	char ** shape;
 }Ship_fs;
 
+
+void load_defender(/*player_t * defender,*/char * modename);
+char * get_line(char * buffer,int * i);
+void parse_line(char * line,char ** buff);
+void show_file(Ship_fs * file);
 
 
 

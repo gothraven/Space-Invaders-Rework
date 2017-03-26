@@ -12,7 +12,9 @@
 
 //#include "game.h"
 #include "load.h"
+
 /*player_t * defender,*/
+
 void load_defender(char * modename){
 	char PATH[100]="";
 	int fd;
@@ -39,8 +41,8 @@ void load_defender(char * modename){
 		parse_line(get_line(buffer,&i),tab);
 		
 		if(line == 0){
-			file->ship_height = atoi(tab[0]);
-			file->ship_width = atoi(tab[1]);
+			file->ship_width = atoi(tab[0]);
+			file->ship_height = atoi(tab[1]);
 		}
 
 		if(line == 1){
@@ -76,10 +78,18 @@ void load_defender(char * modename){
 
 		line++;
 	}
+	int k = 0;
+
+	file->shape = malloc(file->ship_height*sizeof(char*));
+	
 	while(i<nread){	
-		printf("%s\n",get_line(buffer,&i));
-		//i++;
+		file->shape[k] = get_line(buffer,&i);
+		k++;
 	}
+	
+	file->shape[k] = NULL;
+
+	show_file(file);
 
 	if(close(fd)==-1) perror("ERROR:close");
 
@@ -96,7 +106,7 @@ char * get_line(char * buffer,int * i){
 		(*i)++; j++;
 	}
 	
-	buffer[j] = '\0';
+	line[j] = '\0';
 	(*i)++;
 
 	return line;
@@ -109,6 +119,7 @@ void parse_line(char * line,char ** buff){
 
 	while(line[i] != '\0'){
 		while(line[i] == ' '){
+			//printf("@");
 			buff[j][k]='\0';
 			k=0;
 			j++;
@@ -122,4 +133,37 @@ void parse_line(char * line,char ** buff){
 	j++;
 	buff[j] = NULL;
 	free(line);
+}
+
+void show_file(Ship_fs * file){
+
+	printf("ship_width %d\n",file->ship_width);
+	printf("ship_height %d\n",file->ship_height);
+	printf("path_size %d\n",file->path_size);
+	
+	printf("path_h :\n");
+	for (int i = 0; i < file->path_size; ++i){
+		printf("%d ",file->path_h[i]);
+	}
+	
+	printf("\npath_v :\n");
+	for (int i = 0; i < file->path_size; ++i){
+		printf("%d ",file->path_v[i]);
+	}
+	printf("\n");
+
+	printf("ship_health %d\n",file->ship_health);
+	printf("shot_freq %f\n",file->shot_freq);
+	printf("shot_speed %d\n",file->shot_speed);
+	printf("shot_power %d\n",file->shot_power);
+	printf("shot (%c)\n",file->shot);
+
+	printf("shape :\n");
+	int i = 0;
+	while(file->shape[i] != NULL){
+		printf("%s\n",file->shape[i]);
+		i++;
+	}
+
+
 }
