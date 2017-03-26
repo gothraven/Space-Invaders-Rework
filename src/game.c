@@ -23,6 +23,7 @@
 
 int main(){
 	load_defender("medium");
+	pause();
 	return 0;
 }
 
