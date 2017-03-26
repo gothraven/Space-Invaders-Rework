@@ -12,6 +12,10 @@
 
 #include "map.h"
 
+/**
+ *this function jsut show the map in the terminal
+ *@param map is available in map.h /charc is a char/ y and y is for de position   
+ */
 
 void map_xy(char * map, char charc, int x, int y){
 
