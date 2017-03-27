@@ -20,6 +20,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <unistd.h>
+#include "game.h"
 
 #define DEF_PATH "defender/"
 #define ENE_PATH "enemies/"
@@ -27,6 +28,7 @@
 #define LVL_PATH "levels/"
 
 #define BUFFSIZE 1024
+#define MAX_LEVELS 10
 
 typedef struct {
 	int ship_width;
@@ -42,7 +44,11 @@ typedef struct {
 	char ** shape;
 }Ship_fs;
 
-void load_defender(char * defendertype,char * modename);
+void load_mode(Mod_t * mode);
+
+void load_level(Level_t * level,Mod_t * mode);
+
+void load_defender(char * modename);
 void load_enemy(char * enemytipe,char * modename);
 
 void load_shipfile(Ship_fs * file,int fd);

@@ -22,8 +22,11 @@
 
 
 int main(){
+	Mod_t * mode = malloc(sizeof(Mod_t));
+	mode->name ="easy";
+	load_mode(mode);
 	printf("(DON'T WORRY,EVERYTHING IS WORKING WELL)\n");
-	//pause();
+	pause();
 	return 0;
 }
 

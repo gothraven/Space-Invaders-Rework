@@ -42,15 +42,20 @@ typedef struct {
 }Invader_t;
 
 typedef struct {
+	char * number;
+	char * defendertype;
+	char ** enemiestypes;
+}Level_t;
+
+typedef struct {
 	char * name;
-	Player_t * defender;
-	Invader_t invaders[];
+	Level_t ** levels;
 }Mod_t;
 
 typedef struct {
 	char ** map;	
 	int score;
-	Mod_t mode[];
+	Mod_t * mode;
 }Game_t;
 
 

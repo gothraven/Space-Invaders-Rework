@@ -10,7 +10,6 @@
 *                                                                             #
 ******************************************************************************/
 
-#include "game.h"
 #include "load.h"
 
 void load_enemy(char * enemytipe,char * modename){

@@ -13,7 +13,6 @@
 #include "load.h"
 
 
-
 void load_shipfile(Ship_fs * file,int fd){
 
 	int nread;
