@@ -11,7 +11,11 @@
 ******************************************************************************/
 
 #include "load.h"
-
+/**
+ *this function load shape and change the string in int to be stocks in the shell
+ *@param the file ship_fs/ fd is the filed descriptor
+ *@see #man_read(1) #man_malloc(3) #man_free(9) #man_buffer(1) #man_atoi(8) #man_atof(1) #
+ */
 
 void load_shipfile(Ship_fs * file,int fd){
 
