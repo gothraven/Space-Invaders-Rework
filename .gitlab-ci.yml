@@ -1,0 +1,7 @@
+before_script:
+   - export BUILD_VAR=if_needed
+   
+build_linux:
+   stage: build
+   script:
+      - make
