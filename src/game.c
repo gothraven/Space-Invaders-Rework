@@ -23,12 +23,14 @@
 
 int main(){
 	Mod_t * mode = malloc(sizeof(Mod_t));
+	Game_t * game = malloc(sizeof(Game_t));
 	mode->name ="hard";
 	load_mode(mode);
 
-	show_mode(mode);
-	printf("(DON'T WORRY,EVERYTHING IS WORKING WELL)\n");
-	pause();
+	//show_mode(mode);
+	load_game(game,mode);
+	//printf("(DON'T WORRY,EVERYTHING IS WORKING WELL)\n");
+	//pause();
 	return 0;
 }
 

@@ -44,6 +44,9 @@ typedef struct {
 	char ** shape;
 }Ship_fs;
 
+
+void load_game(Game_t * game,Mod_t * mode);
+
 void load_mode(Mod_t * mode);
 void show_mode(Mod_t * mode);
 
