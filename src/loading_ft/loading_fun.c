@@ -23,7 +23,7 @@ void load_shipfile(Ship_fs * file,int fd){
 	int i = 0;
 
 	while(i<nread && line < 9){
-		//printf("(%d)\n",line);
+		
 		char * tab[200];
 		parse_line(get_line(buffer,&i),tab);
 		

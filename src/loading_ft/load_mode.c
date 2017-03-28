@@ -69,3 +69,14 @@ void load_mode(Mod_t * mode){
 	}
 
 }
+
+void show_mode(Mod_t * mode){
+	printf("mode name : (%s)\n",mode->name);
+	int i =0;
+	while(mode->levels[i] != NULL){
+		printf("-----------------------------\n");
+		show_level(mode->levels[i]);
+		printf("-----------------------------\n");
+		i++;
+	}
+}

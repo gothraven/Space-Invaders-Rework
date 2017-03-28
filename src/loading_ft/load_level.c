@@ -32,7 +32,29 @@ void load_level(Level_t * level,Mod_t * mode){
 		exit(EXIT_FAILURE);
 	}
 
-	printf("YOHO level %s  loaded \n",level->number);
+	int nread;
+
+	char buffer[BUFFSIZE];
+	nread = read(fd,buffer,BUFFSIZE);
+	
+	int i = 0;
+	
+	char * nbShips = get_line(buffer,&i);
+	level->nbShips = atoi(nbShips);
+	level->data = malloc(level->nbShips*sizeof(int*));
+	
+	int j=0;
+	while(i<nread){
+		char * tab[200];
+		parse_line(get_line(buffer,&i),tab);
+		level->data[j] = malloc(4*sizeof(int));
+		level->data[j][0] = atoi(tab[0]);
+		level->data[j][1] = atoi(tab[1]);
+		level->data[j][2] = atoi(tab[2]);
+		level->data[j][3] = atoi(tab[3]);
+
+		j++;
+	}
 
 	if(close(fd)==-1){
 		char ERROR[100]="ERROR:CLOSE:";
@@ -42,4 +64,16 @@ void load_level(Level_t * level,Mod_t * mode){
 		perror(ERROR);
 		exit(EXIT_FAILURE);
 	}
+}
+
+
+void show_level(Level_t * level){
+	printf("level number (%s)\n", level->number);
+	printf("number of ships : {%d}\n",level->nbShips);
+	for (int i = 0; i < level->nbShips; ++i){
+		for (int j = 0; j < 4; ++j){
+			printf("%d ",level->data[i][j]);
+		}
+		printf("\n");
+	}		
 }

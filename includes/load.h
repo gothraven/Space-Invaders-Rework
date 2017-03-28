@@ -45,8 +45,10 @@ typedef struct {
 }Ship_fs;
 
 void load_mode(Mod_t * mode);
+void show_mode(Mod_t * mode);
 
 void load_level(Level_t * level,Mod_t * mode);
+void show_level(Level_t * level);
 
 void load_defender(char * modename);
 void load_enemy(char * enemytipe,char * modename);
