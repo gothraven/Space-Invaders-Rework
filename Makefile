@@ -23,7 +23,7 @@ PLAYER_FT_PATH := player_ft/
 PLAYER_FT_SRC := move_player
 
 LOADING_FT_PATH := loading_ft/
-LOADING_FT_SRC := load_defender load_enemies load_mode load_game loading_fun file_lines load_level
+LOADING_FT_SRC := load_defender load_invader load_mode load_game loading_fun file_lines load_level
 
 FILES = game
 

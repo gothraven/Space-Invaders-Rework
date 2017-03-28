@@ -26,11 +26,52 @@ int main(){
 	Game_t * game = malloc(sizeof(Game_t));
 	mode->name ="hard";
 	load_mode(mode);
+	load_game(game,mode,1);
+	char * enemy[] = {"*-*-*\0"," [*] \0",NULL};
+	char keypressed[1];
 
-	//show_mode(mode);
-	load_game(game,mode);
-	//printf("(DON'T WORRY,EVERYTHING IS WORKING WELL)\n");
-	//pause();
+	
+	changemode(1);
+	map_init(game->map);
+	draw_shape(game->map,game->defender->shape,game->defender->x,game->defender->y);
+	map_show(game->map);
+
+	int i =0;
+	int j = 0;
+
+	while(1){
+
+		int status = poll_ft();
+
+		if (status > 0){
+    		// We have got something to read 
+
+			read(0,keypressed,1);
+		
+		}else if (!status) {
+    		// We got a timeout
+
+		}else{
+			changemode(0);
+			printf("\nPoll() error.\n");
+			return 0;
+		}
+
+		move_player(game->map,game->defender,keypressed[0]);
+
+		draw_shape(game->map,enemy,5+i,13+(2)*j);
+		map_show(game->map);
+		erase_shape(game->map,enemy,5+i,13+(2)*j);
+		
+		i++;
+		
+		if(i==SCREEN_WIDTH-20){ 
+			i=0; j++; 
+		}
+
+	}	
+	changemode(0);
+	
 	return 0;
 }
 
@@ -42,7 +83,6 @@ int main(){
 	changemode(1);
 
 	//for testing 
-	char * map = malloc(MAP_SIZE*sizeof(char));
 	char * shape[] = {"  #  \0"," ### \0","#####\0",NULL};
 	char * enemy[] = {"*-*-*\0"," [*] \0",NULL};
 	char keypressed[1];

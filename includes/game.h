@@ -18,16 +18,17 @@ typedef struct {
 	int x;
 	int y;
 	int power;
+	int speed;
 }Shot_t;
 
 typedef struct {
-	char ** shape;
 	int x;
 	int y;
 	int health;
 	int speed;
-	Shot_t * shot;
 	int fireOn;
+	Shot_t * shot;
+	char ** shape;
 }Player_t;
 
 typedef struct {
@@ -53,12 +54,12 @@ typedef struct {
 }Mod_t;
 
 typedef struct {
-	char * mode;
+	int level;
 	int score;
 	int nbInaders;
 	Player_t * defender;
 	Invader_t ** invaders;
-	char ** map;
+	char * map;
 }Game_t;
 
 

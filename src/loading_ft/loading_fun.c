@@ -133,5 +133,4 @@ void free_file(Ship_fs * file){
 		free(file->shape[i]);	
 		i--;
 	}
-	free(file);
 }

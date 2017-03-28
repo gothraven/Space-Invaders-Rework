@@ -1,7 +1,7 @@
 /*****************************************************************************#
 *                                                                             #
 *                                                #   # #### #### ####         #
-*    load_enemies.c                              #   # #  # #    #            #
+*    load_invader.c                              #   # #  # #    #            #
 *                                                #   # #### ###  #            #
 *    By: Z. Safiy Errahmane                      #   # #    #    #            #
 *                                                 ###  #    #### ####         #
@@ -12,7 +12,7 @@
 
 #include "load.h"
 
-void load_enemy(char * enemytipe,char * modename){
+void load_invader(Invader_t * invader,char * enemytipe,char * modename){
 	char PATH[100]="";
 	int fd;
 	
@@ -38,6 +38,7 @@ void load_enemy(char * enemytipe,char * modename){
 	}
 
 	load_shipfile(file,fd);
+	invader->x = 1;
 	show_file(file);
 	free_file(file);
 
