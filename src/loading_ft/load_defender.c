@@ -37,7 +37,7 @@ void load_defender(Player_t * defender,char * modename){
 
 	load_shipfile(file,fd);
 	file_to_defender(defender,file);
-	//free_file(file);
+	free_file(file);
 	
 
 	if(close(fd)==-1){

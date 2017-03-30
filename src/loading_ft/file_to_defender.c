@@ -39,7 +39,6 @@ void file_to_defender(Player_t * defender,Ship_fs * file){
 		}
 	}
 	defender->shape[/*file->ship_height*/3] = NULL;
-	//printf("(%d)(%s)[%s]\n",file->ship_height,defender->shape[0],file->shape[0]);
 
 	
 }

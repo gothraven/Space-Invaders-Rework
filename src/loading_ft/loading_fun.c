@@ -11,12 +11,13 @@
 ******************************************************************************/
 
 #include "load.h"
+
+
 /**
  *this function load shape and change the string in int to be stocks in the shell
  *@param the file ship_fs/ fd is the filed descriptor
  *@see #man_read(1) #man_malloc(3) #man_free(9) #man_buffer(1) #man_atoi(8) #man_atof(1)
  */
-
 void load_shipfile(Ship_fs * file,int fd){
 
 	int nread;
@@ -96,11 +97,12 @@ void load_shipfile(Ship_fs * file,int fd){
 	file->shape[k] = NULL;
 
 }
+
+
 /**
  *this function show the file: the ship, the path and the shots...
  *@param the file named Ship_fs
  */
-
 void show_file(Ship_fs * file){
 
 	printf("ship_width %d\n",file->ship_width);
@@ -131,6 +133,8 @@ void show_file(Ship_fs * file){
 		i++;
 	}
 }
+
+
 /**
  *this function is to free file removing the path_h and path_v
  *@param the file named Ship_fs
