@@ -38,9 +38,8 @@ void load_invader(Invader_t * invader,char * enemytipe,char * modename){
 	}
 
 	load_shipfile(file,fd);
-	invader->x = 1;
-	show_file(file);
-	free_file(file);
+	file_to_invader(invader,file,enemytipe);
+	//free_file(file);
 
 	if(close(fd)==-1){
 		char ERROR[100]="ERROR:CLOSE:";

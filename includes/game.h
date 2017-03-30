@@ -13,6 +13,8 @@
 #ifndef GAME_H
 #define GAME_H
 
+#define DEFAULT_SPEED 1
+
 typedef struct {
 	char shape;
 	int x;
@@ -33,8 +35,10 @@ typedef struct {
 
 typedef struct {
 	int type;
+	/*time to apeare*/
 	int x;
 	int y;
+	/*list circulaire*/
 	int health;
 	int speed;
 	float freq;

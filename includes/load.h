@@ -54,7 +54,10 @@ void load_level(Level_t * level,Mod_t * mode);
 void show_level(Level_t * level);
 
 void load_defender(Player_t * defender,char * modename);
+void file_to_defender(Player_t * defender,Ship_fs * file);
+
 void load_invader(Invader_t * invader,char * enemytipe,char * modename);
+void file_to_invader(Invader_t * invader,Ship_fs * file,char * enemytipe);
 
 void load_shipfile(Ship_fs * file,int fd);
 void show_file(Ship_fs * file);
