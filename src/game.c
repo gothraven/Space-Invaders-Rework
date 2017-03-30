@@ -24,7 +24,7 @@
 int main(){
 	Mod_t * mode = malloc(sizeof(Mod_t));
 	Game_t * game = malloc(sizeof(Game_t));
-	mode->name ="hard";
+	mode->name ="easy";
 	load_mode(mode);
 	load_game(game,mode,1);
 	char * enemy[] = {"*-*-*\0"," [*] \0",NULL};

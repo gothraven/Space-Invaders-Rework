@@ -15,6 +15,7 @@
 
 void file_to_invader(Invader_t * invader,Ship_fs * file,char * enemytipe){
 
+	
 	invader->type = atoi(enemytipe);
 	invader->x = 0;
 	invader->y = 0;

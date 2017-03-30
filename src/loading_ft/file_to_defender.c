@@ -31,6 +31,7 @@ void file_to_defender(Player_t * defender,Ship_fs * file){
 	defender->shot->speed = file->shot_speed;
 	
 	defender->shape = malloc(/*file->ship_height*/3+1*sizeof(char*));
+
 	for (int i = 0; i < /*file->ship_height*/3; ++i){
 		defender->shape[i] = malloc(/*file->ship_width*/5*sizeof(char));
 		for(int j =0; j< /*file->ship_width*/5; ++j){	
