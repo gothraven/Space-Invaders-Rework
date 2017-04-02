@@ -15,16 +15,8 @@
 #include "load.h"
 #include "game.h"
 
-static struct termios oldt;
-
 int main(){
-	
-	tcgetattr(STDIN_FILENO,&oldt);
-	Mod_t * mode = malloc(sizeof(Mod_t));
-	Game_t * game = malloc(sizeof(Game_t));
-	mode->name ="hard";
-	load_mode(mode);
-	load_game(game,mode,1);
-
+	printf("(EVERYTHING IS WORKING WELL)\n");
+	printf("you can test any function you want here\nafter do 'make' then ./game\n");
 	return 0;
 }
