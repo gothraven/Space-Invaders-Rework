@@ -61,7 +61,7 @@ void load_shipfile(Ship_fs * file,int fd){
 			}
 		}
 
-		if(line == 4){  //*- problem -*
+		if(line == 4){
 			file->ship_health = atoi(tab[0]);
 			free(tab[0]);
 		}
@@ -85,6 +85,7 @@ void load_shipfile(Ship_fs * file,int fd){
 
 		line++;
 	}
+
 	int k = 0;
 
 	file->shape = malloc(file->ship_height*sizeof(char*));
@@ -93,8 +94,7 @@ void load_shipfile(Ship_fs * file,int fd){
 		file->shape[k] = get_line(buffer,&i);
 		k++;
 	}
-	
-	file->shape[k] = NULL;
+	//file->shape[k] = NULL;
 
 }
 

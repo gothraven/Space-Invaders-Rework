@@ -57,6 +57,7 @@ OBJ = $(addprefix $(CACHE_PATH),$(addsuffix .o,$(FILES)))
 Green	:= "\033[0;32m"
 Red		:= "\033[1;91m"
 Yellow	:= "\033[0;33m"
+GREEN	:= "\033[1;32m"
 CYAN	:= "\033[1;36m"
 YELLOW	:= "\033[1;33m"
 END 	:= "\033[0m"
@@ -69,10 +70,10 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIB_PATH)
 		@echo $(Yellow)" Compiling -->"$(CYAN)"SPACE INVADERS"$(END)$(Yellow)"<-- with $(CFLAGS) " $(END)
 		@$(COMPILER) $(OBJ) -o $@ $(INCF)
-		@echo $(Green) " !!! Ready !!! EXECUTE WITH :"$(END) $(YELLOW)" ./go" $(END)
+		@echo $(GREEN) " !!! GAME IS READY !!!" $(Green)" EXECUTE WITH :"$(END) $(YELLOW)" ./go" $(END)
 
 $(CACHE_PATH)%.o:$(SRC_PATH)%.c | $(CACHE)
-		@echo $(Green) "Creating "$(Red)"the $(NAME)"$(END) $(Green)" : $@ with $< " $(END);
+		@echo $(Yellow) "Creating the $(NAME)"$(END) $(Green)" : $@ "$(Yellow)"with"$(END) $(Green)"$< " $(END);
 		@$(COMPILER) $(CFLAGS) -o $@ -c $<
 
 %.c:

@@ -29,7 +29,6 @@ char * get_line(char * buffer,int * i){
 }
 
 void parse_line(char * line,char ** buff){
-	
 	buff[0] = malloc(sizeof(char*));
 	int i = 0, j = 0, k = 0;
 

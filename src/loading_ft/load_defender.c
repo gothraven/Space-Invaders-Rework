@@ -9,9 +9,12 @@
 *    Updated: 2017/25/03 02:26:32 by Z.Safiy                                  #
 *                                                                             #
 ******************************************************************************/
-
 #include "load.h"
 #include "map.h"
+
+
+
+
 
 void load_defender(Player_t * defender,char * modename){
 
@@ -37,8 +40,6 @@ void load_defender(Player_t * defender,char * modename){
 
 	load_shipfile(file,fd);
 	file_to_defender(defender,file);
-	free_file(file);
-	
 
 	if(close(fd)==-1){
 		char ERROR[100]="ERROR:CLOSE:";
@@ -47,5 +48,23 @@ void load_defender(Player_t * defender,char * modename){
 		strcat(ERROR,"1");
 		perror(ERROR);
 		exit(EXIT_FAILURE);
+	}
+}
+
+
+void show_defender(Player_t * defender){
+	printf("x = %d, y = %d\n",defender->x, defender->y);
+	printf("health = %d\n",defender->health);
+	printf("fireOn ? %d\n",defender->fireOn);
+	printf("shot is (%c)\n",defender->shot->shape);
+	printf("shot x = %d\n",defender->shot->x);
+	printf("shot y = %d\n",defender->shot->y);
+	printf("shot speed = %d\n",defender->shot->speed);
+	printf("shot power = %d\n",defender->shot->power);
+	printf("Shape :\n");
+	int i = 0;
+	while(defender->shape[i] != NULL){
+		printf("%s\n",defender->shape[i]);
+		i++;
 	}
 }

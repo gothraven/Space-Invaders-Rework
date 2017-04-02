@@ -9,8 +9,9 @@
 *    Updated: 2017/27/03 00:52:32 by Z.Safiy                                  #
 *                                                                             #
 ******************************************************************************/
-
 #include "load.h"
+
+
 
 void load_invader(Invader_t * invader,char * enemytipe,char * modename){
 	char PATH[100]="";
@@ -38,9 +39,7 @@ void load_invader(Invader_t * invader,char * enemytipe,char * modename){
 	}
 
 	load_shipfile(file,fd);
-
 	file_to_invader(invader,file,enemytipe);
-	free_file(file);
 
 	if(close(fd)==-1){
 		char ERROR[100]="ERROR:CLOSE:";
@@ -51,4 +50,28 @@ void load_invader(Invader_t * invader,char * enemytipe,char * modename){
 		exit(EXIT_FAILURE);
 	}
 
+}
+
+void show_invader(Invader_t * invader){
+	printf("type = %d\n",invader->type);
+	printf("it will appear at = %ld sec\n",invader->appear);
+	printf("x = %d, y = %d\n",invader->x, invader->y);
+	printf("health = %d\n",invader->health);
+	printf("shooting freq ? %f\n",invader->freq);
+	printf("shot is (%c)\n",invader->shot->shape);
+	printf("shot x = %d\n",invader->shot->x);
+	printf("shot y = %d\n",invader->shot->y);
+	printf("shot speed = %d\n",invader->shot->speed);
+	printf("shot power = %d\n",invader->shot->power);
+	printf("Shape :\n");
+	int i = 0,j = 0;
+	while(invader->shape[i] != NULL){
+		j=0;
+		while(invader->shape[i][j] != '\0'){
+			printf("(%c)",invader->shape[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
 }

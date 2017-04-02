@@ -9,11 +9,13 @@
 #    Updated: 2017/25/03 00:56:21 by Z.Safiy                                  #
 #                                                                             # 
 #*****************************************************************************/
-
 #ifndef GAME_H
 #define GAME_H
 
+#include <time.h>
+
 #define DEFAULT_SPEED 1
+
 
 typedef struct {
 	char shape;
@@ -27,7 +29,6 @@ typedef struct {
 	int x;
 	int y;
 	int health;
-	int speed;
 	int fireOn;
 	Shot_t * shot;
 	char ** shape;
@@ -35,20 +36,20 @@ typedef struct {
 
 typedef struct {
 	int type;
-	/*time to apeare*/
+	clock_t appear;
 	int x;
 	int y;
-	/*list circulaire*/
+	
 	int health;
-	int speed;
 	float freq;
+	//Path_t path;
 	Shot_t * shot;
 	char ** shape;
 }Invader_t;
 
 typedef struct {
-	char * number;
 	int nbShips;
+	char * number;
 	int ** data;
 }Level_t;
 
@@ -60,7 +61,7 @@ typedef struct {
 typedef struct {
 	int level;
 	int score;
-	int nbInaders;
+	int nbInvaders;
 	Player_t * defender;
 	Invader_t ** invaders;
 	char * map;

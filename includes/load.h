@@ -9,7 +9,6 @@
 #    Updated: 2017/12/03 20:09:52 by Z.Safiy                                  #
 #                                                                             # 
 #*****************************************************************************/
-
 #ifndef LOAD_H
 #define LOAD_H value
 
@@ -55,9 +54,11 @@ void show_level(Level_t * level);
 
 void load_defender(Player_t * defender,char * modename);
 void file_to_defender(Player_t * defender,Ship_fs * file);
+void show_defender(Player_t * defender);
 
 void load_invader(Invader_t * invader,char * enemytipe,char * modename);
 void file_to_invader(Invader_t * invader,Ship_fs * file,char * enemytipe);
+void show_invader(Invader_t * invader);
 
 void load_shipfile(Ship_fs * file,int fd);
 void show_file(Ship_fs * file);
