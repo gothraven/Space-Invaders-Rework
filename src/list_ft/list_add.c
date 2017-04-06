@@ -51,9 +51,9 @@ int isEmpty(Path_t * path){
 void list_show(Path_t * path){
 	Path_t * head = path;
 	printf("{|");
-	while(head != NULL){
+	do{
 		printf("%d,%d|",head->h,head->v);
 		head = head->next;
-	}
+	}while(head != path);
 	printf("}\n");
 }
