@@ -19,6 +19,7 @@ Path_t * list_add(Path_t * path,int h,int v){
 		head = malloc(sizeof(Path_t));
 		head->h = h;
 		head->v = v;
+		head->next = NULL;
 		return head;
 	}
 
@@ -29,6 +30,7 @@ Path_t * list_add(Path_t * path,int h,int v){
 	head->next = malloc(sizeof(Path_t));
 	head->next->h = h;
 	head->next->v = v;
+	head->next->next = NULL;
 
 	return path;
 }
@@ -37,6 +39,7 @@ Path_t * list_close(Path_t * path){
 	Path_t * head = path;
 	while(path->next != NULL){
 		path = path->next; //look for the end of the list
+
 	}
 	path->next = head; //stick the head to the tail
 	return head;

@@ -10,6 +10,7 @@
 *                                                                             #
 ******************************************************************************/
 #include "load.h"
+#include "list.h"
 
 
 
@@ -55,6 +56,8 @@ void load_invader(Invader_t * invader,char * enemytipe,char * modename){
 void show_invader(Invader_t * invader){
 	printf("type = %d\n",invader->type);
 	printf("it will appear at = %ld sec\n",invader->appear);
+	printf("the path:[horizontally,vertically]\n");
+	list_show(invader->path);
 	printf("x = %d, y = %d\n",invader->x, invader->y);
 	printf("health = %d\n",invader->health);
 	printf("shooting freq ? %f\n",invader->freq);
@@ -63,12 +66,12 @@ void show_invader(Invader_t * invader){
 	printf("shot y = %d\n",invader->shot->y);
 	printf("shot speed = %d\n",invader->shot->speed);
 	printf("shot power = %d\n",invader->shot->power);
-	printf("Shape :\n");
+	printf("Shape :\n\n");
 	int i = 0,j = 0;
 	while(invader->shape[i] != NULL){
 		j=0;
 		while(invader->shape[i][j] != '\0'){
-			printf("(%c)",invader->shape[i][j]);
+			printf("%c",invader->shape[i][j]);
 			j++;
 		}
 		printf("\n");

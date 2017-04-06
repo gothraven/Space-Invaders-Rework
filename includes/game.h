@@ -48,7 +48,7 @@ typedef struct {
 	float freq;
 	Shot_t * shot;
 	char ** shape;
-	Path_t path;
+	Path_t * path;
 }Invader_t;
 
 typedef struct {

@@ -19,7 +19,17 @@
 //static struct termios oldt;
 
 int main(){
+
+	Invader_t * invader = malloc(sizeof(Invader_t));
+	load_invader(invader,"1","easy");
+	show_invader(invader);
+	pause();
 	
+	return 0;
+}
+
+ //LIST TESTS
+/*
 	Path_t * path = NULL;
 	int n = 0;
 	
@@ -28,14 +38,12 @@ int main(){
 		n++;
 	}
 	
-	//path = list_close(path);
+	path = list_close(path);
 
 	list_show(path); 
-	
-	return 0;
-}
+*/
 
-
+//LOADING THE GAME 
 /*
 tcgetattr(STDIN_FILENO,&oldt);
 	Mod_t * mode = malloc(sizeof(Mod_t));
