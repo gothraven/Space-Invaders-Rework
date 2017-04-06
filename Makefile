@@ -26,7 +26,7 @@ LOADING_FT_PATH := loading_ft/
 LOADING_FT_SRC := load_defender load_invader load_mode load_game loading_fun file_lines load_level file_to_invader file_to_defender
 
 LIST_FT_PATH := list_ft/
-LIST_FT_SRC := list_add
+LIST_FT_SRC := list_funs
 
 FILES = game
 
