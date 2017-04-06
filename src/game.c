@@ -28,7 +28,7 @@ int main(){
 		n++;
 	}
 	
-	path = list_close(path);
+	//path = list_close(path);
 
 	list_show(path); 
 	

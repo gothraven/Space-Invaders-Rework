@@ -30,7 +30,6 @@ Path_t * list_add(Path_t * path,int h,int v){
 	head->next->h = h;
 	head->next->v = v;
 
-	printf("%p %p\n",head,path);
 	return path;
 }
 
