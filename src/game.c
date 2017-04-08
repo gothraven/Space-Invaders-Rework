@@ -15,18 +15,42 @@
 #include "load.h"
 #include "game.h"
 #include "list.h"
-
+#include "invaders.h"
+#include <stdint.h>
 //static struct termios oldt;
 
 int main(){
 
-	Invader_t * invader = malloc(sizeof(Invader_t));
-	load_invader(invader,"1","easy");
-	show_invader(invader);
-	pause();
-	
+	Mod_t * mode = malloc(sizeof(Mod_t));
+	Game_t * game = malloc(sizeof(Game_t));
+	mode->name ="easy";
+	load_mode(mode);
+	load_game(game,mode,1);
+
 	return 0;
 }
+
+
+// testing the time
+ /*	clock_t t1, t2;  
+    t1 = clock();   
+    sleep(3);
+    t2 = clock();   
+    printf("%g %g %g\n",(double)t1,(double)t2,(double)CLOCKS_PER_SEC);
+    double diff = (double)( (t2 - t1) / CLOCKS_PER_SEC);   
+    printf("%g",diff); 
+  */
+
+
+
+
+ // including path into invaders test
+
+/*
+Invader_t * invader = malloc(sizeof(Invader_t));
+	load_invader(invader,"1","easy");
+	show_invader(invader);
+*/
 
  //LIST TESTS
 /*

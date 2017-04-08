@@ -14,7 +14,7 @@
 #define PLAYER_H
 
 #include "game.h"
-#include "map.h" 
+#include "map.h"
 
 #define RIGHTKEY 'd'
 #define LEFTKEY 'q'
