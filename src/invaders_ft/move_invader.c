@@ -42,37 +42,77 @@ void move_invader(char * map, Invader_t * invader, int dirH, int dirV){
 }
 
 void mv_invader_UP(char * map, Invader_t * invader){
-	printf("%d UP ,%c\n",invader->type,map[0]);
+	erase_shape(map,invader->shape,invader->x,invader->y);
+	
+	invader->y -= 1;
+	
+	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
 void mv_invader_DOWN(char * map, Invader_t * invader){
-	printf("%d DOWN,%c\n",invader->type,map[0]);
+	erase_shape(map,invader->shape,invader->x,invader->y);
+	
+	invader->y += 1;
+	
+	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
 void mv_invader_LEFT(char * map, Invader_t * invader){
-	printf("%d LEFT,%c\n",invader->type,map[0]);
+	erase_shape(map,invader->shape,invader->x,invader->y);
+	
+	invader->x -= 1;
+	
+	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
 void mv_invader_RIGHT(char * map, Invader_t * invader){
-	printf("%d RIGHT,%c\n",invader->type,map[0]);
+	erase_shape(map,invader->shape,invader->x,invader->y);
+	
+	invader->y += 1;
+	
+	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
 void mv_invader_UP_LEFT(char * map, Invader_t * invader){
-	printf("%d UP LEFT,%c\n",invader->type,map[0]);
+	erase_shape(map,invader->shape,invader->x,invader->y);
+	
+	invader->x -= 1;
+	invader->y -= 1;
+	
+	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
 void mv_invader_DOWN_LEFT(char * map, Invader_t * invader){
-	printf("%d DOWN LEFT,%c\n",invader->type,map[0]);
+	erase_shape(map,invader->shape,invader->x,invader->y);
+	
+	invader->x -= 1;
+	invader->y += 1;
+	
+	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
 void mv_invader_UP_RIGHT(char * map, Invader_t * invader){
-	printf("%d UP RIGHT,%c\n",invader->type,map[0]);
+	erase_shape(map,invader->shape,invader->x,invader->y);
+	
+	invader->x += 1;
+	invader->y -= 1;
+	
+	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
 void mv_invader_DOWN_RIGHT(char * map, Invader_t * invader){
-	printf("%d DOWN RIGHT,%c\n",invader->type,map[0]);
+	erase_shape(map,invader->shape,invader->x,invader->y);
+	
+	invader->x += 1;
+	invader->y += 1;
+	
+	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
 void mv_invader_STOP(char * map, Invader_t * invader){
-	printf("%d STOP,%c\n",invader->type,map[0]);
+	erase_shape(map,invader->shape,invader->x,invader->y);
+
+	//doesn't move
+	
+	draw_shape(map,invader->shape,invader->x,invader->y);
 }
