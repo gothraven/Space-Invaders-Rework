@@ -17,6 +17,8 @@
 #include "list.h"
 #include "invaders.h"
 
+static struct termios oldt;
+
 int main(){
 
 	tcgetattr(STDIN_FILENO,&oldt);
