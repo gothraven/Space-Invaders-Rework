@@ -68,7 +68,7 @@ void mv_invader_LEFT(char * map, Invader_t * invader){
 void mv_invader_RIGHT(char * map, Invader_t * invader){
 	erase_shape(map,invader->shape,invader->x,invader->y);
 	
-	invader->y += 1;
+	invader->x += 1;
 	
 	draw_shape(map,invader->shape,invader->x,invader->y);
 }
@@ -113,6 +113,6 @@ void mv_invader_STOP(char * map, Invader_t * invader){
 	erase_shape(map,invader->shape,invader->x,invader->y);
 
 	//doesn't move
-	
+
 	draw_shape(map,invader->shape,invader->x,invader->y);
 }

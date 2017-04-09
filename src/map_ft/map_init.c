@@ -58,7 +58,7 @@ void draw_status_bar(char * map){
 	char * level = "LEVEL - ";
 	char * health = "HEALTH : ";
 
-	x=7,y=1;
+	x=7,y=2;
 	for(unsigned int i=0; i<sizeof(score); i++){
 		map_xy(map,score[i],x++,y);
 	}
