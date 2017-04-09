@@ -16,19 +16,9 @@
 #include "game.h"
 #include "list.h"
 #include "invaders.h"
-#include <stdint.h>
+
 static struct termios oldt;
 
-void free_mode(Mod_t * mode){
-	//free(mode->name);
-	int i = 0;
-	while(mode->levels[i] != NULL){
-		free(mode->levels[i]);
-		i++;	
-	}
-	free(mode->levels);
-	free(mode);
-}
 int main(){
 
 	tcgetattr(STDIN_FILENO,&oldt);
@@ -91,9 +81,6 @@ int main(){
     double diff = (double)( (t2 - t1) / CLOCKS_PER_SEC);   
     printf("%g",diff); 
   */
-
-
-
 
  // including path into invaders test
 
