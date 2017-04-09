@@ -17,8 +17,6 @@
 #include "list.h"
 #include "invaders.h"
 
-static struct termios oldt;
-
 int main(){
 
 	tcgetattr(STDIN_FILENO,&oldt);
@@ -30,6 +28,8 @@ int main(){
 	changemode(1);
 	
 	char keypressed[1]; 
+
+
 
 	map_init(game->map);
 	draw_shape(game->map,game->defender->shape,game->defender->x,game->defender->y);
