@@ -12,6 +12,7 @@
 
 #include "load.h"
 #include "map.h"
+#include "list.h"
 
 void file_to_invader(Invader_t * invader,Ship_fs * file,char * enemytipe){
 
@@ -19,8 +20,6 @@ void file_to_invader(Invader_t * invader,Ship_fs * file,char * enemytipe){
 	invader->type = atoi(enemytipe);
 	invader->x = 0;
 	invader->y = 0;
-	
-	/*list circulaire*/
 
 	invader-> health = file->ship_health;
 	invader-> freq = file->shot_freq;
@@ -40,4 +39,13 @@ void file_to_invader(Invader_t * invader,Ship_fs * file,char * enemytipe){
 	}
 	invader->shape[file->ship_height] = NULL;
 
+	invader->path = NULL;
+
+	for (int i = 0; i < file->path_size; ++i){
+	invader->path = list_add(invader->path,file->path_h[i],file->path_v[i]);
+	}
+	invader->path = list_close(invader->path);
+	
+	invader->dir = *invader->path; 
+	
 }

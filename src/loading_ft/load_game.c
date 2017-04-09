@@ -29,8 +29,8 @@ void load_game(Game_t * game,Mod_t * mode,int lvlnumber){
 		game->invaders[i] = malloc(sizeof(Invader_t));
 		load_invader(game->invaders[i],n,mode->name);	
 		game->invaders[i]->appear = mode->levels[lvlnumber]->data[i][1];
-		game->invaders[i]->x = mode->levels[lvlnumber]->data[i][2];
-		game->invaders[i]->y = mode->levels[lvlnumber]->data[i][3];
+		game->invaders[i]->x = SCREEN_WIDTH - ((mode->levels[lvlnumber]->data[i][2]*SCREEN_WIDTH)/100);
+		game->invaders[i]->y = SCREEN_HEIGHT - ((mode->levels[lvlnumber]->data[i][3]*SCREEN_HEIGHT)/100);
 	}
 	
 	game->score = 0;

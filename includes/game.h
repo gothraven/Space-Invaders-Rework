@@ -7,15 +7,20 @@
 #                                                 ###  #    #### ####         #
 #    Created: 2017/20/03 00:39:21 by Z.Safiy                                  #
 #    Updated: 2017/25/03 00:56:21 by Z.Safiy                                  #
-#                                                                             # 
+#                                                                             #
 #*****************************************************************************/
 #ifndef GAME_H
 #define GAME_H
 
 #include <time.h>
 
-#define DEFAULT_SPEED 1
+typedef struct Path Path_t;
 
+struct Path{
+	int h; //horisental 
+	int v; //vertical
+	Path_t * next;
+};
 
 typedef struct {
 	char shape;
@@ -39,12 +44,12 @@ typedef struct {
 	clock_t appear;
 	int x;
 	int y;
-	
 	int health;
 	float freq;
-	//Path_t path;
+	Path_t dir;
 	Shot_t * shot;
 	char ** shape;
+	Path_t * path;
 }Invader_t;
 
 typedef struct {
