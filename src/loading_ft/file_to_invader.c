@@ -46,5 +46,6 @@ void file_to_invader(Invader_t * invader,Ship_fs * file,char * enemytipe){
 	}
 	invader->path = list_close(invader->path);
 	
+	invader->dir = *invader->path; 
 	
 }

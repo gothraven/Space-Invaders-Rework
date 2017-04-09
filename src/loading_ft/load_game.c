@@ -31,7 +31,6 @@ void load_game(Game_t * game,Mod_t * mode,int lvlnumber){
 		game->invaders[i]->appear = mode->levels[lvlnumber]->data[i][1];
 		game->invaders[i]->x = SCREEN_WIDTH - ((mode->levels[lvlnumber]->data[i][2]*SCREEN_WIDTH)/100);
 		game->invaders[i]->y = SCREEN_HEIGHT - ((mode->levels[lvlnumber]->data[i][3]*SCREEN_HEIGHT)/100);
-		printf("(%d) %d - %d \n",game->invaders[i]->type,mode->levels[lvlnumber]->data[i][2],mode->levels[lvlnumber]->data[i][3]);
 	}
 	
 	game->score = 0;

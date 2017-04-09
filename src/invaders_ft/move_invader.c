@@ -45,6 +45,7 @@ void mv_invader_UP(char * map, Invader_t * invader){
 	erase_shape(map,invader->shape,invader->x,invader->y);
 	
 	invader->y -= 1;
+	invader->dir = *(invader->dir.next); 
 	
 	draw_shape(map,invader->shape,invader->x,invader->y);
 }
@@ -53,7 +54,8 @@ void mv_invader_DOWN(char * map, Invader_t * invader){
 	erase_shape(map,invader->shape,invader->x,invader->y);
 	
 	invader->y += 1;
-	
+	invader->dir = *(invader->dir.next);
+
 	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
@@ -61,7 +63,8 @@ void mv_invader_LEFT(char * map, Invader_t * invader){
 	erase_shape(map,invader->shape,invader->x,invader->y);
 	
 	invader->x -= 1;
-	
+	invader->dir = *(invader->dir.next);
+
 	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
@@ -69,7 +72,8 @@ void mv_invader_RIGHT(char * map, Invader_t * invader){
 	erase_shape(map,invader->shape,invader->x,invader->y);
 	
 	invader->x += 1;
-	
+	invader->dir = *(invader->dir.next);
+
 	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
@@ -78,7 +82,8 @@ void mv_invader_UP_LEFT(char * map, Invader_t * invader){
 	
 	invader->x -= 1;
 	invader->y -= 1;
-	
+	invader->dir = *(invader->dir.next);
+
 	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
@@ -87,7 +92,8 @@ void mv_invader_DOWN_LEFT(char * map, Invader_t * invader){
 	
 	invader->x -= 1;
 	invader->y += 1;
-	
+	invader->dir = *(invader->dir.next);
+
 	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
@@ -96,7 +102,8 @@ void mv_invader_UP_RIGHT(char * map, Invader_t * invader){
 	
 	invader->x += 1;
 	invader->y -= 1;
-	
+	invader->dir = *(invader->dir.next);
+
 	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
@@ -105,7 +112,8 @@ void mv_invader_DOWN_RIGHT(char * map, Invader_t * invader){
 	
 	invader->x += 1;
 	invader->y += 1;
-	
+	invader->dir = *(invader->dir.next);
+
 	draw_shape(map,invader->shape,invader->x,invader->y);
 }
 
@@ -113,6 +121,7 @@ void mv_invader_STOP(char * map, Invader_t * invader){
 	erase_shape(map,invader->shape,invader->x,invader->y);
 
 	//doesn't move
+	invader->dir = *(invader->dir.next); 
 
 	draw_shape(map,invader->shape,invader->x,invader->y);
 }

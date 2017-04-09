@@ -46,6 +46,7 @@ typedef struct {
 	int y;
 	int health;
 	float freq;
+	Path_t dir;
 	Shot_t * shot;
 	char ** shape;
 	Path_t * path;

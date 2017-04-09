@@ -36,8 +36,7 @@ int main(){
 	Game_t * game = malloc(sizeof(Game_t));
 	mode->name ="easy";
 	load_mode(mode);
-	load_game(game,mode,1);
-
+	load_game(game,mode,0); 
 	changemode(1);
 	
 	char keypressed[1]; 
@@ -45,8 +44,6 @@ int main(){
 	map_init(game->map);
 	draw_shape(game->map,game->defender->shape,game->defender->x,game->defender->y);
 	map_show(game->map);
-
-	int j = 0;
 
 	while(1){
 		//map_init(game->map);
@@ -68,36 +65,15 @@ int main(){
 		
 		move_player(game->map,game->defender,keypressed[0]);
 		
-		if(j<20){
-			for (int i = 0; i < game->nbInvaders; ++i)
-			{
-				move_invader(game->map,game->invaders[i],RIGHT,ZERO);
+		for (int i = 0; i < game->nbInvaders; ++i){
 
-			}
-		}else if(j == 20){
-			for (int i = 0; i < game->nbInvaders; ++i)
-			{
-				move_invader(game->map,game->invaders[i],LEFT,DOWN);
+			move_invader(game->map,game->invaders[i],game->invaders[i]->dir.h,game->invaders[i]->dir.v);
 
-			}
-		}else if(j > 20 && j < 45){
-			for (int i = 0; i < game->nbInvaders; ++i)
-			{
-				move_invader(game->map,game->invaders[i],LEFT,ZERO);
-
-			}
-		}else if(j == 45){
-			for (int i = 0; i < game->nbInvaders; ++i)
-			{
-				move_invader(game->map,game->invaders[i],RIGHT,DOWN);
-
-			}
 		}
+		
 
 		map_show(game->map);
 		
-		j++;
-		if(j == 46) j=0;
 	}
 
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
