@@ -16,6 +16,7 @@
 #include "game.h"
 #include "list.h"
 #include "invaders.h"
+#include "shots.h"
 
 static struct termios oldt;
 
@@ -37,6 +38,7 @@ int main(){
 	draw_shape(game->map,game->defender->shape,game->defender->x,game->defender->y);
 	map_show(game->map);
 	int i = 1;
+
 	while(1){
 		
 		int status = poll_ft();
@@ -54,17 +56,19 @@ int main(){
 			printf("\nPoll() error.\n");
 			return 0;
 		}
+
 		if(keypressed[0] == SPACEKEY && (game->defender->fireOn == 1)){
 			game->defender->shot->x = game->defender->x+2;
 			game->defender->shot->y = game->defender->y-i;
 			game->defender->fireOn = 0;
 			keypressed[0] = 'l';
 		}
+
 		if(game->defender->fireOn == 0){
-			map_xy(game->map,' ',game->defender->shot->x,game->defender->shot->y-i);
+			move_shot_up(game->map,game->defender->shot);
 			i++;
-			map_xy(game->map,game->defender->shot->shape,game->defender->shot->x,game->defender->shot->y-i);
 		}
+
 		move_player(game->map,game->defender,keypressed[0]);
 		
 		for (int i = 0; i < game->nbInvaders; ++i){
@@ -75,8 +79,9 @@ int main(){
 		
 
 		map_show(game->map);
-		if(i == (SCREEN_HEIGHT - 7)){ 
-			map_xy(game->map,' ',game->defender->shot->x,game->defender->shot->y-i);
+
+		if(i == (SCREEN_HEIGHT - 5)){ 
+			map_xy(game->map,' ',game->defender->shot->x,game->defender->shot->y);
 			game->defender->fireOn = 1;
 			game->defender->shot->x = 0;
 			game->defender->shot->y = 0;

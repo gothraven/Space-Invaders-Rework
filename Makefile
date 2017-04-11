@@ -25,6 +25,9 @@ PLAYER_FT_SRC := move_player
 INVADERS_FT_PATH := invaders_ft/
 INVADERS_FT_SRC := move_invader
 
+SHOTS_FT_PATH := shots_ft/
+SHOTS_FT_SRC := move_shot
+
 LOADING_FT_PATH := loading_ft/
 LOADING_FT_SRC := load_defender load_invader load_mode load_game loading_fun file_lines load_level file_to_invader file_to_defender
 
@@ -54,6 +57,7 @@ FILES+=$(addprefix $(TERMINAL_FT_PATH),$(TERMINAL_FT_SRC))
 FILES+=$(addprefix $(MAP_FT_PATH),$(MAP_FT_SRC))
 FILES+=$(addprefix $(PLAYER_FT_PATH),$(PLAYER_FT_SRC))
 FILES+=$(addprefix $(INVADERS_FT_PATH),$(INVADERS_FT_SRC))
+FILES+=$(addprefix $(SHOTS_FT_PATH),$(SHOTS_FT_SRC))
 FILES+=$(addprefix $(LOADING_FT_PATH),$(LOADING_FT_SRC))
 FILES+=$(addprefix $(LIST_FT_PATH),$(LIST_FT_SRC))
 
@@ -93,6 +97,7 @@ $(CACHE):
 	@mkdir -p $(CACHE_PATH)$(MAP_FT_PATH)
 	@mkdir -p $(CACHE_PATH)$(PLAYER_FT_PATH)
 	@mkdir -p $(CACHE_PATH)$(INVADERS_FT_PATH)
+	@mkdir -p $(CACHE_PATH)$(SHOTS_FT_PATH)
 	@mkdir -p $(CACHE_PATH)$(LOADING_FT_PATH)
 	@mkdir -p $(CACHE_PATH)$(LIST_FT_PATH)
 
