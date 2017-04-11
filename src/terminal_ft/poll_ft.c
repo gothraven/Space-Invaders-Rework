@@ -19,7 +19,7 @@ int poll_ft(void){
 	int pr;
 	pfd.fd = STDIN_FILENO;
 	pfd.events = POLLIN;
-	pr = poll(&pfd, 1, 80);
+	pr = poll(&pfd, 1, 100);
 	
 	return pr; 
 }
