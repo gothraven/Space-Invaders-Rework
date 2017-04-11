@@ -57,7 +57,6 @@ int main(){
 		if(keypressed[0] == SPACEKEY && (game->defender->fireOn == 1)){
 			game->defender->shot->x = game->defender->x+2;
 			game->defender->shot->y = game->defender->y-i;
-			//map_xy(game->map,game->defender->shot->shape,game->defender->x+2,game->defender->y-i);
 			game->defender->fireOn = 0;
 			keypressed[0] = 'l';
 		}
