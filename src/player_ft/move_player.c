@@ -11,11 +11,12 @@
 #*****************************************************************************/
 
 #include "player.h"
+#include "shots.h"
 
-void move_player(char * map,Player_t * defender, char keypressed){
+void move_player(char * map,Player_t * defender, char * keypressed){
 
-	if(keypressed == LEFTKEY) move_player_left(map,defender);
-	if(keypressed == RIGHTKEY) move_player_right(map,defender);
+	if(keypressed[0] == LEFTKEY) move_player_left(map,defender);
+	if(keypressed[0] == RIGHTKEY) move_player_right(map,defender);
 
 }
 

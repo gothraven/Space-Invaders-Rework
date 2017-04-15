@@ -20,7 +20,7 @@ MAP_FT_PATH := map_ft/
 MAP_FT_SRC := map_xy map_init draw_shape map_show
 
 PLAYER_FT_PATH := player_ft/
-PLAYER_FT_SRC := move_player
+PLAYER_FT_SRC := move_player player_handler
 
 INVADERS_FT_PATH := invaders_ft/
 INVADERS_FT_SRC := move_invader

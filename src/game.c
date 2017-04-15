@@ -37,7 +37,7 @@ int main(){
 	map_init(game->map);
 	draw_shape(game->map,game->defender->shape,game->defender->x,game->defender->y);
 	map_show(game->map);
-	int i = 1;
+
 
 	while(1){
 		
@@ -57,19 +57,7 @@ int main(){
 			return 0;
 		}
 
-		if(keypressed[0] == SPACEKEY && (game->defender->fireOn == 1)){
-			game->defender->shot->x = game->defender->x+2;
-			game->defender->shot->y = game->defender->y-i;
-			game->defender->fireOn = 0;
-			keypressed[0] = 'l';
-		}
-
-		if(game->defender->fireOn == 0){
-			move_shot_up(game->map,game->defender->shot);
-			i++;
-		}
-
-		move_player(game->map,game->defender,keypressed[0]);
+		player_handler(game->map,game->defender,keypressed);
 		
 		for (int i = 0; i < game->nbInvaders; ++i){
 
@@ -80,14 +68,6 @@ int main(){
 
 		map_show(game->map);
 
-		if(i == (SCREEN_HEIGHT - 5)){ 
-			map_xy(game->map,' ',game->defender->shot->x,game->defender->shot->y);
-			game->defender->fireOn = 1;
-			game->defender->shot->x = 0;
-			game->defender->shot->y = 0;
-			i=0;
-		}
-		
 	}
 
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);

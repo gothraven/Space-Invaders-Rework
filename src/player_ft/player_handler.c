@@ -1,27 +1,22 @@
 /*****************************************************************************#
 #                                                                             #
 #                                                #   # #### #### ####         #
-#    shots.h                                     #   # #  # #    #            #
+#    player_handler.h                            #   # #  # #    #            #
 #                                                #   # #### ###  #            #
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
-#    Created: 2017/08/04 17:21:58 by Z.Safiy                                  #
-#    Updated: 2017/08/04 17:21:58 by Z.Safiy                                  #
+#    Created: 2017/15/04 14:19:05 by Z.Safiy                                  #
+#    Updated: 2017/15/04 14:19:05 by Z.Safiy                                  #
 #                                                                             #
 #*****************************************************************************/
 
-#ifndef SHOTS_H
-#define SHOTS_H value
+#include "player.h"
+#include "shots.h"
 
-#include "map.h"
-#include "game.h"
+void player_handler(char * map, Player_t * defender, char * keypressed){
 
-void move_shot(char * map, Player_t * defender, char * keypressed);
-void move_shot_up(char * map, Shot_t * shot);
-void move_shot_down(char * map, Shot_t * shot);
-void erase_shot(char * map, Shot_t * shot);
+	move_shot(map,defender,keypressed);
 
+	move_player(map,defender,keypressed);
 
-
-
-#endif
+}
