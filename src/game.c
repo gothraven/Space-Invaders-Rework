@@ -44,7 +44,6 @@ int main(){
 		int status = poll_ft();
 
 		if (status > 0){
-    		// We have got something to read 
 
 			read(0,keypressed,1);
 
@@ -65,7 +64,6 @@ int main(){
 
 		}
 		
-
 		map_show(game->map);
 
 	}
@@ -74,47 +72,3 @@ int main(){
 	
 	return 0;
 }
-
-
-// testing the time
- /*	clock_t t1, t2;  
-    t1 = clock();   
-    sleep(3);
-    t2 = clock();   
-    printf("%g %g %g\n",(double)t1,(double)t2,(double)CLOCKS_PER_SEC);
-    double diff = (double)( (t2 - t1) / CLOCKS_PER_SEC);   
-    printf("%g",diff); 
-  */
-
- // including path into invaders test
-
-/*
-Invader_t * invader = malloc(sizeof(Invader_t));
-	load_invader(invader,"1","easy");
-	show_invader(invader);
-*/
-
- //LIST TESTS
-/*
-	Path_t * path = NULL;
-	int n = 0;
-	
-	while(n<10){
-		path = list_add(path,n,n+1);
-		n++;
-	}
-	
-	path = list_close(path);
-
-	list_show(path); 
-*/
-
-//LOADING THE GAME 
-/*
-tcgetattr(STDIN_FILENO,&oldt);
-	Mod_t * mode = malloc(sizeof(Mod_t));
-	Game_t * game = malloc(sizeof(Game_t));
-	mode->name ="hard";
-	load_mode(mode);
-	load_game(game,mode,1);
-*/
