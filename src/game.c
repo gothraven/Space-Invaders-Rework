@@ -17,11 +17,15 @@
 #include "list.h"
 #include "invaders.h"
 #include "shots.h"
+#include "ctime.h"
 
 static struct termios oldt;
 
 int main(){
 
+	struct timespec stime;
+	time_init(&stime);
+	
 	tcgetattr(STDIN_FILENO,&oldt);
 	Mod_t * mode = malloc(sizeof(Mod_t));
 	Game_t * game = malloc(sizeof(Game_t));
@@ -42,6 +46,7 @@ int main(){
 	while(1){
 		
 		int status = poll_ft();
+		
 
 		if (status > 0){
 
@@ -56,19 +61,20 @@ int main(){
 			return 0;
 		}
 
+		//int now = time_diff(&stime);
+
 		player_handler(game->map,game->defender,keypressed);
-		
+			
 		for (int i = 0; i < game->nbInvaders; ++i){
 
 			move_invader(game->map,game->invaders[i],game->invaders[i]->dir.h,game->invaders[i]->dir.v);
 
 		}
 		
-		map_show(game->map);
-
+			map_show(game->map);
+		
 	}
 
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-	
 	return 0;
 }

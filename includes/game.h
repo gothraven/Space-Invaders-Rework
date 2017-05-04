@@ -41,7 +41,7 @@ typedef struct {
 
 typedef struct {
 	int type;
-	clock_t appear;
+	int appear;
 	int x;
 	int y;
 	int health;
