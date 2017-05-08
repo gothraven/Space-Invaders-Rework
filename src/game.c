@@ -57,14 +57,13 @@ int main(){
 	game_start(game->map);
 	map_show(game->map);
 
-	int i = 0;
-	int k = 0;
-	int s = 0;
+	int i = 0; //score
+	int k = 0; //deleted invader
+
 	while(1){
 		
 		int status = poll_ft();
 		
-
 		if (status > 0){
 
 			read(0,keypressed,1);
@@ -79,7 +78,7 @@ int main(){
 		}
 		
 
-		snprintf(strs, SCORE_LENGHT, "%d", s);
+		snprintf(strs, SCORE_LENGHT, "%d", i);
 		snprintf(strh, HEALTH_LENGHT, "%d", game->nbInvaders);
 		snprintf(strl, LEVEL_LENGHT, "%d", k);
 		
@@ -88,7 +87,7 @@ int main(){
 		draw_shape(game->map,level,LEVEL_X+9,LEVEL_Y);
 
 		player_handler(game->map,game->defender,keypressed);
-		
+
 		for (int i = 0; i < game->nbInvaders; ++i){
 
 			move_invader(game->map,game->invaders[i],game->invaders[i]->dir.h,game->invaders[i]->dir.v);
@@ -97,8 +96,8 @@ int main(){
 
 		if( i%5 == 0){
 			if( game->nbInvaders != 0 ){
-				erase_shape(game->map,game->invaders[s]->shape,game->invaders[s]->x,game->invaders[s]->y);
-				
+				erase_shape(game->map,game->invaders[k]->shape,game->invaders[k]->x,game->invaders[k]->y);
+
 				for (int c = k; c < game->nbInvaders; c++)
 				{	
 					game->invaders[c] = game->invaders[c+1];
@@ -109,7 +108,7 @@ int main(){
 			} 
 			
 		}
-		
+
 		map_show(game->map);
 		i++;
 	}
