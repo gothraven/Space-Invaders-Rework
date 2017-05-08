@@ -88,7 +88,7 @@ int main(){
 		draw_shape(game->map,level,LEVEL_X+9,LEVEL_Y);
 
 		player_handler(game->map,game->defender,keypressed);
-			
+		
 		for (int i = 0; i < game->nbInvaders; ++i){
 
 			move_invader(game->map,game->invaders[i],game->invaders[i]->dir.h,game->invaders[i]->dir.v);
@@ -97,21 +97,21 @@ int main(){
 
 		if( i%5 == 0){
 			if( game->nbInvaders != 0 ){
-			erase_shape(game->map,game->invaders[s]->shape,game->invaders[s]->x,game->invaders[s]->y);
-			
-			for (int c = k; c < game->nbInvaders; c++)
-			{	
+				erase_shape(game->map,game->invaders[s]->shape,game->invaders[s]->x,game->invaders[s]->y);
+				
+				for (int c = k; c < game->nbInvaders; c++)
+				{	
 					game->invaders[c] = game->invaders[c+1];
-			}
+				}
 				game->nbInvaders--;
 			}else{
 				game_over(game->map);
 			} 
 			
 		}
-			
-			map_show(game->map);
-			i++;
+		
+		map_show(game->map);
+		i++;
 	}
 
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
