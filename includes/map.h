@@ -21,6 +21,14 @@
 #define SCREEN_HEIGHT 50
 #define MAP_SIZE SCREEN_WIDTH*SCREEN_HEIGHT
 
+#define SCORE_X 7
+#define SCORE_Y 2
+#define HEALTH_X 120
+#define HEALTH_Y 2
+#define LEVEL_X 65
+#define LEVEL_Y 2
+
+
 
 
 void map_xy(char * map, char charc, int x, int y);
@@ -34,5 +42,8 @@ void draw_status_bar(char * map);
 
 void draw_shape(char * map,char ** shape,int x, int y);
 void erase_shape(char * map,char ** shape,int x, int y);
+
+void game_over(char * map);
+void game_start(char * map);
 
 #endif

@@ -53,23 +53,17 @@ void draw_borders(char * map){
  *@see map_xy() 
  */
 void draw_status_bar(char * map){
-	char * score = "SCORE : ";
-	int x,y;
-	char * level = "LEVEL - ";
-	char * health = "HEALTH : ";
 
-	x=7,y=2;
-	for(unsigned int i=0; i<sizeof(score); i++){
-		map_xy(map,score[i],x++,y);
-	}
+	char * score[] = {"SCORE : ",NULL};
 	
-	x=65,y=2;
-	for(unsigned int i=0; i<sizeof(level); i++){
-		map_xy(map,level[i],x++,y);
-	}
+	char * level[] = {"LEVEL - ",NULL};
+	
+	char * health[] = {"HEALTH : ",NULL};
 
-	x=120,y=2;
-	for(unsigned int i=0; i<sizeof(health); i++){
-		map_xy(map,health[i],x++,y);
-	}
+	draw_shape(map,score,SCORE_X,SCORE_Y);
+	
+	draw_shape(map,level,LEVEL_X,LEVEL_Y);
+	
+	draw_shape(map,health,HEALTH_X,HEALTH_Y);
+
 }
