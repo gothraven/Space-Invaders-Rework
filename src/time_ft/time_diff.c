@@ -16,8 +16,8 @@
  *  \brief Calculate the time diffrence in milliseconds between the time given and the time of call.
  *  \param time is a time structur which will be used to calculate the time diffrence
  *
- *  La fonction calcule la difference du temps entre le temps d'appel
- *  et le temps passer en paramaitre.
+ *  La fonction calcule la difference de temps entre le temps d'appel
+ *  et le temps passer en paramêtre.
  *
  *  \return the time diffrence in milliseconds
  */

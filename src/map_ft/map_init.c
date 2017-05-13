@@ -12,31 +12,43 @@
 
 #include "map.h"
 
-/**
- *this function draw the map
- *@param map available in map.h
+/*! \fn void map_init(char * map){
+ *  \brief this function is just the initialisation of the map 
+ *  \param map is a characters table which contains the map of the game  
+ *  
+ *  La fonction initialisent les principaux composant de la map   
+ *
  */
+
 void map_init(char * map){
 	fill_map(map);
 	draw_borders(map);
 	draw_status_bar(map);
 }
 
-/**
- *this function draw the ' ' in the map
- *@param map available in map.h
+/*! \fn void fill_map(char * map){
+ *  \brief print space torint the background of the map 
+ *  \param map is a characters table which contains the map of the game  
+ *  
+ *  La fonction affiche des espaces afin de dessiner le fond de la map   
+ *
  */
+
 void fill_map(char * map){
 
 	for(int i=0; i<MAP_SIZE; i++) map[i]=' ';
 
 }
 
-/**
- *this fonction draw the borders of the map 
- *@param map available in map.h
- *@see map_xy()
+/*! \fn void draw_borders(char * map){
+ *  \brief draw the borders using the size define in map.h 
+ *  \param map is a characters table which contains the map of the game  
+ *  
+ *  La fonction dessine les bordures de la map en utilisant les dimensions se trouvant 
+ *  dans le fichier map.h
+ *
  */
+
 void draw_borders(char * map){
 	for (int i = 1; i <=SCREEN_HEIGHT; i++){
 		for (int j = 1; j <=SCREEN_WIDTH; j++){
@@ -47,10 +59,14 @@ void draw_borders(char * map){
 	}
 }
 
-/**
- *this function show the level the score and the health of your spatialship 
- *@param map is available in map.h
- *@see map_xy() 
+/*! \fn void draw_status_bar(char * map){
+ *  \brief draw the the status bar including the score, the level, the health of the sheep 
+ *  using the function draw_shape 
+ *  \param map is a characters table which contains the map of the game  
+ *  
+ *  La fonction dessine la barre de statuts comportant le score, le niveau et la vie du vaisseaux
+ *  en utilisant la fonction draw_shape
+ *
  */
 void draw_status_bar(char * map){
 

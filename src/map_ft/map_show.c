@@ -12,11 +12,14 @@
 
 #include "map.h"
 
-/**
- *this function just show the map
- *@param map available in map.h
- *@see man_write(2)
+/*! \fn void map_show(char * map){
+ *  \brief draw the map on the terminal 
+ *  \param map is a characters table wihch contains the map of the game  
+ *  
+ *  La fonction dessine la map sur le terminal 
+ *
  */
+
 void map_show(char * map){
 
 	write(1,map,MAP_SIZE);
