@@ -25,19 +25,11 @@
  */
 
 
-void move_shot(char * map, Player_t * defender, char * keypressed){
-	if(keypressed[0] == SPACEKEY && defender->fireOn == 1){
-			defender->shot->x = defender->x+2;
-			defender->shot->y = defender->y-1;
-			defender->fireOn = 0;
-			keypressed[0] = 'l';
-	}
-	if(defender->shot->y == 2){
-		erase_shot(map,defender->shot);
-		defender->fireOn = 1;
-	}
-	/*keypressed != SPACEKEY && */
-	if(defender->fireOn == 0) move_shot_up(map,defender->shot);
+void move_shot(char * map, Shot_t * shot, int dir){
+
+	if(dir == 1) move_shot_up(map,shot);
+
+	if(dir == -1) move_shot_down(map,shot);
 
 }
 

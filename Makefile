@@ -23,10 +23,10 @@ PLAYER_FT_PATH := player_ft/
 PLAYER_FT_SRC := move_player player_handler
 
 INVADERS_FT_PATH := invaders_ft/
-INVADERS_FT_SRC := move_invader
+INVADERS_FT_SRC := move_invader invader_size invader_touched kill_invader 
 
 SHOTS_FT_PATH := shots_ft/
-SHOTS_FT_SRC := move_shot
+SHOTS_FT_SRC := move_shot shot_touch shot_handler
 
 LOADING_FT_PATH := loading_ft/
 LOADING_FT_SRC := load_defender load_invader load_mode load_game loading_fun file_lines load_level file_to_invader file_to_defender
