@@ -13,12 +13,32 @@
 #include "player.h"
 #include "shots.h"
 
+/*! \fn void move_player(char * map,Player_t * defender, char * keypressed)
+ *  \brief move the defender according to the key pressed by the user
+ *  \param map is a characters table which contains the map of the game  
+ *  \param defender is the user ship
+ *  \param keypressed is a character key pressed by the user 
+ *  
+ *  La fonction bouge le vaisseaux en fontions de la touche presser par l'utilisateur
+ *
+ */
+
 void move_player(char * map,Player_t * defender, char * keypressed){
 
 	if(keypressed[0] == LEFTKEY) move_player_left(map,defender);
 	if(keypressed[0] == RIGHTKEY) move_player_right(map,defender);
 
 }
+
+/*! \fn void move_player_left(char * map,Player_t * defender)
+ *  \brief move the defender to the left
+ *  \param map is a characters table which contains the map of the game  
+ *  \param defender is the user ship
+ *  
+ *  La fonction bouge le vaisseaux vers la gauche
+ *
+ */
+
 
 void move_player_left(char * map,Player_t * defender){
 
@@ -29,6 +49,15 @@ void move_player_left(char * map,Player_t * defender){
 	draw_shape(map,defender->shape,defender->x,defender->y);
 
 }
+
+/*! \fn void move_player_right(char * map,Player_t * defender)
+ *  \brief move the defender to the right
+ *  \param map is a characters table which contains the map of the game  
+ *  \param defender is the user ship
+ *  
+ *  La fonction bouge le vaisseaux vers la droite
+ *
+ */
 
 void move_player_right(char * map,Player_t * defender){
 
