@@ -12,9 +12,16 @@
 
 #include "map.h"
 
-/**
- *this function jsut show the map in the terminal
- *@param map is available in map.h /charc is a char/ y and y is for de position   
+
+/*! \fn void map_xy(char * map, char charc,int x, int y)
+ *  \brief this function place a character on the map 
+ *  \param map is a characters table which contains the map of the game  
+ *  \param charc is the caracters printed
+ *  \param x is the horisental cordinate of where the shape will start being  
+ *  \param y is the vertical cordinate of where the shape will start being  
+ *  
+ *  La fonction nous indique où placer le charactere en fonction de son x et de son y 
+ *
  */
 void map_xy(char * map, char charc, int x, int y){
 
