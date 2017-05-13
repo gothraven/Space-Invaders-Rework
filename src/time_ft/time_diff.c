@@ -12,7 +12,17 @@
 
 #include "ctime.h"
 
-int time_diff(struct timespec * time){
+/*! \fn int time_diff(struct timespec * time)
+ *  \brief Calculate the time diffrence in milliseconds between the time given and the time of call.
+ *  \param time is a time structur which will be used to calculate the time diffrence
+ *
+ *  La fonction calcule la difference du temps entre le temps d'appel
+ *  et le temps passer en paramaitre.
+ *
+ *  \return the time diffrence in milliseconds
+ */
+int time_diff(struct timespec * time)
+{
 
 	int result;
 	long sec, micro;

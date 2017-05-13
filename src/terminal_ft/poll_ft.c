@@ -12,7 +12,6 @@
 
 #include "terminal.h"
 
-
 int poll_ft(void){
 
 	struct pollfd pfd = {0,0,0};       /* poll() settings   */

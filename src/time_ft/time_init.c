@@ -12,8 +12,16 @@
 
 #include "ctime.h"
 
-
-void time_init(struct timespec * time){
+/*! \fn void time_init(struct timespec * time)
+ *  \brief initialise the structure with the system time of the call
+ *  \param time is a time structur which will be initialized
+ *
+ *  La fonction initialise la strecture passer en paramaitre
+ *  avec le temps system au moment de l'appel.
+ *
+ */
+void time_init(struct timespec * time)
+{
 
 	clock_gettime(CLOCK_REALTIME, time);
 

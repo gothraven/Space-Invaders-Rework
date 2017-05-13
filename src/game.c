@@ -27,8 +27,7 @@ static struct termios oldt;
 
 int main(){
 
-	struct timespec stime;
-	time_init(&stime);
+	
 	
 	tcgetattr(STDIN_FILENO,&oldt);
 	Mod_t * mode = malloc(sizeof(Mod_t));
@@ -59,8 +58,10 @@ int main(){
 
 	int i = 0; //score
 	int k = 0; //deleted invader
-
+	struct timespec stime;
+	
 	while(1){
+		time_init(&stime);	
 		
 		int status = poll_ft();
 		
@@ -68,16 +69,8 @@ int main(){
 
 			read(0,keypressed,1);
 
-		}else if (!status) {
-    		// We got a timeout
-
-		}else{
-			changemode(0);
-			printf("\nPoll() error.\n");
-			return 0;
 		}
 		
-
 		snprintf(strs, SCORE_LENGHT, "%d", i);
 		snprintf(strh, HEALTH_LENGHT, "%d", game->nbInvaders);
 		snprintf(strl, LEVEL_LENGHT, "%d", k);
@@ -88,9 +81,9 @@ int main(){
 
 		player_handler(game->map,game->defender,keypressed);
 
-		for (int i = 0; i < game->nbInvaders; ++i){
+		for (int j = 0; j < game->nbInvaders; ++j){
 
-			move_invader(game->map,game->invaders[i],game->invaders[i]->dir.h,game->invaders[i]->dir.v);
+			move_invader(game->map,game->invaders[j],game->invaders[j]->dir.h,game->invaders[j]->dir.v);
 
 		}
 
@@ -105,12 +98,17 @@ int main(){
 				game->nbInvaders--;
 			}else{
 				game_over(game->map);
-			} 
+			}
 			
 		}
+		//int dtime = time_diff(&stime);	
 
-		map_show(game->map);
+		//if(dtime < 110 && dtime > 80){
+			map_show(game->map);
+		//}
+		
 		i++;
+
 	}
 
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);

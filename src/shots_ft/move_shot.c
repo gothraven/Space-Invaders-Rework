@@ -26,7 +26,8 @@ void move_shot(char * map, Player_t * defender, char * keypressed){
 		erase_shot(map,defender->shot);
 		defender->fireOn = 1;
 	}
-	if(/*keypressed != SPACEKEY && */defender->fireOn == 0) move_shot_up(map,defender->shot);
+	/*keypressed != SPACEKEY && */
+	if(defender->fireOn == 0) move_shot_up(map,defender->shot);
 
 }
 
