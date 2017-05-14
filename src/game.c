@@ -26,8 +26,6 @@
 static struct termios oldt;
 
 int main(){
-
-	
 	
 	tcgetattr(STDIN_FILENO,&oldt);
 	Mod_t * mode = malloc(sizeof(Mod_t));
@@ -39,11 +37,7 @@ int main(){
 	
 	char keypressed[1]; 
 	game->defender->fireOn = 1;
-	
-	
-	/*
-		SCORE HEALTH AND LEVEL INTEGERS
-	*/
+
 	char strs[SCORE_LENGHT];
 	char strh[HEALTH_LENGHT];
 	char strl[LEVEL_LENGHT];
@@ -56,8 +50,6 @@ int main(){
 	game_start(game->map);
 	map_show(game->map);
 
-	int i = 0; //score
-	int k = 0; //deleted invader
 	struct timespec stime;
 	
 	while(1){
@@ -71,15 +63,15 @@ int main(){
 
 		}
 		
-		snprintf(strs, SCORE_LENGHT, "%d", i);
-		snprintf(strh, HEALTH_LENGHT, "%d", game->nbInvaders);
-		snprintf(strl, LEVEL_LENGHT, "%d", k);
+		snprintf(strs, SCORE_LENGHT, "%d", game->score);
+		snprintf(strh, HEALTH_LENGHT, "%d", game->defender->health);
+		snprintf(strl, LEVEL_LENGHT, "%d", game->level);
 		
 		draw_shape(game->map,score,SCORE_X+9,SCORE_Y);
 		draw_shape(game->map,health,HEALTH_X+10,HEALTH_Y);
 		draw_shape(game->map,level,LEVEL_X+9,LEVEL_Y);
 
-		player_handler(game->map,game->defender,keypressed);
+		
 
 		for (int j = 0; j < game->nbInvaders; ++j){
 
@@ -87,30 +79,18 @@ int main(){
 
 		}
 
-		if( i%5 == 0){
-			if( game->nbInvaders != 0 ){
-				erase_shape(game->map,game->invaders[k]->shape,game->invaders[k]->x,game->invaders[k]->y);
-
-				for (int c = k; c < game->nbInvaders; c++)
-				{	
-					game->invaders[c] = game->invaders[c+1];
-				}
-				game->nbInvaders--;
-			}else{
-				game_over(game->map);
-			}
-			
-		}
+		player_handler(game,keypressed);
+		
 		//int dtime = time_diff(&stime);	
 
 		//if(dtime < 110 && dtime > 80){
-			map_show(game->map);
+			
 		//}
-		
-		i++;
+		map_show(game->map);
 
 	}
 
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+	
 	return 0;
 }

@@ -1,29 +1,32 @@
 /*****************************************************************************#
 #                                                                             #
 #                                                #   # #### #### ####         #
-#    player.h                                    #   # #  # #    #            #
+#    invader_size.c                              #   # #  # #    #            #
 #                                                #   # #### ###  #            #
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
-#    Created: 2017/18/03 23:26:09 by Z.Safiy                                  #
-#    Updated: 2017/18/03 23:26:09 by Z.Safiy                                  #
+#    Created: 2017/14/05 00:35:09 by Z.Safiy                                  #
+#    Updated: 2017/11/04 17:15:09 by Z.Safiy                                  #
 #                                                                             # 
 #*****************************************************************************/
 
-#ifndef PLAYER_H
-#define PLAYER_H
+#include "invaders.h"
 
-#include "game.h"
-#include "map.h"
+int invader_height(Invader_t * invader)
+{
+	int i = 0;
+	while(invader->shape[i] != NULL){
+		i++;
+	}
+	return i++;
+}
 
-#define RIGHTKEY 'd'
-#define LEFTKEY 'q'
-#define SPACEKEY ' '
-
-void player_handler(Game_t * game, char * keypressed);
-void move_player(char * map,Player_t * defender, char * keypressed);
-void move_player_left(char * map,Player_t * defender);
-void move_player_right(char * map,Player_t * defender);
-
-
-#endif
+int invader_width(Invader_t * invader)
+{
+	int i=0;
+	int j=0;
+	while(invader->shape[i][j] != '\0'){
+		j++;
+	}
+	return j++;
+}

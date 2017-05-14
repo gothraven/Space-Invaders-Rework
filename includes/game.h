@@ -40,6 +40,7 @@ typedef struct {
 }Player_t;
 
 typedef struct {
+	int id;
 	int type;
 	int appear;
 	int x;

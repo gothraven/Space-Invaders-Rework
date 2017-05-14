@@ -1,29 +1,32 @@
 /*****************************************************************************#
 #                                                                             #
 #                                                #   # #### #### ####         #
-#    player.h                                    #   # #  # #    #            #
+#    kill_invader.c                              #   # #  # #    #            #
 #                                                #   # #### ###  #            #
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
-#    Created: 2017/18/03 23:26:09 by Z.Safiy                                  #
-#    Updated: 2017/18/03 23:26:09 by Z.Safiy                                  #
+#    Created: 2017/14/05 01:15:09 by Z.Safiy                                  #
+#    Updated: 2017/11/04 17:15:09 by Z.Safiy                                  #
 #                                                                             # 
 #*****************************************************************************/
 
-#ifndef PLAYER_H
-#define PLAYER_H
+#include "invaders.h"
 
-#include "game.h"
-#include "map.h"
+void kill_invader(Game_t * game,int id)
+{
+	
+	erase_shape(game->map,game->invaders[id-1]->shape,game->invaders[id-1]->x,game->invaders[id-1]->y);
 
-#define RIGHTKEY 'd'
-#define LEFTKEY 'q'
-#define SPACEKEY ' '
+	for (int i = (id-1); i < game->nbInvaders; i++)
+	{	
+		game->invaders[i] = game->invaders[i+1];
+	}
 
-void player_handler(Game_t * game, char * keypressed);
-void move_player(char * map,Player_t * defender, char * keypressed);
-void move_player_left(char * map,Player_t * defender);
-void move_player_right(char * map,Player_t * defender);
+	game->nbInvaders--;
+	
+	for (int i = 0; i < game->nbInvaders; ++i)
+	{
+		game->invaders[i]->id = (i+1);	
+	}
 
-
-#endif
+}

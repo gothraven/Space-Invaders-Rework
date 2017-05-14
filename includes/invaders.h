@@ -33,4 +33,14 @@ void mv_invader_UP_RIGHT(char * map, Invader_t * invader);
 void mv_invader_DOWN_RIGHT(char * map, Invader_t * invader);
 void mv_invader_STOP(char * map, Invader_t * invader);
 
+int invader_width(Invader_t * invader);
+int invader_height(Invader_t * invader);
+
+int is_touched(Invader_t * invader,Shot_t * shot);
+int invader_touched(Game_t * game);
+
+void kill_invader(Game_t * game,int id);
+
+
+
 #endif

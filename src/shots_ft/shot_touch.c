@@ -1,22 +1,24 @@
 /*****************************************************************************#
 #                                                                             #
 #                                                #   # #### #### ####         #
-#    player_handler.h                            #   # #  # #    #            #
+#    shot_touch.c                                #   # #  # #    #            #
 #                                                #   # #### ###  #            #
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
-#    Created: 2017/15/04 14:19:05 by Z.Safiy                                  #
-#    Updated: 2017/15/04 14:19:05 by Z.Safiy                                  #
-#                                                                             #
+#    Created: 2017/14/05 00:00:09 by Z.Safiy                                  #
+#    Updated: 2017/11/04 17:15:09 by Z.Safiy                                  #
+#                                                                             # 
 #*****************************************************************************/
 
-#include "player.h"
+
 #include "shots.h"
 
-void player_handler(Game_t * game, char * keypressed)
-{
-	shot_handler(game,keypressed);
+int shot_touch(char * map, Shot_t * shot){
 
-	move_player(game->map,game->defender,keypressed);
+	if(map[(shot->y-2)*(SCREEN_WIDTH)+(shot->x-1)] != ' '){
+		return 1;	
+	}else {
+		return 0;
+	}
 
 }

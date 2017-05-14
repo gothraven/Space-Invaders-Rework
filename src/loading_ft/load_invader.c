@@ -55,6 +55,7 @@ void load_invader(Invader_t * invader,char * enemytipe,char * modename){
 
 void show_invader(Invader_t * invader){
 	printf("type = %d\n",invader->type);
+	printf("id = %d\n",invader->id);
 	printf("it will appear at = %d sec\n",invader->appear);
 	printf("the path:[horizontally,vertically]\n");
 	list_show(invader->path);
