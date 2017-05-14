@@ -32,7 +32,7 @@ int main(){
 	Game_t * game = malloc(sizeof(Game_t));
 	mode->name ="easy";
 	load_mode(mode);
-	load_game(game,mode,0); 
+	load_game(game,mode,3); 
 	changemode(1);
 	
 	char keypressed[1]; 
@@ -84,7 +84,7 @@ int main(){
 		//int dtime = time_diff(&stime);	
 
 		//if(dtime < 110 && dtime > 80){
-		
+
 		//}
 		map_show(game->map);
 
