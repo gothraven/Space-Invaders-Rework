@@ -22,6 +22,8 @@
 #define RIGHT 1
 #define ZERO 0
 
+void invaders_handler(Game_t * game,struct timespec * time);
+
 void move_invader(char * map, Invader_t * invader, int dirH, int dirV);
 void mv_invader_UP(char * map, Invader_t * invader);
 void mv_invader_DOWN(char * map, Invader_t * invader);
