@@ -11,8 +11,16 @@
 ******************************************************************************/
 #include "load.h"
 
+/*! \fn void load_level(Level_t * level,Mod_t * mode)
+ *  \brief this function load a level in the structure passed in the paramaters
+ *  \param level is the structure which contains the level
+ *  \param mode is the structure which contains the game mode 
+ *
+ *  La fonction charge un niveau avec les structure passer en parametre   
+ */
 
-void load_level(Level_t * level,Mod_t * mode){
+void load_level(Level_t * level,Mod_t * mode)
+{
 	char PATH[100]="";
 	int fd;
 
@@ -66,7 +74,16 @@ void load_level(Level_t * level,Mod_t * mode){
 }
 
 
-void show_level(Level_t * level){
+/*! \fn void show_level(Level_t * level)
+ *  \brief this function show the level in the game
+ *  \param level is the level where we play
+ *
+ *  La fonction affiche le niveaux ou l'on joue
+ */
+
+
+void show_level(Level_t * level)
+{
 	printf("level number (%s)\n", level->number);
 	printf("number of ships : {%d}\n",level->nbShips);
 	for (int i = 0; i < level->nbShips; ++i){

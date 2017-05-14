@@ -61,6 +61,13 @@ void load_invader(Invader_t * invader,char * enemytipe,char * modename)
 
 }
 
+/*! \fn void show_invader(Invader_t * invader)
+ *  \brief this function show the invader in the map
+ *  \param invader is the invader ship
+ *
+ *  La fonction affiche les invaders sur la map
+ */
+
 void show_invader(Invader_t * invader)
 {
 	printf("type = %d\n",invader->type);

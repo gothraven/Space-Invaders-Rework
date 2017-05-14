@@ -56,7 +56,7 @@ void load_defender(Player_t * defender,char * modename)
 	}
 }
 
-/*! \fn void load_defender(Player_t * defender,char * modename)
+/*! \fn void show_defender(Player_t * defender)
  *  \brief this function show the defender in the map
  *  \param defender is the user ship
  *
