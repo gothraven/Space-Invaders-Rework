@@ -12,7 +12,16 @@
 #include "load.h"
 #include "map.h"
 
-void file_to_defender(Player_t * defender,Ship_fs * file){
+/*! \fn void file_to_defender(Player_t * defender,Ship_fs * file)
+ *  \brief manage the file which countains all th informations about the defender
+ *  \param defender is the user ship
+ *  \param file is a file which contains data 
+ *  
+ *  La fonction gere le fichiers qui contient tout les elements du vaisseaux
+ */
+
+void file_to_defender(Player_t * defender,Ship_fs * file)
+{
 
 	defender->x = (SCREEN_WIDTH/2)-(file->ship_width/2);
 	defender->y = SCREEN_HEIGHT-(file->ship_height);

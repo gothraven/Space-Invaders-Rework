@@ -12,7 +12,18 @@
 
 #include "load.h"
 
-char * get_line(char * buffer,int * i){
+/*! \fn char * get_line(char * buffer,int * i)
+ *  \brief manage all the invader's move up
+ *  \param buffer is a char table where we stock anything
+ *  \param i is pointer 
+ *  
+ *  La fonction gere tout les mouvement des invaders vers le haut
+ *
+ *  \return the line read by the buffer
+ */
+
+char * get_line(char * buffer,int * i)
+{
 	
 	char * line = malloc(1024*sizeof(char));
 	int j = 0;
