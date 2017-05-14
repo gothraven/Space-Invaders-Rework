@@ -16,15 +16,13 @@ static struct termios oldt;
 int main(){
 	
 	tcgetattr(STDIN_FILENO,&oldt);
-<<<<<<< HEAD
+
 	Mod_t * mode = malloc(sizeof(Mod_t));
 	Game_t * game = malloc(sizeof(Game_t));
 	mode->name ="easy";
 	load_mode(mode);
 	load_game(game,mode,0); 
-=======
 
->>>>>>> e9a4a52f66a3bde79d2fa1b9123eed5619ffca9f
 	changemode(1);
 	
 	Game_t * game = malloc(sizeof(Game_t));
