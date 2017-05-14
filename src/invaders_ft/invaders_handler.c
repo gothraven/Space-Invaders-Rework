@@ -21,7 +21,6 @@
  *  La fonction controle tout ce qui a un rapport avec les invaders
  */
 
-
 int invaders_handler(Game_t * game,struct timespec * time)
 {
 	if(game->nbInvaders == 0) return 1;
