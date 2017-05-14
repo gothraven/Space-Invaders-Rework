@@ -37,6 +37,9 @@ LIST_FT_SRC := list_funs
 TIME_FT_PATH := time_ft/
 TIME_FT_SRC := time_init time_diff
 
+ENGINE_FT_PATH := engine_ft/
+ENGINE_FT_SRC := engine_launcher
+
 FILES = game
 
 #----------------MODIF---------------------#
@@ -64,6 +67,7 @@ FILES+=$(addprefix $(SHOTS_FT_PATH),$(SHOTS_FT_SRC))
 FILES+=$(addprefix $(LOADING_FT_PATH),$(LOADING_FT_SRC))
 FILES+=$(addprefix $(LIST_FT_PATH),$(LIST_FT_SRC))
 FILES+=$(addprefix $(TIME_FT_PATH),$(TIME_FT_SRC))
+FILES+=$(addprefix $(ENGINE_FT_PATH),$(ENGINE_FT_SRC))
 
 SRC = $(addprefix $(SRC_PATH),$(addsuffix .c,$(FILES)))
 OBJ = $(addprefix $(CACHE_PATH),$(addsuffix .o,$(FILES)))
@@ -105,6 +109,7 @@ $(CACHE):
 	@mkdir -p $(CACHE_PATH)$(LOADING_FT_PATH)
 	@mkdir -p $(CACHE_PATH)$(LIST_FT_PATH)
 	@mkdir -p $(CACHE_PATH)$(TIME_FT_PATH)
+	@mkdir -p $(CACHE_PATH)$(ENGINE_FT_PATH)
 
 clean:
 		@/bin/rm -rf $(CACHE_PATH)

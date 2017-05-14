@@ -13,6 +13,7 @@
 #include "invaders.h"
 #include "ctime.h"
 
+<<<<<<< HEAD
 /*! \fn void invaders_handler(Game_t * game,struct timespec * time)
  *  \brief this function handles everything about the invaders
  *  \param game is a structure which contains all the game
@@ -22,11 +23,17 @@
  */
 
 void invaders_handler(Game_t * game,struct timespec * time)
+=======
+int invaders_handler(Game_t * game,struct timespec * time)
+>>>>>>> e9a4a52f66a3bde79d2fa1b9123eed5619ffca9f
 {
+	if(game->nbInvaders == 0) return 1;
 	int dtime = time_diff(time);
-	for (int j = 0; j < game->nbInvaders; ++j){
-		if((game->invaders[j]->appear*1000) <= dtime){
-			move_invader(game->map,game->invaders[j],game->invaders[j]->dir.h,game->invaders[j]->dir.v);
+	for (int i = 0; i < game->nbInvaders; ++i){
+		if((game->invaders[i]->appear*1000) <= dtime){
+			move_invader(game->map,game->invaders[i],game->invaders[i]->dir.h,game->invaders[i]->dir.v);
+			if(game->invaders[i]->y >= SCREEN_HEIGHT-2) return 2;
 		}
 	}
+	return 0;
 }

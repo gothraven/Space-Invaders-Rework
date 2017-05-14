@@ -14,6 +14,10 @@
 
 #include <time.h>
 
+#define SCORE_LENGHT 20
+#define HEALTH_LENGHT 3
+#define LEVEL_LENGHT 4
+
 typedef struct Path Path_t;
 
 struct Path{

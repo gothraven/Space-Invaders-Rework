@@ -9,76 +9,33 @@
 *    Updated: 2017/13/03 10:52:32 by Z.Safiy                                  #
 *                                                                             #
 ******************************************************************************/
-#include "terminal.h"
-#include "map.h"
-#include "player.h"
-#include "load.h"
-#include "game.h"
-#include "list.h"
-#include "invaders.h"
-#include "shots.h"
-#include "ctime.h"
-
-#define SCORE_LENGHT 20
-#define HEALTH_LENGHT 3
-#define LEVEL_LENGHT 4
+#include "engine.h"
 
 static struct termios oldt;
 
 int main(){
 	
 	tcgetattr(STDIN_FILENO,&oldt);
+<<<<<<< HEAD
 	Mod_t * mode = malloc(sizeof(Mod_t));
 	Game_t * game = malloc(sizeof(Game_t));
 	mode->name ="easy";
 	load_mode(mode);
 	load_game(game,mode,0); 
+=======
+
+>>>>>>> e9a4a52f66a3bde79d2fa1b9123eed5619ffca9f
 	changemode(1);
 	
-	char keypressed[1]; 
-	game->defender->fireOn = 1;
-
-	char strs[SCORE_LENGHT];
-	char strh[HEALTH_LENGHT];
-	char strl[LEVEL_LENGHT];
-	char * score[2] = {strs,NULL};
-	char * health[2] = {strh,NULL};
-	char * level[2] = {strl,NULL};
-
-	map_init(game->map);
-	draw_shape(game->map,game->defender->shape,game->defender->x,game->defender->y);
-	game_start(game->map);
-	map_show(game->map);
-
-	struct timespec stime;
-	time_init(&stime);
-
-	while(1){
-			
-		int status = poll_ft();
-		
-		if (status > 0){
-
-			read(0,keypressed,1);
-
-		}
-		
-		snprintf(strs, SCORE_LENGHT, "%d", game->score);
-		snprintf(strh, HEALTH_LENGHT, "%d", game->defender->health);
-		snprintf(strl, LEVEL_LENGHT, "%d", game->level);
-		
-		draw_shape(game->map,score,SCORE_X+9,SCORE_Y);
-		draw_shape(game->map,health,HEALTH_X+10,HEALTH_Y);
-		draw_shape(game->map,level,LEVEL_X+9,LEVEL_Y);
-
-		invaders_handler(game,&stime);
-
-		player_handler(game,keypressed);
-		
-		map_show(game->map);
-
+	Game_t * game = malloc(sizeof(Game_t));
+	Mod_t * mode = malloc(sizeof(Mod_t));
+	mode->name = "easy";
+	load_mode(mode);
+	int i = 0,status = 0;
+	while(mode->levels[i] != NULL && status != 1){
+		status = engine_launcher(game,mode,i);
+		i++;
 	}
-
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 	
 	return 0;

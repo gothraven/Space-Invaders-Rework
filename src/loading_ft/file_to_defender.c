@@ -13,7 +13,7 @@
 #include "map.h"
 
 /*! \fn void file_to_defender(Player_t * defender,Ship_fs * file)
- *  \brief manage the file which countains all th informations about the defender
+ *  \brief manage the file which countains all the informations about the defender
  *  \param defender is the user ship
  *  \param file is a file which contains data 
  *  

@@ -15,7 +15,7 @@
 #include "list.h"
 
 /*! \fn void file_to_invader(Invader_t * invader,Ship_fs * file,char * enemytipe)
- *  \brief manage the file which countains all th informations about the invaders
+ *  \brief manage the file which countains all the informations about the invaders
  *  \param invader is the invader's ship
  *  \param file is a file which contains data 
  *  \param enemytip is the tipe of the invader ship  

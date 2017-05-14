@@ -33,8 +33,6 @@ void load_game(Game_t * game,Mod_t * mode,int lvlnumber){
 		game->invaders[i]->x = SCREEN_WIDTH - ((mode->levels[lvlnumber]->data[i][2]*SCREEN_WIDTH)/100);
 		game->invaders[i]->y = SCREEN_HEIGHT - ((mode->levels[lvlnumber]->data[i][3]*SCREEN_HEIGHT)/100);
 	}
-	
-	game->score = 0;
 
 	game->map = malloc(MAP_SIZE*sizeof(char));
 }
