@@ -12,6 +12,14 @@
 
 #include "invaders.h"
 
+/*! \fn void kill_invader(Game_t * game,int id)
+ *  \brief this function replace a invaders by space when he died 
+ *  \param game is a structure which contains all the game
+ *  \param id is a struct to define every single ship
+ *
+ *  La fonction remplace les invaders mort par des espaces
+ */
+
 void kill_invader(Game_t * game,int id)
 {
 	
