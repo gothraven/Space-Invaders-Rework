@@ -13,7 +13,8 @@
 
 static struct termios oldt;
 
-int main(){
+int main()
+{
 	
 	tcgetattr(STDIN_FILENO,&oldt);
 	changemode(1);
