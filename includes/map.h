@@ -45,5 +45,7 @@ void erase_shape(char * map,char ** shape,int x, int y);
 
 void game_over(char * map);
 void game_start(char * map);
+void level_done(char * map);
+void next_level(char * map);
 
 #endif
