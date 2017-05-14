@@ -12,9 +12,18 @@
 #include "load.h"
 #include "map.h"
 
+/*! \fn void load_game(Game_t * game,Mod_t * mode,int lvlnumber)
+ *  \brief this function load the game with the structure passed in the paramaters
+ *  \param game is a structure which contains all the game
+ *  \param mode is the structure which contains the game mode 
+ *  \param lvlnumber is the structure which contains the level of the game
+ *
+ *  La fonction charge le jeux avec les structures passer en parametres  
+ */
 
 
-void load_game(Game_t * game,Mod_t * mode,int lvlnumber){
+void load_game(Game_t * game,Mod_t * mode,int lvlnumber)
+{
 	game->level = lvlnumber;
 	game->nbInvaders = mode->levels[lvlnumber]->nbShips;
 	game->defender = malloc(sizeof(Player_t *));

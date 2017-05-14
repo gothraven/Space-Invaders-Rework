@@ -12,11 +12,16 @@
 #include "load.h"
 #include "map.h"
 
+/*! \fn void load_defender(Player_t * defender,char * modename)
+ *  \brief this function load a defender in the structure passed in the paramaters
+ *  \param defender is the user ship
+ *  \param modename is the structure which contains the game mode 
+ *
+ *  La fonction charge le defender avec les structures passer en parametre   
+ */
 
-
-
-
-void load_defender(Player_t * defender,char * modename){
+void load_defender(Player_t * defender,char * modename)
+{
 
 	char PATH[100]="";
 	int fd;
@@ -51,8 +56,15 @@ void load_defender(Player_t * defender,char * modename){
 	}
 }
 
+/*! \fn void load_defender(Player_t * defender,char * modename)
+ *  \brief this function show the defender in the map
+ *  \param defender is the user ship
+ *
+ *  La fonction affiche le defender sur la map
+ */
 
-void show_defender(Player_t * defender){
+void show_defender(Player_t * defender)
+{
 	printf("x = %d, y = %d\n",defender->x, defender->y);
 	printf("health = %d\n",defender->health);
 	printf("fireOn ? %d\n",defender->fireOn);

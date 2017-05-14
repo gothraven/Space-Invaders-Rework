@@ -12,7 +12,14 @@
 #include "load.h"
 #include "list.h"
 
-
+/*! \fn void load_invader(Player_t * invader,char * enemytipe,char * modename)
+ *  \brief this function load an invader in the structure passed in the paramaters
+ *  \param invader is the invader ship
+ *  \param enemytipe is the type of the ennemie 
+ *  \param modename is the structure which contains the game mode 
+ *
+ *  La fonction charge les invader avec les structure passer en parametre   
+ */
 
 void load_invader(Invader_t * invader,char * enemytipe,char * modename)
 {
