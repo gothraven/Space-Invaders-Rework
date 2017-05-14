@@ -71,18 +71,10 @@ int main(){
 		draw_shape(game->map,health,HEALTH_X+10,HEALTH_Y);
 		draw_shape(game->map,level,LEVEL_X+9,LEVEL_Y);
 
-		
-		int dtime = time_diff(&stime);
-		for (int j = 0; j < game->nbInvaders; ++j){
-			if((game->invaders[j]->appear*1000) <= dtime){
-				move_invader(game->map,game->invaders[j],game->invaders[j]->dir.h,game->invaders[j]->dir.v);
-			}
-		}
+		invaders_handler(game,&stime);
 
 		player_handler(game,keypressed);
 		
-
-
 		map_show(game->map);
 
 	}

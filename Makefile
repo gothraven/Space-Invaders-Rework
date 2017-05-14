@@ -23,7 +23,7 @@ PLAYER_FT_PATH := player_ft/
 PLAYER_FT_SRC := move_player player_handler
 
 INVADERS_FT_PATH := invaders_ft/
-INVADERS_FT_SRC := move_invader invader_size invader_touched kill_invader 
+INVADERS_FT_SRC := move_invader invader_size invader_touched kill_invader invaders_handler
 
 SHOTS_FT_PATH := shots_ft/
 SHOTS_FT_SRC := move_shot shot_touch shot_handler
