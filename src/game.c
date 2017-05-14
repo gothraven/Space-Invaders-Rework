@@ -32,7 +32,7 @@ int main(){
 	Game_t * game = malloc(sizeof(Game_t));
 	mode->name ="easy";
 	load_mode(mode);
-	load_game(game,mode,3); 
+	load_game(game,mode,1); 
 	changemode(1);
 	
 	char keypressed[1]; 
@@ -51,10 +51,10 @@ int main(){
 	map_show(game->map);
 
 	struct timespec stime;
-	
+	time_init(&stime);
+
 	while(1){
-		time_init(&stime);	
-		
+			
 		int status = poll_ft();
 		
 		if (status > 0){
@@ -72,20 +72,17 @@ int main(){
 		draw_shape(game->map,level,LEVEL_X+9,LEVEL_Y);
 
 		
-
+		int dtime = time_diff(&stime);
 		for (int j = 0; j < game->nbInvaders; ++j){
-
-			move_invader(game->map,game->invaders[j],game->invaders[j]->dir.h,game->invaders[j]->dir.v);
-
+			if((game->invaders[j]->appear*1000) <= dtime){
+				move_invader(game->map,game->invaders[j],game->invaders[j]->dir.h,game->invaders[j]->dir.v);
+			}
 		}
 
 		player_handler(game,keypressed);
 		
-		//int dtime = time_diff(&stime);	
 
-		//if(dtime < 110 && dtime > 80){
 
-		//}
 		map_show(game->map);
 
 	}
