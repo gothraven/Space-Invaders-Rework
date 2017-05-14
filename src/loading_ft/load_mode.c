@@ -12,8 +12,15 @@
 
 #include "load.h"
 
+/*! \fn void load_mode(Mod_t * mode)
+ *  \brief this function load a mode in the structure passed in the paramaters
+ *  \param mode is the structure which contains the game mode 
+ *
+ *  La fonction charge un mode avec les structure passer en parametre   
+ */
 
-void load_mode(Mod_t * mode){
+void load_mode(Mod_t * mode)
+{
 	char PATH[100]="";
 	int fd;
 
@@ -70,7 +77,15 @@ void load_mode(Mod_t * mode){
 
 }
 
-void show_mode(Mod_t * mode){
+/*! \fn void show_mode(Mod_t * mode)
+ *  \brief this function show the mode where we play
+ *  \param mode is the structure which contains the game mode
+ *
+ *  La fonction affiche le niveaux ou l'on joue
+ */
+
+void show_mode(Mod_t * mode)
+{
 	printf("mode name : (%s)\n",mode->name);
 	int i =0;
 	while(mode->levels[i] != NULL){

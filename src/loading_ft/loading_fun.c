@@ -12,13 +12,16 @@
 
 #include "load.h"
 
-
-/**
- *this function load shape and change the string in int to be stocks in the shell
- *@param the file ship_fs/ fd is the filed descriptor
- *@see #man_read(1) #man_malloc(3) #man_free(9) #man_buffer(1) #man_atoi(8) #man_atof(1)
+/*! \fn void load_shipfile(Ship_fs * file,int fd)
+ *  \brief this function load ship file in the structure passed in the paramaters
+ *  \param file which contains all the informations about the ship 
+ *  \param fd is a file descripteur 
+ *
+ *  La fonction charge les differents vaisseaux avec les structure passer en parametre   
  */
-void load_shipfile(Ship_fs * file,int fd){
+
+void load_shipfile(Ship_fs * file,int fd)
+{
 
 	int nread;
 
@@ -98,12 +101,15 @@ void load_shipfile(Ship_fs * file,int fd){
 
 }
 
-
-/**
- *this function show the file: the ship, the path and the shots...
- *@param the file named Ship_fs
+/*! \fn void show_file(Ship_fs * file)
+ *  \brief this function show the differnt ship 
+ *  \param file which contains all the informations about the ship
+ *
+ *  La fonction affiche les differents vaisseaux jouable
  */
-void show_file(Ship_fs * file){
+
+void show_file(Ship_fs * file)
+{
 
 	printf("ship_width %d\n",file->ship_width);
 	printf("ship_height %d\n",file->ship_height);
@@ -134,12 +140,15 @@ void show_file(Ship_fs * file){
 	}
 }
 
-
-/**
- *this function is to free file removing the path_h and path_v
- *@param the file named Ship_fs
+/*! \fn void free_file(Ship_fs * file)
+ *  \brief this function free all the data concerning the shape in the file  
+ *  \param mode file which contains all the informations about the ship
+ *
+ *  La fonction supprime les donnes concernant le vaisseaux
  */
-void free_file(Ship_fs * file){
+
+void free_file(Ship_fs * file)
+{
 	free(file->path_h);
 	free(file->path_v);
 	int i = file->ship_height-1;
