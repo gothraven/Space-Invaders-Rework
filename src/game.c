@@ -23,7 +23,7 @@ int main()
 	Mod_t * mode = malloc(sizeof(Mod_t));
 	mode->name = "easy";
 	load_mode(mode);
-	//test//
+	
 	int i = 0,status = 0;
 	while(mode->levels[i] != NULL && status != 1){
 		status = engine_launcher(game,mode,i);
