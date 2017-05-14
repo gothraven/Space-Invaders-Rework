@@ -32,7 +32,7 @@ int main(){
 	Game_t * game = malloc(sizeof(Game_t));
 	mode->name ="easy";
 	load_mode(mode);
-	load_game(game,mode,1); 
+	load_game(game,mode,0); 
 	changemode(1);
 	
 	char keypressed[1]; 
