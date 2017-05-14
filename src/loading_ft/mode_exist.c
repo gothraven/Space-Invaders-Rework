@@ -1,7 +1,7 @@
 /*****************************************************************************#
 *                                                                             #
 *                                                #   # #### #### ####         #
-*    game.c                                      #   # #  # #    #            #
+*    mode_exist.c                                #   # #  # #    #            #
 *                                                #   # #### ###  #            #
 *    By: Z. Safiy Errahmane                      #   # #    #    #            #
 *                                                 ###  #    #### ####         #
@@ -9,35 +9,18 @@
 *    Updated: 2017/13/03 10:52:32 by Z.Safiy                                  #
 *                                                                             #
 ******************************************************************************/
-#include "engine.h"
+#include "load.h"
 
-static struct termios oldt;
-
-int main(int argc, char *argv[])
+int mode_exist(char * name)
 {
-	if(argc < 2){
-		show_options();
-		return 1;
-	}
-	if(!mode_exist(argv[1])){
-		show_modes();
-		return 2;
-	}
-	
-	tcgetattr(STDIN_FILENO,&oldt);
-	changemode(1);
-	
-	Game_t * game = malloc(sizeof(Game_t));
-	Mod_t * mode = malloc(sizeof(Mod_t));
-	mode->name = argv[1];
-	load_mode(mode);
-	
-	int i = 0,status = 0;
-	while(mode->levels[i] != NULL && status != 1){
-		status = engine_launcher(game,mode,i);
-		i++;
-	}
-	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
-	
-	return game->score;
+
+	DIR * mode = opendir(MODE_DIR);	
+	struct dirent * dir = NULL;
+	while((dir=readdir(mode))!=NULL){
+		if(dir->d_name[0] != '.')
+			if(strcmp(name,dir->d_name) == 0)
+				return 1;
+	}	
+	return 0;
+
 }
