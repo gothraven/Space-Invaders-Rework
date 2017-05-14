@@ -13,7 +13,8 @@
 
 #include "shots.h"
 
-int shot_touch(char * map, Shot_t * shot){
+int shot_touch(char * map, Shot_t * shot)
+{
 
 	if(map[(shot->y-2)*(SCREEN_WIDTH)+(shot->x-1)] != ' '){
 		return 1;	

@@ -20,7 +20,8 @@
  *
  */
 
-void map_init(char * map){
+void map_init(char * map)
+{
 	fill_map(map);
 	draw_borders(map);
 	draw_status_bar(map);
@@ -34,7 +35,8 @@ void map_init(char * map){
  *
  */
 
-void fill_map(char * map){
+void fill_map(char * map)
+{
 
 	for(int i=0; i<MAP_SIZE; i++) map[i]=' ';
 
@@ -49,7 +51,8 @@ void fill_map(char * map){
  *
  */
 
-void draw_borders(char * map){
+void draw_borders(char * map)
+{
 	for (int i = 1; i <=SCREEN_HEIGHT; i++){
 		for (int j = 1; j <=SCREEN_WIDTH; j++){
 			if(j==1 || j==2 || j==SCREEN_WIDTH-1 || j==SCREEN_WIDTH || i==1 || i==SCREEN_HEIGHT){
@@ -68,7 +71,8 @@ void draw_borders(char * map){
  *  en utilisant la fonction draw_shape
  *
  */
-void draw_status_bar(char * map){
+void draw_status_bar(char * map)
+{
 
 	char * score[] = {"SCORE : ",NULL};
 	

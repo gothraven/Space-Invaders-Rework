@@ -84,7 +84,7 @@ int main(){
 		//int dtime = time_diff(&stime);	
 
 		//if(dtime < 110 && dtime > 80){
-			
+		
 		//}
 		map_show(game->map);
 
