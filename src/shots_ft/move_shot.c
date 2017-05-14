@@ -17,8 +17,8 @@
 /*! \fn void move_shot(char * map, Player_t * defender, char * keypressed)
  *  \brief manage the shot and the move of the user's ship
  *  \param map is a characters table which contains the map of the game  
- *  \param defender is the user ship
- *  \param keypressed is a character key pressed by the user 
+ *  \param shot is a struct which contains everithing about a certains shot 
+ *  \param dir=1 canonical mode dir=0 normal mode 
  *  
  *  La fonction gere les tires et les deplacement du vaisseaux de l'utilisateur
  *

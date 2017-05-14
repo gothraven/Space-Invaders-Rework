@@ -12,6 +12,14 @@
 
 #include "invaders.h"
 
+/*! \fn int invader_touched(Game_t * game)
+ *  \brief tell us if a ship was touch by a shoot 
+ *  \param game is a structure which contains all the game
+ *
+ *  La fonction indique si un vaisseaux a etait toucher et renvois son id 
+ *
+ *  \return the id of the invaders who was touched
+ */
 
 int invader_touched(Game_t * game)
 {
@@ -25,7 +33,15 @@ int invader_touched(Game_t * game)
 	return 0;
 }
 
-
+/*! \fn int is_touched(Invader_t * invader,Shot_t * shot)
+ *  \brief manage the collision between a shot and a invader
+ *  \param invader is the ship of the ennemies
+ *  \param shot is a struct which contains everithing about a certains shot 
+ *
+ *  La fonction gere la collision entre un tire et un invaders
+ *
+ *  \return 1 if the invaders was touch
+ */
 
 int is_touched(Invader_t * invader,Shot_t * shot)
 {	

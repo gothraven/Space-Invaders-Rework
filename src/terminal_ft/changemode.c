@@ -12,12 +12,16 @@
 
 #include "terminal.h"
 
-/**
- * Changes the terminal mode from normal to raw mode
- * @param dir is the option, 1 for RAW mode, 0 for normal mode.
- * @see #man_tcgetattr(3) #man_cfmakeraw(3) #man_tcsetattr(3)
+/*! \fn void changemode(int dir)
+ *  \brief change the terminal mode switching between the normal mode to the canonical mode
+ *  \param dir=1 canonical mode dir=0 normal mode 
+ *  
+ *  La fonction change le mode du terminal le passant du mode normal au mode canonique
+ *
  */
-void changemode(int dir){
+
+void changemode(int dir)
+{
 
 	static struct termios oldt, newt;
 

@@ -12,6 +12,15 @@
 
 #include "invaders.h"
 
+/*! \fn int invader_height(Invader_t * invader)
+ *  \brief give the height of the invader
+ *  \param invader is the ship of the ennemies
+ *
+ *  La fonction indique la largeur du vaisseaux ennemie
+ *
+ *  \return the height of the invader
+ */
+
 int invader_height(Invader_t * invader)
 {
 	int i = 0;
@@ -20,6 +29,15 @@ int invader_height(Invader_t * invader)
 	}
 	return i++;
 }
+
+/*! \fn int invader_width(Invader_t * invader)
+ *  \brief give the width of the invader
+ *  \param invader is the ship of the ennemies
+ *
+ *  La fonction indique la longueur du vaisseaux ennemie
+ *
+ *  \return the width of the invader
+ */
 
 int invader_width(Invader_t * invader)
 {

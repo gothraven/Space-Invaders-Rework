@@ -12,7 +12,15 @@
 
 #include "terminal.h"
 
-int poll_ft(void){
+/*! \fn int poll_ft(void)
+ *  \brief poll is a function which blockes until there is something to be read in the STDIN
+ *  
+ *  La fonction poll est une fonction qui attends qu'il y ait un trucs a lire dans le STDIN
+ *
+ */
+
+int poll_ft(void)
+{
 
 	struct pollfd pfd = {0,0,0};       /* poll() settings   */
 	int pr;

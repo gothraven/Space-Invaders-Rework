@@ -13,6 +13,14 @@
 #include "invaders.h"
 #include "ctime.h"
 
+/*! \fn void invaders_handler(Game_t * game,struct timespec * time)
+ *  \brief this function handles everything about the invaders
+ *  \param game is a structure which contains all the game
+ *  \param time is a structure which contains the time of everything
+ *
+ *  La fonction controle tout ce qui a un rapport avec les invaders
+ */
+
 void invaders_handler(Game_t * game,struct timespec * time)
 {
 	int dtime = time_diff(time);
