@@ -25,6 +25,7 @@ void move_player(char * map,Player_t * defender, char * keypressed);
 void move_player_left(char * map,Player_t * defender);
 void move_player_right(char * map,Player_t * defender);
 int defender_width(Player_t * defender);
+int defender_height(Player_t * defender);
 
 
 #endif
