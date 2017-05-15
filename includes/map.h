@@ -27,6 +27,9 @@
 #define HEALTH_Y 2
 #define LEVEL_X 65
 #define LEVEL_Y 2
+#define GAME_PAUSE_X (SCREEN_WIDTH/2) - 22
+#define GAME_PAUSE_Y (SCREEN_HEIGHT/2) -5
+
 
 
 
@@ -47,5 +50,7 @@ void game_over(char * map);
 void game_start(char * map);
 void level_done(char * map);
 void next_level(char * map);
+void game_pause(char * map);
+void game_continue(char *map);
 
 #endif

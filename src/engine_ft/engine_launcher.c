@@ -45,7 +45,11 @@ int engine_launcher(Game_t * game,Mod_t * mode,int levelNumber)
 			read(0,keypressed,1);
 
 		}
-		
+		if(keypressed[0] == 'p'){
+			game_pause(game->map);
+			read(0,keypressed,1);
+			game_continue(game->map);
+		}
 		snprintf(strs, SCORE_LENGHT, "%d", game->score);
 		snprintf(strh, HEALTH_LENGHT, "%d", game->defender->health);
 		snprintf(strl, LEVEL_LENGHT, "%d", game->level);
