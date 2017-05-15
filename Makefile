@@ -13,6 +13,8 @@
 
 NAME := game
 
+LAUNCHER := ./src/launcher.c
+
 TERMINAL_FT_PATH := terminal_ft/
 TERMINAL_FT_SRC := changemode poll_ft 
 
@@ -29,7 +31,7 @@ SHOTS_FT_PATH := shots_ft/
 SHOTS_FT_SRC := move_shot shot_touch shot_handler
 
 LOADING_FT_PATH := loading_ft/
-LOADING_FT_SRC := load_defender load_invader load_mode load_game loading_fun file_lines load_level file_to_invader file_to_defender
+LOADING_FT_SRC := load_defender load_invader load_mode load_game loading_fun file_lines load_level file_to_invader file_to_defender mode_exist
 
 LIST_FT_PATH := list_ft/
 LIST_FT_SRC := list_funs
@@ -38,10 +40,9 @@ TIME_FT_PATH := time_ft/
 TIME_FT_SRC := time_init time_diff
 
 ENGINE_FT_PATH := engine_ft/
-ENGINE_FT_SRC := engine_launcher
+ENGINE_FT_SRC := engine_launcher game_help
 
-FILES = game
-
+FILES = game 
 #----------------MODIF---------------------#
 
 #----------------STD--------------------#
@@ -49,13 +50,15 @@ COMPILER := gcc
 
 SRC_PATH := src/
 
+LAUNCHER_PATH := src/
+
 HDR_PATH := includes/
 
 CACHE_PATH := cache/
 
 INCF = -I $(HDR_PATH)
 
-CFLAGS = -g -W -Wall -Werror -Wextra  $(INCF)
+CFLAGS = -g -W -Wall -Werror -Wextra -std=gnu99 $(INCF)
 #----------------STD--------------------#
 
 #----------------ADDING PATH AND FORMAT TO THE FILENAMES--------------------#
@@ -85,12 +88,12 @@ END 	:= "\033[0m"
 
 CACHE:=.cache_exists
 
-all: $(NAME)
+all: $(NAME) go
+
 
 $(NAME): $(OBJ) $(LIB_PATH)
 		@echo $(Yellow)" Compiling -->"$(CYAN)"SPACE INVADERS"$(END)$(Yellow)"<-- with $(CFLAGS) " $(END)
 		@$(COMPILER) $(OBJ) -o $@ $(INCF)
-		@echo $(GREEN) " !!! GAME IS READY !!!" $(Green)" EXECUTE WITH :"$(END) $(YELLOW)" ./go" $(END)
 
 $(CACHE_PATH)%.o:$(SRC_PATH)%.c | $(CACHE)
 		@echo $(Yellow) "Creating the $(NAME)"$(END) $(Green)" : $@ "$(Yellow)"with"$(END) $(Green)"$< " $(END);
@@ -111,6 +114,11 @@ $(CACHE):
 	@mkdir -p $(CACHE_PATH)$(TIME_FT_PATH)
 	@mkdir -p $(CACHE_PATH)$(ENGINE_FT_PATH)
 
+
+go:
+	@$(COMPILER) $(LAUNCHER) -o $(@)
+	@echo $(GREEN) " !!! GAME IS READY !!!" $(Green)" EXECUTE WITH :"$(END) $(YELLOW)" ./go [mode_name]" $(END)
+
 clean:
 		@/bin/rm -rf $(CACHE_PATH)
 		@/bin/rm -rf $(CACHE)
@@ -118,8 +126,14 @@ clean:
 
 fclean: clean
 		@/bin/rm -rf $(NAME)
+		@rm -rf ./go
 		@echo $(Red) "Deleting ---->>>> $(NAME)" $(END)
-		
+		@echo $(Red) "Deleting ---->>>> go" $(END)
+
+gclean:
+		@rm -rf ./go
+		@echo $(Red) "Deleting ---->>>> go" $(END)
+
 re: fclean all
 
 norm:

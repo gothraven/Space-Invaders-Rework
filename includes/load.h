@@ -19,12 +19,15 @@
 #include <fcntl.h>
 #include <string.h>
 #include <unistd.h>
+#include <dirent.h>
+
 #include "game.h"
 
 #define DEF_PATH "defender/"
 #define ENE_PATH "enemies/"
 #define MOD_PATH "mods/"
 #define LVL_PATH "levels/"
+#define MODE_DIR "mods"
 
 #define BUFFSIZE 1024
 #define MAX_LEVELS 10
@@ -67,7 +70,7 @@ void free_file(Ship_fs * file);
 char * get_line(char * buffer,int * i);
 void parse_line(char * line,char ** buff);
 
-
+int mode_exist(char * name);
 
 
 

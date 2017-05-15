@@ -26,5 +26,7 @@
 #include "ctime.h"
 
 int engine_launcher(Game_t * game,Mod_t * mode,int levelNumber);
+int show_modes();
+int show_options();
 
 #endif
