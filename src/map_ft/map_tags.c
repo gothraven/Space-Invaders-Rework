@@ -92,3 +92,31 @@ void next_level(char * map)
 	sleep(2);
 	erase_shape(map,next_level,35,20);
 }
+
+void game_pause(char * map)
+{
+	char * game_pause[]={" _______  _______  __   __  _______  _______ ",
+						 "|       ||   _   ||  | |  ||       ||       |",
+						 "|    _  ||  |_|  ||  | |  ||  _____||    ___|",
+						 "|   |_| ||       ||  |_|  || |_____ |   |___ ",
+						 "|    ___||       ||       ||_____  ||    ___|",
+						 "|   |    |   _   ||       | _____| ||   |___ ",
+						 "|___|    |__| |__||_______||_______||_______|",
+						NULL};
+	draw_shape(map,game_pause,GAME_PAUSE_X,GAME_PAUSE_Y);
+	map_show(map);
+}
+
+void game_continue(char * map)
+{	
+	char * game_pause[]={" _______  _______  __   __  _______  _______ ",
+						 "|       ||   _   ||  | |  ||       ||       |",
+						 "|    _  ||  |_|  ||  | |  ||  _____||    ___|",
+						 "|   |_| ||       ||  |_|  || |_____ |   |___ ",
+						 "|    ___||       ||       ||_____  ||    ___|",
+						 "|   |    |   _   ||       | _____| ||   |___ ",
+						 "|___|    |__| |__||_______||_______||_______|",
+						NULL};
+	erase_shape(map,game_pause,GAME_PAUSE_X,GAME_PAUSE_Y);
+	map_show(map);
+}

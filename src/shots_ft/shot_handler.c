@@ -32,13 +32,7 @@ void shot_handler(Game_t * game, char * keypressed)
 		erase_shot(game->map,game->defender->shot);
 		game->defender->fireOn = 1;	
 	}
-/*
-	if(game->defender->shot->y == 2){
-		erase_shot(game->map,game->defender->shot);
-		game->defender->fireOn = 1;
-	}
-*/
-	/*keypressed != SPACEKEY && */
+
 	if(game->defender->fireOn == 0) move_shot(game->map,game->defender->shot,UP);
 
 }	

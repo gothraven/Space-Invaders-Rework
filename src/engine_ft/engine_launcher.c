@@ -1,7 +1,7 @@
 /*****************************************************************************#
 #                                                                             #
 #                                                #   # #### #### ####         #
-#    engine_launcher.c                             #   # #  # #    #            #
+#    engine_launcher.c                           #   # #  # #    #            #
 #                                                #   # #### ###  #            #
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
@@ -49,9 +49,13 @@ int engine_launcher(Game_t * game,Mod_t * mode,int levelNumber)
 		int status = poll_ft();
 	
 		if (status > 0){
-
 			read(0,keypressed,1);
+		}
 
+		if(keypressed[0] == 'p'){
+			game_pause(game->map);
+			read(0,keypressed,1);
+			game_continue(game->map);
 		}
 		
 		snprintf(strs, SCORE_LENGHT, "%d", game->score);
