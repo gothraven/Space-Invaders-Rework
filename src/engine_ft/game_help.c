@@ -13,7 +13,7 @@
 #include "engine.h"
 
 /*! \fn int show_modes()
- *  \brief this functions the diferents mode available
+ *  \brief this functions show the diferents mode available
  *
  *  La fonction montre les differents mode de jeux disponible
  */
@@ -31,6 +31,12 @@ int show_modes()
 	printf("\nplease choose one of them.\n");
 	return 0;
 }
+
+/*! \fn int show_options()
+ *  \brief this functions indicates that the users choice is wrong
+ *
+ *   La fonction indique si que que l'utilisateur utilise un fichiers qui n'est pas le bon
+ */
 
 int show_options()
 {	
