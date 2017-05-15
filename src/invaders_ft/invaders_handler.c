@@ -10,6 +10,7 @@
 #                                                                             # 
 #*****************************************************************************/
 
+#include "player.h"
 #include "invaders.h"
 #include "ctime.h"
 
@@ -28,7 +29,7 @@ int invaders_handler(Game_t * game,struct timespec * time)
 	for (int i = 0; i < game->nbInvaders; ++i){
 		if((game->invaders[i]->appear*1000) <= dtime){
 			move_invader(game->map,game->invaders[i],game->invaders[i]->dir.h,game->invaders[i]->dir.v);
-			if(game->invaders[i]->y >= SCREEN_HEIGHT-2) return 2;
+			if(game->invaders[i]->y >= SCREEN_HEIGHT - (defender_height(game->defender)+2)) return 2;
 		}
 	}
 	return 0;

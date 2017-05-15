@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	strcat(game,argv[1]);
 	
 	FILE * fd = popen(game,"r");
-	
+	printf("(thank you, see you next time)\n");
 	return pclose(fd);
 	
 }
