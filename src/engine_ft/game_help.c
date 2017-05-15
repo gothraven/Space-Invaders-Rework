@@ -15,7 +15,7 @@
 /*! \fn int show_modes()
  *  \brief this functions show the diferents mode available
  *
- *  La fonction montre les differents mode de jeux disponible
+ *  La fonction montre les différents modes de jeux disponibles
  */
 
 int show_modes()
@@ -35,7 +35,7 @@ int show_modes()
 /*! \fn int show_options()
  *  \brief this functions indicates that the users choice is wrong
  *
- *   La fonction indique si que que l'utilisateur utilise un fichiers qui n'est pas le bon
+ *   La fonction indique si l'utilisateur utilise un fichier qui n'est pas le bon
  */
 
 int show_options()

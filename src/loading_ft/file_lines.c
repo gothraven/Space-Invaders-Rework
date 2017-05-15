@@ -13,11 +13,11 @@
 #include "load.h"
 
 /*! \fn char * get_line(char * buffer,int * i)
- *  \brief manage all the invader's move up
+ *  \brief parcour all the line to get the one we choose
  *  \param buffer is a char table where we stock anything
  *  \param i is pointer 
  *  
- *  La fonction gere tout les mouvement des invaders vers le haut
+ *  La fonction parcours toutes les lignes et nous renvoi sur celle que l'on demande
  *
  *  \return the line read by the buffer
  */
@@ -39,7 +39,19 @@ char * get_line(char * buffer,int * i)
 	return line;
 }
 
-void parse_line(char * line,char ** buff){
+/*! \fn void parse_line(char * line,char ** buff)
+ *  \brief parcour all the line to get something different of the " "
+ *  \param line is the line we choose
+ *  \param buffer is a char table where we stock anything 
+ *  
+ *  La fonction parcourt toutes les lignes et s'arrête lorsqu'elle rencontre 
+ *  quelque chose différent de " "
+ *
+ *  \return the line read by the buffer
+ */
+
+void parse_line(char * line,char ** buff)
+{
 	buff[0] = malloc(sizeof(char*));
 	int i = 0, j = 0, k = 0;
 

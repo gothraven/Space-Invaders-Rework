@@ -16,7 +16,7 @@
  *  \brief give the height of the invader
  *  \param invader is the ship of the ennemies
  *
- *  La fonction indique la largeur du vaisseaux ennemie
+ *  La fonction indique la largeur du vaisseau ennemi
  *
  *  \return the height of the invader
  */
@@ -34,7 +34,7 @@ int invader_height(Invader_t * invader)
  *  \brief give the width of the invader
  *  \param invader is the ship of the ennemies
  *
- *  La fonction indique la longueur du vaisseaux ennemie
+ *  La fonction indique la longueur du vaisseau ennemi
  *
  *  \return the width of the invader
  */

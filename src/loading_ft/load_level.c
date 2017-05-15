@@ -16,7 +16,7 @@
  *  \param level is the structure which contains the level
  *  \param mode is the structure which contains the game mode 
  *
- *  La fonction charge un niveau avec les structure passer en parametre   
+ *  La fonction charge un niveau avec les structure passeées en paramêtre   
  */
 
 void load_level(Level_t * level,Mod_t * mode)
@@ -78,7 +78,7 @@ void load_level(Level_t * level,Mod_t * mode)
  *  \brief this function show the level in the game
  *  \param level is the level where we play
  *
- *  La fonction affiche le niveaux ou l'on joue
+ *  La fonction affiche le niveau où l'on joue
  */
 
 

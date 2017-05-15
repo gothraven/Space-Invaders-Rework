@@ -18,7 +18,7 @@
  *  \param enemytipe is the type of the ennemie 
  *  \param modename is the structure which contains the game mode 
  *
- *  La fonction charge les invader avec les structure passer en parametre   
+ *  La fonction charge les invaders avec les structures passées en paramétre   
  */
 
 void load_invader(Invader_t * invader,char * enemytipe,char * modename)

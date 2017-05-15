@@ -16,7 +16,7 @@
  *  \brief tell us if a ship was touch by a shoot 
  *  \param game is a structure which contains all the game
  *
- *  La fonction indique si un vaisseaux a etait toucher et renvois son id 
+ *  La fonction indique si un vaisseau à été touché et renvoi son id 
  *
  *  \return the id of the invaders who was touched
  */
@@ -38,7 +38,7 @@ int invader_touched(Game_t * game)
  *  \param invader is the ship of the ennemies
  *  \param shot is a struct which contains everithing about a certains shot 
  *
- *  La fonction gere la collision entre un tire et un invaders
+ *  La fonction gère la collision entre un tir et un invaders
  *
  *  \return 1 if the invaders was touch
  */

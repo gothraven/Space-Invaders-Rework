@@ -19,7 +19,7 @@
  *  \param defender is the user ship
  *  \param keypressed is a character key pressed by the user 
  *  
- *  La fonction bouge le vaisseaux en fontions de la touche presser par l'utilisateur
+ *  La fonction bouge le vaisseau en fonction de la touche pressée par l'utilisateur
  *
  */
 
@@ -36,7 +36,7 @@ void move_player(char * map,Player_t * defender, char * keypressed){
  *  \param map is a characters table which contains the map of the game  
  *  \param defender is the user ship
  *  
- *  La fonction bouge le vaisseaux vers la gauche
+ *  La fonction bouge le vaisseau vers la gauche
  *
  */
 
@@ -56,7 +56,7 @@ void move_player_left(char * map,Player_t * defender){
  *  \param map is a characters table which contains the map of the game  
  *  \param defender is the user ship
  *  
- *  La fonction bouge le vaisseaux vers la droite
+ *  La fonction bouge le vaisseau vers la droite
  *
  */
 

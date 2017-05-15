@@ -17,7 +17,7 @@
  *  \param game is a structure which contains all the game
  *  \param levelNumber is a variables where the number of the level is stored 
  *
- *  La fonction met en relations toutes les parties du jeux  
+ *  La fonction met en relation toutes les parties du jeu  
  */
 
 int engine_launcher(Game_t * game,Mod_t * mode,int levelNumber)

@@ -16,7 +16,7 @@
  *  \brief this function is just the initialisation of the map 
  *  \param map is a characters table which contains the map of the game  
  *  
- *  La fonction initialisent les principaux composant de la map   
+ *  La fonction initialise les principaux composants de la map   
  *
  */
 
@@ -67,7 +67,7 @@ void draw_borders(char * map)
  *  using the function draw_shape 
  *  \param map is a characters table which contains the map of the game  
  *  
- *  La fonction dessine la barre de statuts comportant le score, le niveau et la vie du vaisseaux
+ *  La fonction dessine la barre de statuts comportant le score, le niveau et la vie du vaisseau
  *  en utilisant la fonction draw_shape
  *
  */

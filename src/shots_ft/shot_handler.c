@@ -11,8 +11,16 @@
 #*****************************************************************************/
 
 #include "player.h"
-#include "invaders.h"
+#include "invaders.h" 
 #include "shots.h"
+
+/*! \fn void shot_handler(Game_t * game, char * keypressed)
+ *  \brief this function handle all about the user shot
+ *  \param game is a structure which contains all the game
+ *  \param keypressed contains the key pressed by the user
+ *  
+ *  La fonction gère tout ce qui est en rapport avec les tirs du defender
+ */
 
 void shot_handler(Game_t * game, char * keypressed)
 {

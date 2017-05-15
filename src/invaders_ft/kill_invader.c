@@ -17,7 +17,7 @@
  *  \param game is a structure which contains all the game
  *  \param id is a struct to define every single ship
  *
- *  La fonction remplace les invaders mort par des espaces
+ *  La fonction remplace les invaders morts par des espaces
  */
 
 void kill_invader(Game_t * game,int id)

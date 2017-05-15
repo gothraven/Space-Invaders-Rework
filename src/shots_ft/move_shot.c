@@ -20,7 +20,7 @@
  *  \param shot is a struct which contains everithing about a certains shot 
  *  \param dir=1 canonical mode dir=0 normal mode 
  *  
- *  La fonction gere les tires et les deplacement du vaisseaux de l'utilisateur
+ *  La fonction gère les tirs et les déplacements du vaisseau de l'utilisateur
  *
  */
 
@@ -39,7 +39,7 @@ void move_shot(char * map, Shot_t * shot, int dir){
  *  \param map is a characters table which contains the map of the game  
  *  \param shot is a struct which contains everithing about a certains shot 
  *  
- *  La fonction fait monter le tire du vaisseau de l'utilisateurs en l'affichant sur la ligne du dessus 
+ *  La fonction fait monter le tir du vaisseau de l'utilisateur en l'affichant sur la ligne du dessus 
  *
  */
 
@@ -56,7 +56,7 @@ void move_shot_up(char * map, Shot_t * shot){
  *  \param map is a characters table which contains the map of the game  
  *  \param shot is a struct which contains everithing about a certains shot 
  *  
- *  La fonction fait descendre le tire de l'envahiseur en l'affichant sur la ligne du dessous
+ *  La fonction fait descendre le tir de l'envahiseur en l'affichant sur la ligne du dessous
  *
  */
 
@@ -74,7 +74,7 @@ void move_shot_down(char * map, Shot_t * shot){
  *  \param map is a characters table which contains the map of the game  
  *  \param shot is a struct which contains everithing about a certains shot 
  *  
- *  La fonction remplace le tire par un espace pour le faire disparaitre de l'écran
+ *  La fonction remplace le tir par un espace pour le faire disparaître de l'écran
  *
  */
 

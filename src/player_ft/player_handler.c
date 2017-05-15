@@ -19,7 +19,7 @@
  *  \param defender is the user ship
  *  \param keypressed is a character key pressed by the user 
  *  
- *  La fonction gere les tires et les deplacement du vaisseaux de l'utilisateur
+ *  La fonction gère les tirs et les déplacements du vaisseau de l'utilisateur
  *
  */
 

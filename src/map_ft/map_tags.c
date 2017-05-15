@@ -36,11 +36,11 @@ void game_over(char * map)
 	erase_shape(map,game_over,40,20);
 }
 
-/*! \fn void game_start(char * map){
+/*! \fn void game_start(char * map)
  *  \brief draw "start" on the map and then erase it after sometime
  *  \param map is a characters table wihch contains the map of the game  
  *  
- *  La fonction dessine "level - start" sur la map et est supprimer apres un certains temps
+ *  La fonction dessine "level - start" sur la map et elle le supprime après un certain temps
  *
  */
 
@@ -60,6 +60,13 @@ void game_start(char * map)
 	erase_shape(map,game_start,25,20);
 }
 
+/*! \fn void game_done(char * map)
+ *  \brief draw "level-done" on the map and then erase it after sometime
+ *  \param map is a characters table wihch contains the map of the game  
+ *  
+ *  La fonction dessine "level - done" sur la map et elle le supprime après un certain temps
+ *
+ */
 
 void level_done(char * map)
 {
@@ -77,6 +84,14 @@ void level_done(char * map)
 	erase_shape(map,leve_done,35,20);
 }
 
+/*! \fn void next_level(char * map)
+ *  \brief draw "next level" on the map and then erase it after sometime
+ *  \param map is a characters table wihch contains the map of the game  
+ *  
+ *  La fonction dessine "next level" sur la map et elle le supprime après un certain temps
+ *
+ */
+
 void next_level(char * map)
 {
 	char * next_level[]={" __    _  _______  __   __  _______                     ",
@@ -93,6 +108,14 @@ void next_level(char * map)
 	erase_shape(map,next_level,35,20);
 }
 
+/*! \fn void game_pause(char * map)
+ *  \brief draw "pause" on the map and then erase it after sometime
+ *  \param map is a characters table wihch contains the map of the game  
+ *  
+ *  La fonction dessine "pause" sur la map et elle le supprime après un certain temps
+ *
+ */
+
 void game_pause(char * map)
 {
 	char * game_pause[]={" _______  _______  __   __  _______  _______ ",
@@ -107,6 +130,13 @@ void game_pause(char * map)
 	map_show(map);
 }
 
+/*! \fn void game_continue (char * map)
+ *  \brief draw "pause" on the map and then erase it after sometime
+ *  \param map is a characters table wihch contains the map of the game  
+ *  
+ *  La fonction dessine "pause" sur la map et elle le supprime après un certain temps
+ *
+ */
 void game_continue(char * map)
 {	
 	char * game_pause[]={" _______  _______  __   __  _______  _______ ",

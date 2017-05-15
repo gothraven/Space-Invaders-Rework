@@ -20,7 +20,7 @@
  *  \param file is a file which contains data 
  *  \param enemytip is the tipe of the invader ship  
  *
- *  La fonction gere le fichiers qui contient tout les elements des invaders 
+ *  La fonction gère le fichier qui contient tous les éléments des invaders 
  */
 
 

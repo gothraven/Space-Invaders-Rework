@@ -19,7 +19,7 @@
  *  \param x is the horisental cordinate of where the shape will start being  
  *  \param y is the vertical cordinate of where the shape will start being  
  *  
- *  La fonction desinne un objet en utilisant ses coordonner x, y tel que 
+ *  La fonction dessine un objet en utilisant ses coordonnées x, y tel que 
  *  x et y soit le plus petit possible 
  *
  */
@@ -45,8 +45,8 @@ void draw_shape(char * map,char ** shape,int x, int y){
  *  \param x is the horisental cordinate of where the shape will start being deleted
  *  \param y is the vertical cordinate of where the shape will start being deleted
  *  
- *  La fonction echange les caracteres par des espace dans la map dans le but de changer l'objet 
- *  en utilisant ses coordonner x, y tel que x et y soit le plus petit possible 
+ *  La fonction échange les caractères par des espaces dans la map dans le but de changer l'objet 
+ *  en utilisant ses coordonnèes x, y tel que x et y soit le plus petit possible 
  *
  */
 void erase_shape(char * map,char ** shape,int x, int y){

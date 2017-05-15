@@ -15,7 +15,7 @@
  *  \brief this function compare the name enter by users the mode's name
  *  \param name is a the name of the mode 
  *
- *  La fonction compare le nom entrez par lutilisateur avec le nom des modes du jeux   
+ *  La fonction compare le nom entré par l'utilisateur avec le nom des modes du jeu  
  *
  *  \return 1 if it's right, 0 if it's wrong
  */

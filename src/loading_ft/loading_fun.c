@@ -17,7 +17,7 @@
  *  \param file which contains all the informations about the ship 
  *  \param fd is a file descripteur 
  *
- *  La fonction charge les differents vaisseaux avec les structure passer en parametre   
+ *  La fonction charge les différents vaisseaux avec les structures passeées en paramétre   
  */
 
 void load_shipfile(Ship_fs * file,int fd)
@@ -105,7 +105,7 @@ void load_shipfile(Ship_fs * file,int fd)
  *  \brief this function show the differnt ship 
  *  \param file which contains all the informations about the ship
  *
- *  La fonction affiche les differents vaisseaux jouable
+ *  La fonction affiche les differents vaisseaux jouables
  */
 
 void show_file(Ship_fs * file)
@@ -144,7 +144,7 @@ void show_file(Ship_fs * file)
  *  \brief this function free all the data concerning the shape in the file  
  *  \param mode file which contains all the informations about the ship
  *
- *  La fonction supprime les donnes concernant le vaisseaux
+ *  La fonction supprime les données concernant le vaisseau
  */
 
 void free_file(Ship_fs * file)

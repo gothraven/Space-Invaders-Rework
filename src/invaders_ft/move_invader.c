@@ -20,7 +20,7 @@
  *  \param dirH is the horizontal direction UP 1 DOWN -1
  *  \param dirV is the vertical direction RIGHT 1 LEFT -1
  *  
- *  La fonction gere tout les mouvement des invaders
+ *  La fonction gère tous les mouvements des invaders
  *
  */
 
@@ -58,7 +58,7 @@ void move_invader(char * map, Invader_t * invader, int dirH, int dirV)
  *  \param map is a characters table which contains the map of the game  
  *  \param invader is the ship of the ennemies
  *  
- *  La fonction gere tout les mouvement des invaders vers le haut
+ *  La fonction gère tous les mouvements des invaders vers le haut
  */
 
 void mv_invader_UP(char * map, Invader_t * invader)
@@ -76,7 +76,7 @@ void mv_invader_UP(char * map, Invader_t * invader)
  *  \param map is a characters table which contains the map of the game  
  *  \param invader is the ship of the ennemies
  *  
- *  La fonction gere tout les mouvement des invaders vers le bas
+ *  La fonction gère tous les mouvements des invaders vers le bas
  */
 
 void mv_invader_DOWN(char * map, Invader_t * invader)
@@ -94,7 +94,7 @@ void mv_invader_DOWN(char * map, Invader_t * invader)
  *  \param map is a characters table which contains the map of the game  
  *  \param invader is the ship of the ennemies
  *  
- *  La fonction gere tout les mouvement des invaders vers la gauche
+ *  La fonction gère tous les mouvements des invaders vers la gauche
  */
 
 void mv_invader_LEFT(char * map, Invader_t * invader)
@@ -112,7 +112,7 @@ void mv_invader_LEFT(char * map, Invader_t * invader)
  *  \param map is a characters table which contains the map of the game  
  *  \param invader is the ship of the ennemies
  *  
- *  La fonction gere tout les mouvement des invaders vers la droite
+ *  La fonction gère tous les mouvements des invaders vers la droite
  */
 
 void mv_invader_RIGHT(char * map, Invader_t * invader)
@@ -130,7 +130,7 @@ void mv_invader_RIGHT(char * map, Invader_t * invader)
  *  \param map is a characters table which contains the map of the game  
  *  \param invader is the ship of the ennemies
  *  
- *  La fonction gere tout les mouvement des invaders vers le haut à gauche
+ *  La fonction gère tous les mouvements des invaders vers le haut à gauche
  */
 
 void mv_invader_UP_LEFT(char * map, Invader_t * invader)
@@ -149,7 +149,7 @@ void mv_invader_UP_LEFT(char * map, Invader_t * invader)
  *  \param map is a characters table which contains the map of the game  
  *  \param invader is the ship of the ennemies
  *  
- *  La fonction gere tout les mouvement des invaders vers le bas à gauche
+ *  La fonction gère tous les mouvements des invaders vers le bas à gauche
  */
 
 void mv_invader_DOWN_LEFT(char * map, Invader_t * invader)
@@ -168,7 +168,7 @@ void mv_invader_DOWN_LEFT(char * map, Invader_t * invader)
  *  \param map is a characters table which contains the map of the game  
  *  \param invader is the ship of the ennemies
  *  
- *  La fonction gere tout les mouvement des invaders vers le haut à droite
+ *  La fonction gère tous les mouvements des invaders vers le haut à droite
  */
 
 void mv_invader_UP_RIGHT(char * map, Invader_t * invader)
@@ -187,7 +187,7 @@ void mv_invader_UP_RIGHT(char * map, Invader_t * invader)
  *  \param map is a characters table which contains the map of the game  
  *  \param invader is the ship of the ennemies
  *  
- *  La fonction gere tout les mouvement des invaders vers le bas à droite
+ *  La fonction gère tous les mouvements des invaders vers le bas à droite
  */
 void mv_invader_DOWN_RIGHT(char * map, Invader_t * invader)
 {
@@ -205,7 +205,7 @@ void mv_invader_DOWN_RIGHT(char * map, Invader_t * invader)
  *  \param map is a characters table which contains the map of the game  
  *  \param invader is the ship of the ennemies
  *  
- *  La fonction gere tout les arrets des invaders
+ *  La fonction gère tous les arrêts des invaders
  */
 
 void mv_invader_STOP(char * map, Invader_t * invader)

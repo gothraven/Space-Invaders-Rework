@@ -17,7 +17,7 @@
  *  \param defender is the user ship
  *  \param file is a file which contains data 
  *  
- *  La fonction gere le fichiers qui contient tout les elements du vaisseaux
+ *  La fonction gère le fichier qui contient tous les éléments du vaisseau
  */
 
 void file_to_defender(Player_t * defender,Ship_fs * file)

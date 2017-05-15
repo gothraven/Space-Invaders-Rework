@@ -18,7 +18,7 @@
  *  \param mode is the structure which contains the game mode 
  *  \param lvlnumber is the structure which contains the level of the game
  *
- *  La fonction charge le jeux avec les structures passer en parametres  
+ *  La fonction charge le jeu avec les structures passées en paramétres  
  */
 
 

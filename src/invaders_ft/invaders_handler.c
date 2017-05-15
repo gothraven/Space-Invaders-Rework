@@ -19,7 +19,7 @@
  *  \param game is a structure which contains all the game
  *  \param time is a structure which contains the time of everything
  *
- *  La fonction controle tout ce qui a un rapport avec les invaders
+ *  La fonction contrôle tout ce qui a un rapport avec les invaders
  */
 
 int invaders_handler(Game_t * game,struct timespec * time)

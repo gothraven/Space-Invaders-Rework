@@ -17,7 +17,7 @@
  *  \param defender is the user ship
  *  \param modename is the structure which contains the game mode 
  *
- *  La fonction charge le defender avec les structures passer en parametre   
+ *  La fonction charge le defender avec les structures passées en paramétre   
  */
 
 void load_defender(Player_t * defender,char * modename)

@@ -15,7 +15,7 @@
 /*! \fn int poll_ft(void)
  *  \brief poll is a function which blockes until there is something to be read in the STDIN
  *  
- *  La fonction poll est une fonction qui attends qu'il y ait un trucs a lire dans le STDIN
+ *  La fonction poll est une fonction qui attend qu'il y ait un truc à lire dans le STDIN
  *
  */
 

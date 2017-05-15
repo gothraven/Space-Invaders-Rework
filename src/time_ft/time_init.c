@@ -16,7 +16,7 @@
  *  \brief initialise the structure with the system time of the call
  *  \param time is a time structur which will be initialized
  *
- *  La fonction initialise la strecture passer en paramaitre
+ *  La fonction initialise la structure passée en paramétre
  *  avec le temps system au moment de l'appel.
  *
  */
