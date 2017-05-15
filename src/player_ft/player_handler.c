@@ -28,6 +28,7 @@ void player_handler(Game_t * game, char * keypressed)
 {
 	shot_handler(game,keypressed);
 
+
 	move_player(game->map,game->defender,keypressed);
 
 }

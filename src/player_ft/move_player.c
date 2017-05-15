@@ -27,8 +27,9 @@ void move_player(char * map,Player_t * defender, char * keypressed){
 
 	if(keypressed[0] == LEFTKEY) move_player_left(map,defender);
 	if(keypressed[0] == RIGHTKEY) move_player_right(map,defender);
-
-}
+	if(defender->x == 3) move_player_right(map,defender);
+	if(defender->x+defender_width(defender) == SCREEN_WIDTH - 1) move_player_left(map,defender);
+}	
 
 /*! \fn void move_player_left(char * map,Player_t * defender)
  *  \brief move the defender to the left

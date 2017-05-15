@@ -22,7 +22,7 @@ MAP_FT_PATH := map_ft/
 MAP_FT_SRC := map_xy map_init draw_shape map_show map_tags
 
 PLAYER_FT_PATH := player_ft/
-PLAYER_FT_SRC := move_player player_handler
+PLAYER_FT_SRC := move_player player_handler player_ship
 
 INVADERS_FT_PATH := invaders_ft/
 INVADERS_FT_SRC := move_invader invader_size invader_touched kill_invader invaders_handler
