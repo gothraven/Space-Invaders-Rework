@@ -12,6 +12,12 @@
 
 #include "engine.h"
 
+/*! \fn int show_modes()
+ *  \brief this functions the diferents mode available
+ *
+ *  La fonction montre les differents mode de jeux disponible
+ */
+
 int show_modes()
 {
 	DIR * mode = opendir(MODE_DIR);	

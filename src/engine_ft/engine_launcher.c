@@ -12,6 +12,14 @@
 
 #include "engine.h"
 
+/*! \fn int engine_launcher(Game_t * game,Mod_t * mode,int levelNumber)
+ *  \brief this function is the engine of the game, everything goes back to it. 
+ *  \param game is a structure which contains all the game
+ *  \param levelNumber is a variables where the number of the level is stored 
+ *
+ *  La fonction met en relations toutes les parties du jeux  
+ */
+
 int engine_launcher(Game_t * game,Mod_t * mode,int levelNumber)
 {
 	
