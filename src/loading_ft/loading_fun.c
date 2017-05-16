@@ -142,7 +142,7 @@ void show_file(Ship_fs * file)
 
 /*! \fn void free_file(Ship_fs * file)
  *  \brief this function free all the data concerning the shape in the file  
- *  \param mode file which contains all the informations about the ship
+ *  \param file which contains all the informations about the ship
  *
  *  La fonction supprime les données concernant le vaisseau
  */

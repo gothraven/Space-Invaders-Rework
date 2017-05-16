@@ -16,8 +16,8 @@
 
 /*! \fn int shot_touch(char * map, Shot_t * shot)
  *  \brief this function tell us if the shot touch somthing
- *  \param game is a structure which contains all the game
- *  \param keypressed contains the key pressed by the user
+ *  \param map is a characters table which contains the map of the game
+ *  \param shot is a struct which contains everithing about a certains shot
  *  
  *  La fonction nous indique si le tir touche quelque chose
  *

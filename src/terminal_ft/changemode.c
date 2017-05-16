@@ -14,7 +14,7 @@
 
 /*! \fn void changemode(int dir)
  *  \brief change the terminal mode switching between the normal mode to the canonical mode
- *  \param dir=1 canonical mode dir=0 normal mode 
+ *  \param dir = 1 canonical mode dir = 0 normal mode 
  *  
  *  La fonction change le mode du terminal le passant du mode normal au mode canonique
  *

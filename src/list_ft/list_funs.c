@@ -16,8 +16,8 @@
 /*! \fn Path_t * list_add(Path_t * path,int h,int v)
  *  \brief this function add an arguments in the list 
  *  \param path is
- *  \param h is the first char in char**
- *  \param v is the seconf char in char**
+ *  \param h is the horizental movement
+ *  \param v is the vertical movement
  *
  *  La fonction ajoute un arguments dans la liste
  *

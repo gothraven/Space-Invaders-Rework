@@ -60,7 +60,7 @@ void game_start(char * map)
 	erase_shape(map,game_start,LEVEL_START_X,LEVEL_START_Y);
 }
 
-/*! \fn void game_done(char * map)
+/*! \fn void level_done(char * map)
  *  \brief draw "level-done" on the map and then erase it after sometime
  *  \param map is a characters table wihch contains the map of the game  
  *  

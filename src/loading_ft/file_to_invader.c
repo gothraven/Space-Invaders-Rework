@@ -18,7 +18,7 @@
  *  \brief manage the file which countains all the informations about the invaders
  *  \param invader is the invader's ship
  *  \param file is a file which contains data 
- *  \param enemytip is the tipe of the invader ship  
+ *  \param enemytipe is the tipe of the invader ship  
  *
  *  La fonction gère le fichier qui contient tous les éléments des invaders 
  */

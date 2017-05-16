@@ -42,7 +42,7 @@ char * get_line(char * buffer,int * i)
 /*! \fn void parse_line(char * line,char ** buff)
  *  \brief parcour all the line to get something different of the " "
  *  \param line is the line we choose
- *  \param buffer is a char table where we stock anything 
+ *  \param buff is a char table where we stock anything 
  *  
  *  La fonction parcourt toutes les lignes et s'arrête lorsqu'elle rencontre 
  *  quelque chose différent de " "
