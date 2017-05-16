@@ -6,7 +6,7 @@
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
 #    Created: 2017/06/04 12:02:21 by Z.Safiy                                  #
-#    Updated: 2017/06/04 15:02:21 by Z.Safiy                                  #
+#    Updated: 2017/06/04 21:54:56 by L.Frederic                               #
 #                                                                             #
 #*****************************************************************************/
 
@@ -15,7 +15,7 @@
 
 /*! \fn Path_t * list_add(Path_t * path,int h,int v)
  *  \brief this function add an arguments in the list 
- *  \param path is
+ *  \param path is a list structure wich contain the ship's path
  *  \param h is the horizental movement
  *  \param v is the vertical movement
  *
@@ -50,7 +50,7 @@ Path_t * list_add(Path_t * path,int h,int v)
 
 /*! \fn Path_t * list_close(Path_t * path)
  *  \brief this function close the list and return the head
- *  \param path is
+ *  \param path is a list structure wich contain the ship's path
  *
  *  La fonction ferme la liste et nous la retourne
  *
@@ -70,7 +70,7 @@ Path_t * list_close(Path_t * path)
 
 /*! \fn int isEmpty(Path_t * path)
  *  \brief this function tell us if the list is empty
- *  \param path
+ *  \param path is a list structure wich contain the ship's path
  *
  *  La fonction nous indisue si la liste est vide où non
  *
@@ -85,7 +85,7 @@ int isEmpty(Path_t * path)
 
 /*! \fn void list_show(Path_t * path)
  *  \brief this function show the list 
- *  \param path
+ *  \param path is a list structure wich contain the ship's path
  *
  *  La fonction met en relation toutes les parties du jeu
  */
