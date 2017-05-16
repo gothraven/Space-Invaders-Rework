@@ -27,7 +27,7 @@
 int shot_touch(char * map, Shot_t * shot)
 {
 
-	if(map[(shot->y-2)*(SCREEN_WIDTH)+(shot->x-1)] != ' '){
+	if(map[(shot->y-2)*(SCREEN_WIDTH)+(shot->x)] != ' '){
 		return 1;	
 	}else {
 		return 0;
