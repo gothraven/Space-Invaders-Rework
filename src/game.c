@@ -35,8 +35,14 @@ int main(int argc, char *argv[])
 	int i = 0,status = 0;
 	while(mode->levels[i] != NULL && status != 1){
 		status = engine_launcher(game,mode,i);
+		if(status != 1 && mode->levels[i+1] != NULL) 
+			next_level(game->map);
 		i++;
 	}
+	if(status != 1){
+		earth_saved(game->map);
+		good_bye(game->map);
+	}	
 	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
 	
 	return game->score;

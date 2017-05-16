@@ -17,7 +17,8 @@
  *  \param game is a structure which contains all the game
  *  \param levelNumber is a variables where the number of the level is stored 
  *
- *  La fonction met en relation toutes les parties du jeu  
+ *  La fonction met en relation toutes les parties du jeu
+ *  \return 0 if level won, 1 level lost or player surrendered
  */
 
 int engine_launcher(Game_t * game,Mod_t * mode,int levelNumber)
@@ -25,16 +26,9 @@ int engine_launcher(Game_t * game,Mod_t * mode,int levelNumber)
 	
 	load_game(game,mode,levelNumber); 
 	
-	
-	char keypressed[1]; 
+	char key[3];
+	char keypressed[0]; 
 	game->defender->fireOn = 1;
-
-	char strs[SCORE_LENGHT];
-	char strh[HEALTH_LENGHT];
-	char strl[LEVEL_LENGHT];
-	char * score[2] = {strs,NULL};
-	char * health[2] = {strh,NULL};
-	char * level[2] = {strl,NULL};
 
 	map_init(game->map);
 	draw_shape(game->map,game->defender->shape,game->defender->x,game->defender->y);
@@ -42,44 +36,64 @@ int engine_launcher(Game_t * game,Mod_t * mode,int levelNumber)
 	map_show(game->map);
 
 	struct timespec stime;
+	
 	time_init(&stime);
 	int stat = 0;
-	while(1){
-			
-		int status = poll_ft();
 	
+	while(1){
+		
+		int status = poll_ft();
+
 		if (status > 0){
-			read(0,keypressed,1);
+			read(0,key,3);
+			if(key[2] == 68) keypressed[0] = 'q';
+			if(key[2] == 67) keypressed[0] = 'd';
+			if(key[0] == ' ') keypressed[0] = ' ';
+			if(key[0] == 'p') keypressed[0] = 'p';
+			if(key[0] == 'q') keypressed[0] = 's';
+
 		}
 
+		/* the player side */
+		player_handler(game,keypressed);
+
+		/* the enemies side */
+		stat = invaders_handler(game,&stime);
+		
+		/* in case  player want to pause */		
 		if(keypressed[0] == 'p'){
 			game_pause(game->map);
 			read(0,keypressed,1);
 			game_continue(game->map);
+
+		}
+
+		/* in case  player want to surrender */
+		if(keypressed[0] == 's'){
+			surrender(game->map);
+			read(1,keypressed,1);
+			if(keypressed[0] == 'y'){
+				return 1;
+			}else{
+				keypressed[0] = 'q';
+			}
 		}
 		
-		snprintf(strs, SCORE_LENGHT, "%d", game->score);
-		snprintf(strh, HEALTH_LENGHT, "%d", game->defender->health);
-		snprintf(strl, LEVEL_LENGHT, "%d", game->level);
+		/* to keep the status bar updated */
+		status_bar_handler(game);
 		
-		draw_shape(game->map,score,SCORE_X+9,SCORE_Y);
-		draw_shape(game->map,health,HEALTH_X+10,HEALTH_Y);
-		draw_shape(game->map,level,LEVEL_X+9,LEVEL_Y);
-
-		stat = invaders_handler(game,&stime);
 		
-		if( stat == 1){
+		if( stat == 1){ /*in case level is won*/
 			level_done(game->map);
-			next_level(game->map);
 			return 0;
-		}else if(stat == 2){
+		}else if(stat == 2){ /*in case level is lost*/
 			game_over(game->map);
 			return 1;
 		}
 
-		player_handler(game,keypressed);
-		
+		/*to print the hole picture of the game*/
 		map_show(game->map);
+
 
 	}
 
