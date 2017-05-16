@@ -3,10 +3,10 @@
 *                                                #   # #### #### ####         #
 *    game_help.c                                 #   # #  # #    #            #
 *                                                #   # #### ###  #            #
-*    By: Z. Safiy Errahmane                      #   # #    #    #            #
+*    By: L. Frederic                             #   # #    #    #            #
 *                                                 ###  #    #### ####         #
-*    Created: 2017/15/05 01:24:32 by Z.Safiy                                  #
-*    Updated: 2017/15/05 01:24:32 by Z.Safiy                                  #
+*    Created: 2017/15/05 01:24:32 by L.Frederic                               #
+*    Updated: 2017/15/05 17:24:32 by L.Frederic                               #
 *                                                                             #
 ******************************************************************************/
 
@@ -16,6 +16,7 @@
  *  \brief this functions show the diferents mode available
  *
  *  La fonction montre les différents modes de jeux disponibles
+ *  \return 0 in all the cases
  */
 
 int show_modes()
@@ -36,6 +37,8 @@ int show_modes()
  *  \brief this functions indicates that the users choice is wrong
  *
  *   La fonction indique si l'utilisateur utilise un fichier qui n'est pas le bon
+ *
+ *  \return the return value of show_modes
  */
 
 int show_options()

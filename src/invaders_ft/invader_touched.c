@@ -6,7 +6,7 @@
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
 #    Created: 2017/14/05 00:19:09 by Z.Safiy                                  #
-#    Updated: 2017/11/04 17:15:09 by Z.Safiy                                  #
+#    Updated: 2017/11/04 17:15:09 by L.Frederic                               #
 #                                                                             # 
 #*****************************************************************************/
 
@@ -34,13 +34,13 @@ int invader_touched(Game_t * game)
 }
 
 /*! \fn int is_touched(Invader_t * invader,Shot_t * shot)
- *  \brief manage the collision between a shot and a invader
+ *  \brief manage the collision between a shot and the invaders
  *  \param invader is the ship of the ennemies
  *  \param shot is a struct which contains everithing about a certains shot 
  *
- *  La fonction gère la collision entre un tir et un invaders
+ *  La fonction gère la collision entre un tir et tous les invaders
  *
- *  \return 1 if the invaders was touch
+ *  \return 1 if the invaders was touched else 0
  */
 
 int is_touched(Invader_t * invader,Shot_t * shot)

@@ -6,7 +6,7 @@
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
 #    Created: 2017/14/05 00:35:09 by Z.Safiy                                  #
-#    Updated: 2017/11/04 17:15:09 by Z.Safiy                                  #
+#    Updated: 2017/16/05 17:32:09 by L.Frederic                               #
 #                                                                             # 
 #*****************************************************************************/
 
@@ -18,7 +18,7 @@
  *
  *  La fonction indique la largeur du vaisseau ennemi
  *
- *  \return the height of the invader
+ *  \return the height of the invader's ship
  */
 
 int invader_height(Invader_t * invader)
@@ -36,7 +36,7 @@ int invader_height(Invader_t * invader)
  *
  *  La fonction indique la longueur du vaisseau ennemi
  *
- *  \return the width of the invader
+ *  \return the width of the invader's ship
  */
 
 int invader_width(Invader_t * invader)

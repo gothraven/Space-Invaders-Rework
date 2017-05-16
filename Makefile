@@ -88,7 +88,7 @@ END 	:= "\033[0m"
 
 CACHE:=.cache_exists
 
-all: $(NAME) go
+all: $(NAME) go doc
 
 
 $(NAME): $(OBJ) $(LIB_PATH)
@@ -119,21 +119,26 @@ go:
 	@$(COMPILER) $(LAUNCHER) -o $(@)
 	@echo $(GREEN) " !!! GAME IS READY !!!" $(Green)" EXECUTE WITH :"$(END) $(YELLOW)" ./go [mode_name]" $(END)
 
+doc:
+	@doxygen doc.conf
+	@echo $(GREEN) "Project is documented" $(END)
+
 clean:
 		@/bin/rm -rf $(CACHE_PATH)
 		@/bin/rm -rf $(CACHE)
 		@echo $(Red) "Deleting ---->>>> $(CACHE_PATH)" $(END)
 
-fclean: clean
+fclean: clean gclean dclean
 		@/bin/rm -rf $(NAME)
-		@rm -rf ./go
 		@echo $(Red) "Deleting ---->>>> $(NAME)" $(END)
-		@echo $(Red) "Deleting ---->>>> go" $(END)
 
 gclean:
 		@rm -rf ./go
 		@echo $(Red) "Deleting ---->>>> go" $(END)
 
+dclean:
+		@rm -rf doc/
+		@echo $(Red) "Deleting ---->>>> doc/" $(END)		
 re: fclean all
 
 norm:
