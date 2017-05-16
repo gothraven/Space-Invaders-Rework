@@ -20,8 +20,9 @@ int main(int argc, char *argv[])
 	if(!mode_exist(argv[1])){
 		return show_modes();
 	}
-
-	char game[120] = "xterm -geometry 150x50 -e ./game ";
+	// "xterm -geometry 150x50 -e ./game " first terminal option
+	// "gnome-terminal --geometry=150x50 --zoom=0.7 -e ./game " second terminal option
+	char game[120] = "gnome-terminal --geometry=150x50 --zoom=0.7 -x ./game ";
 	
 	strcat(game,argv[1]);
 	
@@ -67,44 +68,3 @@ int show_options()
 	printf("To launche the game you should give the right mode\n\n");
 	return show_modes();
 }
-
-
-
-
-
-
-		/*int status;	
-	pid_t pid;
-
-	char * game[6];
-	game[0] = "xterm";
-	game[1] = "-geometry";
-	game[2] = "150x50";
-	game[3] = "-e";
-	game[4] = "./game";
-	game[5] = argv[1];
-	game[6] = NULL;
-	
-	
-
-	pid = fork();
-	if(pid == 0){
-
-		status = execvp(game[0],game);
-		exit(status);
-
-	}else if(pid < 0){
-		
-		perror("ERROR");
-		return 1;
-
-	}else{
-
-		waitpid(pid, &status, WUNTRACED);		
-		printf("test\n");
-		if(status == 1) printf("no params\n");
-		if(status == 2) printf("no mods\n");
-		if(status == 0) printf("your score is %d\n",status);
-
-		return 0;
-	}*/

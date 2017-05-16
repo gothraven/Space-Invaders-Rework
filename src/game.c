@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	load_mode(mode);
 	
 	int i = 0,status = 0;
-	while(mode->levels[i] != NULL && status != 4){
+	while(mode->levels[i] != NULL && status != 1){
 		status = engine_launcher(game,mode,i);
 		i++;
 	}
