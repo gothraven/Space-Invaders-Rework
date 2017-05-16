@@ -137,6 +137,7 @@ void game_pause(char * map)
  *  La fonction dessine "pause" sur la map et elle le supprime après un certain temps
  *
  */
+
 void game_continue(char * map)
 {	
 	char * game_pause[]={" _______  _______  __   __  _______  _______ ",
@@ -151,6 +152,13 @@ void game_continue(char * map)
 	map_show(map);
 }
 
+/*! \fn void good_bye (char * map)
+ *  \brief draw "good bye" on the map and then erase it after sometime
+ *  \param map is a characters table wihch contains the map of the game  
+ *  
+ *  La fonction dessine "good bye" sur la map et elle le supprime après un certain temps
+ *
+ */
 
 void good_bye(char * map)
 {
@@ -168,6 +176,14 @@ void good_bye(char * map)
 	erase_shape(map,good_bye,GOOD_BYE_X,GOOD_BYE_Y);
 }
 
+/*! \fn void earth_saved(char * map)
+ *  \brief draw "earth_saved" on the map and then erase it after sometime
+ *  \param map is a characters table wihch contains the map of the game  
+ *  
+ *  La fonction dessine "earth_saved" sur la map et elle le supprime après un certain temps
+ *
+ */
+
 void earth_saved(char * map)
 {
 	char * earth_saved[]={" _______  _______  ______    _______  __   __    _______  _______  __   __  _______  ______  ",
@@ -183,6 +199,14 @@ void earth_saved(char * map)
 	sleep(2);
 	erase_shape(map,earth_saved,EARTH_SAVED_X,EARTH_SAVED_Y);
 }
+
+/*! \fn void surrender(char * map)
+ *  \brief draw "surrender yes?" on the map and then erase it after sometime
+ *  \param map is a characters table wihch contains the map of the game  
+ *  
+ *  La fonction dessine "surrender yes?" sur la map et elle le supprime après un certain temps
+ *
+ */
 
 void surrender(char * map)
 {

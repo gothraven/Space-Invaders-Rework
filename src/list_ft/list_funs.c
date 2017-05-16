@@ -13,9 +13,22 @@
 #include "game.h"
 #include "list.h"
 
-Path_t * list_add(Path_t * path,int h,int v){
+/*! \fn Path_t * list_add(Path_t * path,int h,int v)
+ *  \brief this function add an arguments in the list 
+ *  \param path is
+ *  \param h is the first char in char**
+ *  \param v is the seconf char in char**
+ *
+ *  La fonction ajoute un arguments dans la liste
+ *
+ *  \return head if the list only have one arguments (NULL), path is the arguments
+ *  have many arguments
+ */
+
+Path_t * list_add(Path_t * path,int h,int v)
+{
 	Path_t * head = path;
-	if(head == NULL){
+	if(head == NULL){ 
 		head = malloc(sizeof(Path_t));
 		head->h = h;
 		head->v = v;
@@ -35,7 +48,17 @@ Path_t * list_add(Path_t * path,int h,int v){
 	return path;
 }
 
-Path_t * list_close(Path_t * path){
+/*! \fn Path_t * list_close(Path_t * path)
+ *  \brief this function close the list and return the head
+ *  \param path is
+ *
+ *  La fonction ferme la liste et nous la retourne
+ *
+ *  \return head to close the list 
+ */
+
+Path_t * list_close(Path_t * path)
+{
 	Path_t * head = path;
 	while(path->next != NULL){
 		path = path->next; //look for the end of the list
@@ -45,12 +68,30 @@ Path_t * list_close(Path_t * path){
 	return head;
 }
 
-int isEmpty(Path_t * path){
+/*! \fn int isEmpty(Path_t * path)
+ *  \brief this function tell us if the list is empty
+ *  \param path
+ *
+ *  La fonction nous indisue si la liste est vide où non
+ *
+ *  \return 0 if the list is not empty, 1 the list is empty
+ */
+
+int isEmpty(Path_t * path)
+{
 	if(path != NULL) return 0;
 	else return 1;
 }
 
-void list_show(Path_t * path){
+/*! \fn void list_show(Path_t * path)
+ *  \brief this function show the list 
+ *  \param path
+ *
+ *  La fonction met en relation toutes les parties du jeu
+ */
+
+void list_show(Path_t * path)
+{
 	Path_t * head = path;
 	printf("{|");
 	do{

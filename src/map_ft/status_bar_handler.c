@@ -6,11 +6,18 @@
 #    By: Z. Safiy Errahmane                      #   # #    #    #            #
 #                                                 ###  #    #### ####         #
 #    Created: 2017/16/05 05:17:00 by Z.Safiy                                  #
-#    Updated: 2017/16/05 05:17:10 by Z.Safiy                                  #
+#    Updated: 2017/16/05 05:17:10 by L.Frederic                               #
 #                                                                             # 
 #*****************************************************************************/
 
 #include "map.h"
+
+/*! \fn void status_bar_handler(Game_t * game)
+ *  \brief this function handles everything about the status bar
+ *  \param game is a structure which contains all the game
+ *
+ *  La fonction contrôle tout ce qui a un rapport avec les invaders
+ */
 
 void status_bar_handler(Game_t * game)
 {
