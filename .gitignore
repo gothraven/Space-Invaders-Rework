@@ -5,3 +5,4 @@ keyboardInput
 *.o
 *.svg
 go
+doc/*
