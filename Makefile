@@ -88,7 +88,7 @@ END 	:= "\033[0m"
 
 CACHE:=.cache_exists
 
-all: $(NAME) go doc
+all: $(NAME) doc go 
 
 
 $(NAME): $(OBJ) $(LIB_PATH)
@@ -121,7 +121,7 @@ go:
 
 doc:
 	@doxygen doc.conf
-	@echo $(GREEN) "Project is documented" $(END)
+	@echo $(GREEN) " !!! Project is documented check the [doc/html/index.html] !!!" $(END)
 
 clean:
 		@/bin/rm -rf $(CACHE_PATH)
